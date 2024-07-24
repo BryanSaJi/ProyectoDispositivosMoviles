@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384251270934",
+    "project_id": "tamales-leyla-gd7cxq",
+    "storage_bucket": "tamales-leyla-gd7cxq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384251270934:android:fe9a34b3c4fad88af02237",
+        "android_client_info": {
+          "package_name": "io.builderking.foodcort"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHA9Mf7MCv-EIT6QrTVmKXWUNoCbSxlvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
