@@ -465,12 +465,13 @@ class _BsMostrarDetalleOrdenWidgetState
                                                               ),
                                                         ),
                                                         count: _model
-                                                            .ccAgregarCantidadValue ??= 0,
+                                                            .ccAgregarCantidadValue ??= 1,
                                                         updateCount: (count) =>
                                                             setState(() => _model
                                                                     .ccAgregarCantidadValue =
                                                                 count),
                                                         stepSize: 1,
+                                                        minimum: 1,
                                                         contentPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(

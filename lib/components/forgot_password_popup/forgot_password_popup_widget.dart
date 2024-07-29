@@ -93,7 +93,7 @@ class _ForgotPasswordPopupWidgetState extends State<ForgotPasswordPopupWidget> {
                           Flexible(
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '75vfyalz' /* Enter your email */,
+                                'a7h9ku4j' /* Enter your email */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
@@ -153,7 +153,7 @@ class _ForgotPasswordPopupWidgetState extends State<ForgotPasswordPopupWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'rnzvwmdo' /* Email Address */,
+                                    'tcoqtr5m' /* Email Address */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium

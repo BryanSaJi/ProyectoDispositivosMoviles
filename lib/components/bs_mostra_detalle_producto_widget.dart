@@ -465,12 +465,13 @@ class _BsMostraDetalleProductoWidgetState
                                                               ),
                                                         ),
                                                         count: _model
-                                                            .ccAgregarCantidadValue ??= 0,
+                                                            .ccAgregarCantidadValue ??= 1,
                                                         updateCount: (count) =>
                                                             setState(() => _model
                                                                     .ccAgregarCantidadValue =
                                                                 count),
                                                         stepSize: 1,
+                                                        minimum: 1,
                                                         contentPadding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
@@ -581,7 +582,7 @@ class _BsMostraDetalleProductoWidgetState
                                   children: [
                                     TextSpan(
                                       text: FFLocalizations.of(context).getText(
-                                        '2pro7d5b' /* ₡  */,
+                                        'icsxsp5r' /* ₡  */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

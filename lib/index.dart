@@ -37,3 +37,4 @@ export '/pages/vista_como_dueno_necesito_visualizarla_informacion_del_cliente/vi
     show VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget;
 export '/vistadehordenescliente/vistadehordenescliente_widget.dart'
     show VistadehordenesclienteWidget;
+export '/pages/edit_user/edit_user_widget.dart' show EditUserWidget;

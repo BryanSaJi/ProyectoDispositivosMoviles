@@ -317,64 +317,43 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Icon(
-                                      FFIcons.ksettings,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
-                                    ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        'saba47ge' /* Setting */,
+                            InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('vistaConfiguracion');
+                              },
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Icon(
+                                        FFIcons.ksettings,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 24.0,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelLarge
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ].divide(SizedBox(width: 8.0)),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 2.0, 8.0, 2.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            'nrnif4ks' /* 1 */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelSmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                letterSpacing: 0.0,
-                                              ),
+                                      Text(
+                                        FFLocalizations.of(context).getText(
+                                          'saba47ge' /* Setting */,
                                         ),
-                                      ],
-                                    ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ].divide(SizedBox(width: 8.0)),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ]
                               .divide(SizedBox(height: 24.0))
@@ -1312,78 +1291,34 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                             context.pushNamed(
                                                                 'vistaCarrito');
                                                           },
-                                                          child: badges.Badge(
-                                                            badgeContent: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                '7ftqfwo3' /* 5 */,
-                                                              ),
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
+                                                          child: Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .titleSmall
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: Colors
-                                                                        .white,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
+                                                                  .primaryBackground,
+                                                              shape: BoxShape
+                                                                  .circle,
                                                             ),
-                                                            showBadge: true,
-                                                            shape: badges
-                                                                .BadgeShape
-                                                                .circle,
-                                                            badgeColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                            elevation: 3.0,
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    8.0),
-                                                            position: badges
-                                                                    .BadgePosition
-                                                                .topEnd(),
-                                                            animationType: badges
-                                                                .BadgeAnimationType
-                                                                .scale,
-                                                            toAnimate: true,
-                                                            child: Container(
-                                                              width: 40.0,
-                                                              height: 40.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                              ),
-                                                              child: Visibility(
-                                                                visible: valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.rol,
-                                                                        '') !=
-                                                                    'Admin',
-                                                                child:
-                                                                    AuthUserStreamWidget(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          Icon(
-                                                                    FFIcons
-                                                                        .kbasket,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    size: 24.0,
-                                                                  ),
+                                                            child: Visibility(
+                                                              visible: valueOrDefault(
+                                                                      currentUserDocument
+                                                                          ?.rol,
+                                                                      '') !=
+                                                                  'Admin',
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        Icon(
+                                                                  FFIcons
+                                                                      .kbasket,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  size: 24.0,
                                                                 ),
                                                               ),
                                                             ),
@@ -1533,13 +1468,28 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                             shape:
                                                                 BoxShape.circle,
                                                           ),
-                                                          child: Icon(
-                                                            FFIcons
-                                                                .kbellRinging,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            size: 24.0,
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                  'vistaConfiguracion');
+                                                            },
+                                                            child: Icon(
+                                                              FFIcons
+                                                                  .kbellRinging,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              size: 24.0,
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -2256,7 +2206,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                 List<ProductRecord>
                                                     lvResultadosBusquedaProductRecordList =
                                                     snapshot.data!;
-
                                                 // Return an empty Container when the item does not exist.
                                                 if (snapshot.data!.isEmpty) {
                                                   return Container();
@@ -2267,6 +2216,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                         ? lvResultadosBusquedaProductRecordList
                                                             .first
                                                         : null;
+
                                                 return Builder(
                                                   builder: (context) {
                                                     final productosBusqueda =

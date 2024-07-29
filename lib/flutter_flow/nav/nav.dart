@@ -155,9 +155,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vistaConfiguracion',
           path: '/vistaConfiguracion',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'vistaConfiguracion')
-              : VistaConfiguracionWidget(),
+          builder: (context, params) => VistaConfiguracionWidget(),
         ),
         FFRoute(
           name: 'EditProfile',
@@ -220,6 +218,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'vistadehordenescliente',
           path: '/vistadehordenescliente',
           builder: (context, params) => VistadehordenesclienteWidget(),
+        ),
+        FFRoute(
+          name: 'EditUser',
+          path: '/editUser',
+          asyncParams: {
+            'user': getDoc(['Users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => EditUserWidget(
+            user: params.getParam(
+              'user',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

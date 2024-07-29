@@ -157,7 +157,6 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'vistaIndex': VistaIndexWidget(),
       'vistaHistorialDePedidos': VistaHistorialDePedidosWidget(),
-      'vistaConfiguracion': VistaConfiguracionWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -193,16 +192,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               '550t588t' /* My Orders */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              FFIcons.ksettings,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'y5fgtfl1' /* Settings */,
             ),
             tooltip: '',
           )
