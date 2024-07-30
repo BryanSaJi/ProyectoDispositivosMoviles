@@ -16,11 +16,6 @@ class OrderRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "Products" field.
-  List<int>? _products;
-  List<int> get products => _products ?? const [];
-  bool hasProducts() => _products != null;
-
   // "OrderDate" field.
   DateTime? _orderDate;
   DateTime? get orderDate => _orderDate;
@@ -56,8 +51,17 @@ class OrderRecord extends FirestoreRecord {
   DocumentReference? get paymentMethod => _paymentMethod;
   bool hasPaymentMethod() => _paymentMethod != null;
 
+  // "OrderStatus" field.
+  String? _orderStatus;
+  String get orderStatus => _orderStatus ?? '';
+  bool hasOrderStatus() => _orderStatus != null;
+
+  // "Product" field.
+  List<DocumentReference>? _product;
+  List<DocumentReference> get product => _product ?? const [];
+  bool hasProduct() => _product != null;
+
   void _initializeFields() {
-    _products = getDataList(snapshotData['Products']);
     _orderDate = snapshotData['OrderDate'] as DateTime?;
     _orderHour = snapshotData['OrderHour'] as DateTime?;
     _enable = snapshotData['Enable'] as bool?;
@@ -65,6 +69,8 @@ class OrderRecord extends FirestoreRecord {
     _orderTotal = castToType<int>(snapshotData['OrderTotal']);
     _orderCode = snapshotData['OrderCode'] as String?;
     _paymentMethod = snapshotData['PaymentMethod'] as DocumentReference?;
+    _orderStatus = snapshotData['OrderStatus'] as String?;
+    _product = getDataList(snapshotData['Product']);
   }
 
   static CollectionReference get collection =>
@@ -108,6 +114,7 @@ Map<String, dynamic> createOrderRecordData({
   int? orderTotal,
   String? orderCode,
   DocumentReference? paymentMethod,
+  String? orderStatus,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -118,6 +125,7 @@ Map<String, dynamic> createOrderRecordData({
       'OrderTotal': orderTotal,
       'OrderCode': orderCode,
       'PaymentMethod': paymentMethod,
+      'OrderStatus': orderStatus,
     }.withoutNulls,
   );
 
@@ -130,26 +138,28 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
   @override
   bool equals(OrderRecord? e1, OrderRecord? e2) {
     const listEquality = ListEquality();
-    return listEquality.equals(e1?.products, e2?.products) &&
-        e1?.orderDate == e2?.orderDate &&
+    return e1?.orderDate == e2?.orderDate &&
         e1?.orderHour == e2?.orderHour &&
         e1?.enable == e2?.enable &&
         e1?.orderUser == e2?.orderUser &&
         e1?.orderTotal == e2?.orderTotal &&
         e1?.orderCode == e2?.orderCode &&
-        e1?.paymentMethod == e2?.paymentMethod;
+        e1?.paymentMethod == e2?.paymentMethod &&
+        e1?.orderStatus == e2?.orderStatus &&
+        listEquality.equals(e1?.product, e2?.product);
   }
 
   @override
   int hash(OrderRecord? e) => const ListEquality().hash([
-        e?.products,
         e?.orderDate,
         e?.orderHour,
         e?.enable,
         e?.orderUser,
         e?.orderTotal,
         e?.orderCode,
-        e?.paymentMethod
+        e?.paymentMethod,
+        e?.orderStatus,
+        e?.product
       ]);
 
   @override

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -203,7 +204,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'gwftimt8' /* Nombre del producto */,
+                                                    'gwftimt8' /* Product Name */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -352,7 +353,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '81hvn177' /* Precio */,
+                                                    '81hvn177' /* Price */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -439,6 +440,10 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                 validator: _model
                                                     .priceTextFieldTextControllerValidator
                                                     .asValidator(context),
+                                                inputFormatters: [
+                                                  FilteringTextInputFormatter
+                                                      .allow(RegExp('[0-9]'))
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -504,7 +509,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'dd8ele7r' /* Cantidad */,
+                                                    'dd8ele7r' /* Quantity */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -595,6 +600,10 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                 validator: _model
                                                     .quantityTextFieldTextControllerValidator
                                                     .asValidator(context),
+                                                inputFormatters: [
+                                                  FilteringTextInputFormatter
+                                                      .allow(RegExp('[0-9]'))
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -660,7 +669,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'x19kz3q2' /* Descripcion */,
+                                                    'x19kz3q2' /* Description */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -816,7 +825,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '7bhhu6z7' /* Tiempo */,
+                                                    '7bhhu6z7' /* Time */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -907,6 +916,10 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                 validator: _model
                                                     .timeTextFieldTextControllerValidator
                                                     .asValidator(context),
+                                                inputFormatters: [
+                                                  FilteringTextInputFormatter
+                                                      .allow(RegExp('[0-9]'))
+                                                ],
                                               ),
                                             ),
                                           ),
@@ -972,7 +985,7 @@ class _CreateProductWidgetState extends State<CreateProductWidget> {
                                                   hintText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'xzbtn89n' /* Sabor */,
+                                                    'xzbtn89n' /* Flavor */,
                                                   ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(

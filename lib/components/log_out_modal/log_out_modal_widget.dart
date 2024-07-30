@@ -124,7 +124,8 @@ class _LogOutModalWidgetState extends State<LogOutModalWidget> {
                             await authManager.signOut();
                             GoRouter.of(context).clearRedirectLocation();
 
-                            context.goNamedAuth('vistaLogin', context.mounted);
+                            context.goNamedAuth(
+                                'vistaOrdenesCliente', context.mounted);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -141,7 +142,7 @@ class _LogOutModalWidgetState extends State<LogOutModalWidget> {
                                   GoRouter.of(context).clearRedirectLocation();
 
                                   context.goNamedAuth(
-                                      'vistaLogin', context.mounted);
+                                      'vistaOrdenesCliente', context.mounted);
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(

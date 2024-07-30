@@ -57,7 +57,6 @@ class VistaDuenoProductosModel
     return controller
       ..addPageRequestListener(
         (nextPageMarker) => queryProductRecordPage(
-          queryBuilder: (_) => lvProductosPagingQuery ??= query,
           nextPageMarker: nextPageMarker,
           controller: controller,
           pageSize: 25,

@@ -1276,43 +1276,41 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                             .openDrawer();
                                                       },
                                                     ),
-                                                    Stack(
-                                                      children: [
-                                                        InkWell(
-                                                          splashColor: Colors
-                                                              .transparent,
-                                                          focusColor: Colors
-                                                              .transparent,
-                                                          hoverColor: Colors
-                                                              .transparent,
-                                                          highlightColor: Colors
-                                                              .transparent,
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                                'vistaCarrito');
-                                                          },
-                                                          child: Container(
-                                                            width: 40.0,
-                                                            height: 40.0,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                            child: Visibility(
-                                                              visible: valueOrDefault(
-                                                                      currentUserDocument
-                                                                          ?.rol,
-                                                                      '') !=
-                                                                  'Admin',
-                                                              child:
-                                                                  AuthUserStreamWidget(
-                                                                builder:
-                                                                    (context) =>
-                                                                        Icon(
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.rol,
+                                                            '') !=
+                                                        'Admin')
+                                                      AuthUserStreamWidget(
+                                                        builder: (context) =>
+                                                            Stack(
+                                                          children: [
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context.pushNamed(
+                                                                    'vistaCarrito');
+                                                              },
+                                                              child: Container(
+                                                                width: 40.0,
+                                                                height: 40.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                                child: Icon(
                                                                   FFIcons
                                                                       .kbasket,
                                                                   color: FlutterFlowTheme.of(
@@ -1322,10 +1320,9 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
+                                                          ],
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
                                                   ].divide(
                                                       SizedBox(width: 8.0)),
                                                 ),

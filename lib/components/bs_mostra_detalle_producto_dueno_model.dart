@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -31,16 +30,10 @@ class BsMostraDetalleProductoDuenoModel
       : 0;
   // State field(s) for ccAgregarCantidad widget.
   int? ccAgregarCantidadValue;
-  // Model for navigator component.
-  late NavigatorModel navigatorModel;
 
   @override
-  void initState(BuildContext context) {
-    navigatorModel = createModel(context, () => NavigatorModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    navigatorModel.dispose();
-  }
+  void dispose() {}
 }

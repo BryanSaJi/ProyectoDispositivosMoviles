@@ -1453,62 +1453,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // vistadehordenescliente
+  // vistaOrdenesCliente
   {
     'ru1cib9k': {
-      'en': 'Recent Orders',
-      'es': '',
+      'en': 'My orders',
+      'es': 'Mis ordenes',
     },
     'i6qjiebj': {
-      'en': 'Below are your most recent orders',
+      'en': 'ordenes en curso',
       'es': '',
     },
-    '2klbvyxx': {
-      'en': 'Order #: ',
-      'es': '',
-    },
-    'i08c64i0': {
-      'en': '429242424',
-      'es': '',
-    },
-    '8107z0z8': {
-      'en': 'Mon. July 3rd',
-      'es': '',
-    },
-    '3hwm2v5a': {
-      'en': '2.5 lbs',
-      'es': '',
-    },
-    'oay8nkkx': {
-      'en': '\$1.50',
-      'es': '',
-    },
-    'ej8wpcrl': {
-      'en': 'Shipped',
-      'es': '',
-    },
-    'iorzx2ew': {
-      'en': 'Order #: ',
-      'es': '',
-    },
-    'w938i88b': {
-      'en': '429242424',
-      'es': '',
-    },
-    '2b6xsv0w': {
-      'en': 'Mon. July 3rd',
-      'es': '',
-    },
-    '07sh3cq8': {
-      'en': '2.5 lbs',
-      'es': '',
-    },
-    'dlxf22cn': {
-      'en': '\$1.50',
-      'es': '',
-    },
-    'ofopablh': {
-      'en': 'Shipped',
+    'bh7zu2td': {
+      'en': 'canselar',
       'es': '',
     },
     'n5a2a4tp': {
@@ -1532,30 +1488,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'eci9jwdn': {
-      'en': 'Accepted',
-      'es': '',
-    },
-    'ndxdfauu': {
-      'en': 'Order #: ',
-      'es': '',
-    },
-    'rypp8g89': {
-      'en': '429242424',
-      'es': '',
-    },
-    'yjiurssd': {
-      'en': 'Mon. July 3rd',
-      'es': '',
-    },
-    '17wwq1kj': {
-      'en': '2.5 lbs',
-      'es': '',
-    },
-    'gnmwe5yb': {
-      'en': '\$1.50',
-      'es': '',
-    },
-    'thkqh7go': {
       'en': 'Accepted',
       'es': '',
     },
@@ -1629,10 +1561,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Todos los Productos',
       'es': '',
     },
-    '5ffn149i': {
-      'en': '₡',
-      'es': '',
-    },
     '5l4ryyir': {
       'en': '',
       'es': '',
@@ -1697,16 +1625,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Nombre',
     },
     'm5ohbmbf': {
-      'en': 'Create your username',
-      'es': '',
+      'en': 'Product Name',
+      'es': 'Nombre del Producto',
     },
     '1ztlje1m': {
       'en': 'Price',
       'es': 'Precio',
     },
     'wnbimfra': {
-      'en': 'Create your username',
-      'es': '',
+      'en': 'Product Price',
+      'es': 'Precio del Producto',
     },
     'vwmr0g0z': {
       'en': 'Quantity',
@@ -1721,24 +1649,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción',
     },
     'tvvqeyhy': {
-      'en': 'Enter your email or phone number',
-      'es': '',
+      'en': 'Product Description',
+      'es': 'Descripción del producto',
     },
     'exxap529': {
       'en': 'Time',
       'es': 'Tiempo',
     },
     '4okuiqgv': {
-      'en': 'Enter your email or phone number',
-      'es': '',
+      'en': 'Product Time',
+      'es': 'Tiempo de Preparacion',
     },
     'pi0g83t3': {
       'en': 'Sabor',
-      'es': '',
+      'es': 'Flavor',
     },
     '0p5tf813': {
-      'en': 'Enter your email or phone number',
-      'es': '',
+      'en': 'Product Flavor',
+      'es': 'Sabor del Producto',
     },
     '5k2phqb5': {
       'en': 'Enabled',
@@ -1794,7 +1722,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4qsapk2i': {
       'en': 'Save Changes',
-      'es': '',
+      'es': 'Guardar Cambios',
     },
     '5qxikuqr': {
       'en': 'Home',
@@ -1812,48 +1740,48 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Nombre',
     },
     'gwftimt8': {
-      'en': 'Nombre del producto',
-      'es': '',
+      'en': 'Product Name',
+      'es': 'Nombre del producto',
     },
     '6wbv13tw': {
       'en': 'Price',
       'es': 'Precio',
     },
     '81hvn177': {
-      'en': 'Precio',
-      'es': '',
+      'en': 'Price',
+      'es': 'Precio',
     },
     'i0m5gypq': {
       'en': 'Quantity',
       'es': 'Cantidad',
     },
     'dd8ele7r': {
-      'en': 'Cantidad',
-      'es': '',
+      'en': 'Quantity',
+      'es': 'Cantidad',
     },
     'tdf6zczk': {
       'en': 'Description',
       'es': 'Descripción',
     },
     'x19kz3q2': {
-      'en': 'Descripcion',
-      'es': '',
+      'en': 'Description',
+      'es': 'Descripcion',
     },
     '7fqp6q28': {
       'en': 'Time',
       'es': 'Tiempo',
     },
     '7bhhu6z7': {
-      'en': 'Tiempo',
-      'es': '',
+      'en': 'Time',
+      'es': 'Tiempo',
     },
     'd5yoj0l3': {
       'en': 'Flavor',
       'es': 'Sabor',
     },
     'xzbtn89n': {
-      'en': 'Sabor',
-      'es': '',
+      'en': 'Flavor',
+      'es': 'Sabor',
     },
     '13wu38yl': {
       'en': 'Enabled',
@@ -1909,7 +1837,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zu2qwhzk': {
       'en': 'Save Changes',
-      'es': '',
+      'es': 'Aplicar Cambios',
     },
     'iemea84t': {
       'en': 'Home',
@@ -2572,8 +2500,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'zivxvi82': {
-      'en': 'Descripción',
-      'es': '',
+      'en': 'Description',
+      'es': 'Descripción',
     },
     '5ijt3ent': {
       'en': '₡ ',

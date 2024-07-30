@@ -35,8 +35,8 @@ export '/pages/vista_dueno_visualizar_la_lista_de_pedidos/vista_dueno_visualizar
     show VistaDuenoVisualizarLaListaDePedidosWidget;
 export '/pages/vista_como_dueno_necesito_visualizarla_informacion_del_cliente/vista_como_dueno_necesito_visualizarla_informacion_del_cliente_widget.dart'
     show VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget;
-export '/vistadehordenescliente/vistadehordenescliente_widget.dart'
-    show VistadehordenesclienteWidget;
+export '/pages/vista_ordenes_cliente/vista_ordenes_cliente_widget.dart'
+    show VistaOrdenesClienteWidget;
 export '/pages/edit_user/edit_user_widget.dart' show EditUserWidget;
 export '/pages/vista_dueno_productos/vista_dueno_productos_widget.dart'
     show VistaDuenoProductosWidget;

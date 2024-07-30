@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -503,7 +502,7 @@ class _BsMostraDetalleProductoDuenoWidgetState
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'zivxvi82' /* Descripción */,
+                                                  'zivxvi82' /* Description */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -667,16 +666,6 @@ class _BsMostraDetalleProductoDuenoWidgetState
                   ),
                 ),
               ],
-            ),
-          ),
-          Align(
-            alignment: AlignmentDirectional(1.02, -0.75),
-            child: wrapWithModel(
-              model: _model.navigatorModel,
-              updateCallback: () => setState(() {}),
-              child: NavigatorWidget(
-                expanded: false,
-              ),
             ),
           ),
         ],

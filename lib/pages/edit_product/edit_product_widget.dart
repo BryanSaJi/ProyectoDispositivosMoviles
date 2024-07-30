@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -210,7 +211,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'm5ohbmbf' /* Create your username */,
+                                                        'm5ohbmbf' /* Product Name */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -359,7 +360,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'wnbimfra' /* Create your username */,
+                                                        'wnbimfra' /* Product Price */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -444,6 +445,11 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                     validator: _model
                                                         .txtPrecioTextControllerValidator
                                                         .asValidator(context),
+                                                    inputFormatters: [
+                                                      FilteringTextInputFormatter
+                                                          .allow(
+                                                              RegExp('[0-9]'))
+                                                    ],
                                                   ),
                                                 ),
                                               ),
@@ -603,6 +609,11 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                     validator: _model
                                                         .txtCantidadTextControllerValidator
                                                         .asValidator(context),
+                                                    inputFormatters: [
+                                                      FilteringTextInputFormatter
+                                                          .allow(
+                                                              RegExp('[0-9]'))
+                                                    ],
                                                   ),
                                                 ),
                                               ),
@@ -666,11 +677,12 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
+                                                      alignLabelWithHint: false,
                                                       hintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'tvvqeyhy' /* Enter your email or phone numb... */,
+                                                        'tvvqeyhy' /* Product Description */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -759,6 +771,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                               'Plus Jakarta Sans',
                                                           letterSpacing: 0.0,
                                                         ),
+                                                    textAlign: TextAlign.start,
                                                     maxLines: 5,
                                                     validator: _model
                                                         .txtDescripcionTextControllerValidator
@@ -830,7 +843,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4okuiqgv' /* Enter your email or phone numb... */,
+                                                        '4okuiqgv' /* Product Time */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -922,6 +935,11 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                     validator: _model
                                                         .txtTiempoTextControllerValidator
                                                         .asValidator(context),
+                                                    inputFormatters: [
+                                                      FilteringTextInputFormatter
+                                                          .allow(
+                                                              RegExp('[0-9]'))
+                                                    ],
                                                   ),
                                                 ),
                                               ),
@@ -989,7 +1007,7 @@ class _EditProductWidgetState extends State<EditProductWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '0p5tf813' /* Enter your email or phone numb... */,
+                                                        '0p5tf813' /* Product Flavor */,
                                                       ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(

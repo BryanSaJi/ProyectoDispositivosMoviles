@@ -559,11 +559,7 @@ class _VistaDuenoProductosWidgetState extends State<VistaDuenoProductosWidget> {
                                                   ProductRecord>(
                                                 pagingController: _model
                                                     .setLvProductosController(
-                                                  ProductRecord.collection
-                                                      .where(
-                                                    'Enable',
-                                                    isEqualTo: true,
-                                                  ),
+                                                  ProductRecord.collection,
                                                 ),
                                                 padding: EdgeInsets.zero,
                                                 shrinkWrap: true,
@@ -802,8 +798,9 @@ class _VistaDuenoProductosWidgetState extends State<VistaDuenoProductosWidget> {
                                                                         children: [
                                                                           TextSpan(
                                                                             text:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              '5ffn149i' /* ₡ */,
+                                                                                FFLocalizations.of(context).getVariableText(
+                                                                              enText: '₡',
+                                                                              esText: '₡',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',

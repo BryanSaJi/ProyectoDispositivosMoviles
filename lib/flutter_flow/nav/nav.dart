@@ -79,14 +79,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? NavBarPage()
+          : VistaOrdenesClienteWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? NavBarPage()
+              : VistaOrdenesClienteWidget(),
         ),
         FFRoute(
           name: 'vistaCreacionCuenta',
@@ -215,9 +217,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget(),
         ),
         FFRoute(
-          name: 'vistadehordenescliente',
-          path: '/vistadehordenescliente',
-          builder: (context, params) => VistadehordenesclienteWidget(),
+          name: 'vistaOrdenesCliente',
+          path: '/vistaOrdenesCliente',
+          builder: (context, params) => VistaOrdenesClienteWidget(),
         ),
         FFRoute(
           name: 'EditUser',
@@ -426,7 +428,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/vistaLogin';
+            return '/vistaOrdenesCliente';
           }
           return null;
         },
