@@ -31,11 +31,6 @@ class OrderRecord extends FirestoreRecord {
   DateTime? get orderHour => _orderHour;
   bool hasOrderHour() => _orderHour != null;
 
-  // "PaymentMethode" field.
-  int? _paymentMethode;
-  int get paymentMethode => _paymentMethode ?? 0;
-  bool hasPaymentMethode() => _paymentMethode != null;
-
   // "Enable" field.
   bool? _enable;
   bool get enable => _enable ?? false;
@@ -56,15 +51,20 @@ class OrderRecord extends FirestoreRecord {
   String get orderCode => _orderCode ?? '';
   bool hasOrderCode() => _orderCode != null;
 
+  // "PaymentMethod" field.
+  DocumentReference? _paymentMethod;
+  DocumentReference? get paymentMethod => _paymentMethod;
+  bool hasPaymentMethod() => _paymentMethod != null;
+
   void _initializeFields() {
     _products = getDataList(snapshotData['Products']);
     _orderDate = snapshotData['OrderDate'] as DateTime?;
     _orderHour = snapshotData['OrderHour'] as DateTime?;
-    _paymentMethode = castToType<int>(snapshotData['PaymentMethode']);
     _enable = snapshotData['Enable'] as bool?;
     _orderUser = snapshotData['OrderUser'] as DocumentReference?;
     _orderTotal = castToType<int>(snapshotData['OrderTotal']);
     _orderCode = snapshotData['OrderCode'] as String?;
+    _paymentMethod = snapshotData['PaymentMethod'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -103,21 +103,21 @@ class OrderRecord extends FirestoreRecord {
 Map<String, dynamic> createOrderRecordData({
   DateTime? orderDate,
   DateTime? orderHour,
-  int? paymentMethode,
   bool? enable,
   DocumentReference? orderUser,
   int? orderTotal,
   String? orderCode,
+  DocumentReference? paymentMethod,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'OrderDate': orderDate,
       'OrderHour': orderHour,
-      'PaymentMethode': paymentMethode,
       'Enable': enable,
       'OrderUser': orderUser,
       'OrderTotal': orderTotal,
       'OrderCode': orderCode,
+      'PaymentMethod': paymentMethod,
     }.withoutNulls,
   );
 
@@ -133,11 +133,11 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
     return listEquality.equals(e1?.products, e2?.products) &&
         e1?.orderDate == e2?.orderDate &&
         e1?.orderHour == e2?.orderHour &&
-        e1?.paymentMethode == e2?.paymentMethode &&
         e1?.enable == e2?.enable &&
         e1?.orderUser == e2?.orderUser &&
         e1?.orderTotal == e2?.orderTotal &&
-        e1?.orderCode == e2?.orderCode;
+        e1?.orderCode == e2?.orderCode &&
+        e1?.paymentMethod == e2?.paymentMethod;
   }
 
   @override
@@ -145,11 +145,11 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
         e?.products,
         e?.orderDate,
         e?.orderHour,
-        e?.paymentMethode,
         e?.enable,
         e?.orderUser,
         e?.orderTotal,
-        e?.orderCode
+        e?.orderCode,
+        e?.paymentMethod
       ]);
 
   @override

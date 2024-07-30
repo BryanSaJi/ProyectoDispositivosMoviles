@@ -231,6 +231,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'vistaDuenoProductos',
+          path: '/vistaDuenoProductos',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'vistaDuenoProductos')
+              : VistaDuenoProductosWidget(),
+        ),
+        FFRoute(
+          name: 'EditProduct',
+          path: '/editProduct',
+          asyncParams: {
+            'product': getDoc(['Product'], ProductRecord.fromSnapshot),
+          },
+          builder: (context, params) => EditProductWidget(
+            product: params.getParam(
+              'product',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'CreateProduct',
+          path: '/createProduct',
+          builder: (context, params) => CreateProductWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

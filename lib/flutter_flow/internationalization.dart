@@ -962,10 +962,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Version 1.0.1 Build 24',
       'es': '',
     },
-    'j41peiz3': {
-      'en': '1',
-      'es': '',
-    },
     'y5fgtfl1': {
       'en': 'Settings',
       'es': 'Ajustes',
@@ -1242,6 +1238,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'z1gvsynd': {
       'en': 'Time Marc',
       'es': 'Marca de Tiempo',
+    },
+    'uqre8utj': {
+      'en': 'Products',
+      'es': 'Productos',
     },
     'szqnix9c': {
       'en': 'Reports',
@@ -1619,6 +1619,299 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar cambios',
     },
     'eo83rb11': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // vistaDuenoProductos
+  {
+    'x3shoaly': {
+      'en': 'Todos los Productos',
+      'es': '',
+    },
+    '5ffn149i': {
+      'en': '₡',
+      'es': '',
+    },
+    '5l4ryyir': {
+      'en': '',
+      'es': '',
+    },
+    'dhyi0nlq': {
+      'en': 'FoodCort  Menu',
+      'es': '',
+    },
+    'emxrnj27': {
+      'en': 'Voucher',
+      'es': '',
+    },
+    '6nyq8064': {
+      'en': '2',
+      'es': '',
+    },
+    'lxvsvg4a': {
+      'en': 'Chat',
+      'es': '',
+    },
+    '27u7z9wk': {
+      'en': '23',
+      'es': '',
+    },
+    'agkljcbc': {
+      'en': 'History',
+      'es': '',
+    },
+    'nhj9b0um': {
+      'en': '14',
+      'es': '',
+    },
+    'eht376ui': {
+      'en': 'Magdalena Succrose',
+      'es': '',
+    },
+    'caeyou02': {
+      'en': 'Good Morning',
+      'es': '',
+    },
+    'wlhqgnsl': {
+      'en': 'Help',
+      'es': '',
+    },
+    'zeop0gix': {
+      'en': 'Logout',
+      'es': '',
+    },
+    '3xa6oz30': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // EditProduct
+  {
+    'pff8lcne': {
+      'en': 'Edit Product',
+      'es': 'Editar Producto',
+    },
+    'nwv02ne2': {
+      'en': 'Name',
+      'es': 'Nombre',
+    },
+    'm5ohbmbf': {
+      'en': 'Create your username',
+      'es': '',
+    },
+    '1ztlje1m': {
+      'en': 'Price',
+      'es': 'Precio',
+    },
+    'wnbimfra': {
+      'en': 'Create your username',
+      'es': '',
+    },
+    'vwmr0g0z': {
+      'en': 'Quantity',
+      'es': 'Cantidad',
+    },
+    '9diuoplu': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'ybooo0tn': {
+      'en': 'Description',
+      'es': 'Descripción',
+    },
+    'tvvqeyhy': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'exxap529': {
+      'en': 'Time',
+      'es': 'Tiempo',
+    },
+    '4okuiqgv': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'pi0g83t3': {
+      'en': 'Sabor',
+      'es': '',
+    },
+    '0p5tf813': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    '5k2phqb5': {
+      'en': 'Enabled',
+      'es': '',
+    },
+    'dfeexwx5': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'd089m0p7': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '67q4ywpk': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'jcy5vyx0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '05oy3vdi': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'fjubulik': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'osoxgttt': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    '7t51vopi': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'hvsca0ar': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'dx4b31jm': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'yfj9pzc5': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'y4668zpq': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '4qsapk2i': {
+      'en': 'Save Changes',
+      'es': '',
+    },
+    '5qxikuqr': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // CreateProduct
+  {
+    'hav9y9fj': {
+      'en': 'Create Product',
+      'es': '',
+    },
+    'li83rbst': {
+      'en': 'Name',
+      'es': 'Nombre',
+    },
+    'gwftimt8': {
+      'en': 'Nombre del producto',
+      'es': '',
+    },
+    '6wbv13tw': {
+      'en': 'Price',
+      'es': 'Precio',
+    },
+    '81hvn177': {
+      'en': 'Precio',
+      'es': '',
+    },
+    'i0m5gypq': {
+      'en': 'Quantity',
+      'es': 'Cantidad',
+    },
+    'dd8ele7r': {
+      'en': 'Cantidad',
+      'es': '',
+    },
+    'tdf6zczk': {
+      'en': 'Description',
+      'es': 'Descripción',
+    },
+    'x19kz3q2': {
+      'en': 'Descripcion',
+      'es': '',
+    },
+    '7fqp6q28': {
+      'en': 'Time',
+      'es': 'Tiempo',
+    },
+    '7bhhu6z7': {
+      'en': 'Tiempo',
+      'es': '',
+    },
+    'd5yoj0l3': {
+      'en': 'Flavor',
+      'es': 'Sabor',
+    },
+    'xzbtn89n': {
+      'en': 'Sabor',
+      'es': '',
+    },
+    '13wu38yl': {
+      'en': 'Enabled',
+      'es': '',
+    },
+    'wxst5nwh': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    '3m3v8l87': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'c1b72uue': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'akji6rvo': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'gl6sq534': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'owy93h53': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'x34lynde': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'vni71l2p': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '17tuta4l': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'h4eh9wa7': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'a5q2x18l': {
+      'en': 'Campo Requerido',
+      'es': '',
+    },
+    'e03fy31o': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'zu2qwhzk': {
+      'en': 'Save Changes',
+      'es': '',
+    },
+    'iemea84t': {
       'en': 'Home',
       'es': '',
     },
@@ -2270,6 +2563,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'sf57huyo': {
       'en': 'Añadir al carrito',
       'es': '',
+    },
+  },
+  // bsMostraDetalleProductoDueno
+  {
+    'qjiqma7w': {
+      'en': 'Detalles',
+      'es': '',
+    },
+    'zivxvi82': {
+      'en': 'Descripción',
+      'es': '',
+    },
+    '5ijt3ent': {
+      'en': '₡ ',
+      'es': '',
+    },
+    'ppu93b9j': {
+      'en': 'editar',
+      'es': 'editar',
     },
   },
   // Miscellaneous

@@ -466,43 +466,28 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {},
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.12,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.035,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .error,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(24.0),
+                                                                      ),
                                                                       child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.12,
-                                                                        height: MediaQuery.sizeOf(context).height *
-                                                                            0.035,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(24.0),
-                                                                        ),
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .remove,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
+                                                                          Icon(
+                                                                        Icons
+                                                                            .remove,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        size:
+                                                                            24.0,
                                                                       ),
                                                                     ),
                                                                   ],

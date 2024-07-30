@@ -1,4 +1,5 @@
 import '/components/log_out_modal/log_out_modal_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -74,6 +75,20 @@ class _AdministrativeControlWidgetState
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
+                                FlutterFlowIconButton(
+                                  borderColor: Colors.transparent,
+                                  borderRadius: 10.0,
+                                  buttonSize: 40.0,
+                                  icon: Icon(
+                                    FFIcons.karrowNarrowLeft,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 22.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.safePop();
+                                  },
+                                ),
                                 Container(
                                   width: 40.0,
                                   height: 40.0,
@@ -84,7 +99,7 @@ class _AdministrativeControlWidgetState
                                     alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          50.0, 0.0, 0.0, 0.0),
+                                          20.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'igz5tqm2' /* Administrative Control */,
@@ -343,6 +358,65 @@ class _AdministrativeControlWidgetState
                                                 FFLocalizations.of(context)
                                                     .getText(
                                                   'z1gvsynd' /* Time Marc */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              trailing: Icon(
+                                                Icons.arrow_forward_ios,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grey2,
+                                                size: 20.0,
+                                              ),
+                                              tileColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              dense: false,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                  'vistaDuenoProductos');
+                                            },
+                                            child: ListTile(
+                                              leading: Icon(
+                                                Icons
+                                                    .production_quantity_limits,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
+                                              ),
+                                              title: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'uqre8utj' /* Products */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)

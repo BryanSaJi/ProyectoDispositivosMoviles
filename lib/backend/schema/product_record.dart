@@ -16,11 +16,6 @@ class ProductRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "IdProduct" field.
-  int? _idProduct;
-  int get idProduct => _idProduct ?? 0;
-  bool hasIdProduct() => _idProduct != null;
-
   // "NameProduct" field.
   String? _nameProduct;
   String get nameProduct => _nameProduct ?? '';
@@ -61,8 +56,12 @@ class ProductRecord extends FirestoreRecord {
   List<String> get imageProduct => _imageProduct ?? const [];
   bool hasImageProduct() => _imageProduct != null;
 
+  // "sabor" field.
+  String? _sabor;
+  String get sabor => _sabor ?? '';
+  bool hasSabor() => _sabor != null;
+
   void _initializeFields() {
-    _idProduct = castToType<int>(snapshotData['IdProduct']);
     _nameProduct = snapshotData['NameProduct'] as String?;
     _price = castToType<int>(snapshotData['Price']);
     _quantity = castToType<int>(snapshotData['Quantity']);
@@ -71,6 +70,7 @@ class ProductRecord extends FirestoreRecord {
     _timeProduct = castToType<int>(snapshotData['timeProduct']);
     _ratingProduct = castToType<int>(snapshotData['ratingProduct']);
     _imageProduct = getDataList(snapshotData['imageProduct']);
+    _sabor = snapshotData['sabor'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -108,7 +108,6 @@ class ProductRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createProductRecordData({
-  int? idProduct,
   String? nameProduct,
   int? price,
   int? quantity,
@@ -116,10 +115,10 @@ Map<String, dynamic> createProductRecordData({
   String? descriptionProduct,
   int? timeProduct,
   int? ratingProduct,
+  String? sabor,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'IdProduct': idProduct,
       'NameProduct': nameProduct,
       'Price': price,
       'Quantity': quantity,
@@ -127,6 +126,7 @@ Map<String, dynamic> createProductRecordData({
       'DescriptionProduct': descriptionProduct,
       'timeProduct': timeProduct,
       'ratingProduct': ratingProduct,
+      'sabor': sabor,
     }.withoutNulls,
   );
 
@@ -139,20 +139,19 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
   @override
   bool equals(ProductRecord? e1, ProductRecord? e2) {
     const listEquality = ListEquality();
-    return e1?.idProduct == e2?.idProduct &&
-        e1?.nameProduct == e2?.nameProduct &&
+    return e1?.nameProduct == e2?.nameProduct &&
         e1?.price == e2?.price &&
         e1?.quantity == e2?.quantity &&
         e1?.enable == e2?.enable &&
         e1?.descriptionProduct == e2?.descriptionProduct &&
         e1?.timeProduct == e2?.timeProduct &&
         e1?.ratingProduct == e2?.ratingProduct &&
-        listEquality.equals(e1?.imageProduct, e2?.imageProduct);
+        listEquality.equals(e1?.imageProduct, e2?.imageProduct) &&
+        e1?.sabor == e2?.sabor;
   }
 
   @override
   int hash(ProductRecord? e) => const ListEquality().hash([
-        e?.idProduct,
         e?.nameProduct,
         e?.price,
         e?.quantity,
@@ -160,7 +159,8 @@ class ProductRecordDocumentEquality implements Equality<ProductRecord> {
         e?.descriptionProduct,
         e?.timeProduct,
         e?.ratingProduct,
-        e?.imageProduct
+        e?.imageProduct,
+        e?.sabor
       ]);
 
   @override

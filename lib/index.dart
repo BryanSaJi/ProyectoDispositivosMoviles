@@ -38,3 +38,8 @@ export '/pages/vista_como_dueno_necesito_visualizarla_informacion_del_cliente/vi
 export '/vistadehordenescliente/vistadehordenescliente_widget.dart'
     show VistadehordenesclienteWidget;
 export '/pages/edit_user/edit_user_widget.dart' show EditUserWidget;
+export '/pages/vista_dueno_productos/vista_dueno_productos_widget.dart'
+    show VistaDuenoProductosWidget;
+export '/pages/edit_product/edit_product_widget.dart' show EditProductWidget;
+export '/pages/create_product/create_product_widget.dart'
+    show CreateProductWidget;

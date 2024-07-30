@@ -26,9 +26,27 @@ class PaymentMethodeRecord extends FirestoreRecord {
   String get methodeDescription => _methodeDescription ?? '';
   bool hasMethodeDescription() => _methodeDescription != null;
 
+  // "CardNumber" field.
+  String? _cardNumber;
+  String get cardNumber => _cardNumber ?? '';
+  bool hasCardNumber() => _cardNumber != null;
+
+  // "CardExpDate" field.
+  DateTime? _cardExpDate;
+  DateTime? get cardExpDate => _cardExpDate;
+  bool hasCardExpDate() => _cardExpDate != null;
+
+  // "CardCVV" field.
+  String? _cardCVV;
+  String get cardCVV => _cardCVV ?? '';
+  bool hasCardCVV() => _cardCVV != null;
+
   void _initializeFields() {
     _idOrder = castToType<int>(snapshotData['IdOrder']);
     _methodeDescription = snapshotData['MethodeDescription'] as String?;
+    _cardNumber = snapshotData['CardNumber'] as String?;
+    _cardExpDate = snapshotData['CardExpDate'] as DateTime?;
+    _cardCVV = snapshotData['CardCVV'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -68,11 +86,17 @@ class PaymentMethodeRecord extends FirestoreRecord {
 Map<String, dynamic> createPaymentMethodeRecordData({
   int? idOrder,
   String? methodeDescription,
+  String? cardNumber,
+  DateTime? cardExpDate,
+  String? cardCVV,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'IdOrder': idOrder,
       'MethodeDescription': methodeDescription,
+      'CardNumber': cardNumber,
+      'CardExpDate': cardExpDate,
+      'CardCVV': cardCVV,
     }.withoutNulls,
   );
 
@@ -86,12 +110,20 @@ class PaymentMethodeRecordDocumentEquality
   @override
   bool equals(PaymentMethodeRecord? e1, PaymentMethodeRecord? e2) {
     return e1?.idOrder == e2?.idOrder &&
-        e1?.methodeDescription == e2?.methodeDescription;
+        e1?.methodeDescription == e2?.methodeDescription &&
+        e1?.cardNumber == e2?.cardNumber &&
+        e1?.cardExpDate == e2?.cardExpDate &&
+        e1?.cardCVV == e2?.cardCVV;
   }
 
   @override
-  int hash(PaymentMethodeRecord? e) =>
-      const ListEquality().hash([e?.idOrder, e?.methodeDescription]);
+  int hash(PaymentMethodeRecord? e) => const ListEquality().hash([
+        e?.idOrder,
+        e?.methodeDescription,
+        e?.cardNumber,
+        e?.cardExpDate,
+        e?.cardCVV
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is PaymentMethodeRecord;
