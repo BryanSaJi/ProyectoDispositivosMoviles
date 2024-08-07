@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 class CreateProductModel extends FlutterFlowModel<CreateProductWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for NameTextField widget.
   FocusNode? nameTextFieldFocusNode;
@@ -132,7 +131,6 @@ class CreateProductModel extends FlutterFlowModel<CreateProductWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     nameTextFieldFocusNode?.dispose();
     nameTextFieldTextController?.dispose();
 

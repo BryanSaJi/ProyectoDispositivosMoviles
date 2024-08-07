@@ -335,6 +335,7 @@ class _FilterPopupWidgetState extends State<FilterPopupWidget> {
                             icon: FaIcon(
                               FontAwesomeIcons.hamburger,
                               color: FlutterFlowTheme.of(context).warning,
+                              size: 15.0,
                             ),
                             options: FFButtonOptions(
                               height: 40.0,

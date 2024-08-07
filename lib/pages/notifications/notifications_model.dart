@@ -12,7 +12,6 @@ import 'package:provider/provider.dart';
 class NotificationsModel extends FlutterFlowModel<NotificationsWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navigator component.
   late NavigatorModel navigatorModel;
 
@@ -23,7 +22,6 @@ class NotificationsModel extends FlutterFlowModel<NotificationsWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     navigatorModel.dispose();
   }
 }

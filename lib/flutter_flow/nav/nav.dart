@@ -79,16 +79,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? NavBarPage()
-          : VistaOrdenesClienteWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? NavBarPage()
-              : VistaOrdenesClienteWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
         ),
         FFRoute(
           name: 'vistaCreacionCuenta',
@@ -258,6 +256,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateProduct',
           path: '/createProduct',
           builder: (context, params) => CreateProductWidget(),
+        ),
+        FFRoute(
+          name: 'UsersEmployees',
+          path: '/usersEmployees',
+          builder: (context, params) => UsersEmployeesWidget(),
+        ),
+        FFRoute(
+          name: 'TimeMarcAdmin',
+          path: '/timeMarcAdmin',
+          builder: (context, params) => TimeMarcAdminWidget(),
+        ),
+        FFRoute(
+          name: 'TimeMarcUser',
+          path: '/timeMarcUser',
+          builder: (context, params) => TimeMarcUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -428,7 +441,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/vistaOrdenesCliente';
+            return '/vistaLogin';
           }
           return null;
         },

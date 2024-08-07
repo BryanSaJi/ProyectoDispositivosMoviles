@@ -13,7 +13,6 @@ class NotificationSettingModel
     extends FlutterFlowModel<NotificationSettingWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for Switch widget.
   bool? switchValue1;
   // State field(s) for Switch widget.
@@ -28,7 +27,6 @@ class NotificationSettingModel
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     navigatorModel.dispose();
   }
 }

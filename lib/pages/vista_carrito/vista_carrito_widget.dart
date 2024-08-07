@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -43,9 +44,7 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -406,28 +405,53 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.12,
-                                                                      height: MediaQuery.sizeOf(context)
-                                                                              .height *
-                                                                          0.035,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .success,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(24.0),
-                                                                      ),
+                                                                    InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await listViewCartRecord
+                                                                            .reference
+                                                                            .update({
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'Quantity': FieldValue.increment(1),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                      },
                                                                       child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .add,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                        size:
-                                                                            24.0,
+                                                                          Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.12,
+                                                                        height: MediaQuery.sizeOf(context).height *
+                                                                            0.035,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).success,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(24.0),
+                                                                        ),
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .add,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
+                                                                          size:
+                                                                              24.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -447,9 +471,7 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                         Flexible(
                                                                           child:
                                                                               Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              '3bpnc8iz' /* 1 */,
-                                                                            ),
+                                                                            listViewCartRecord.quantity.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 20.0,
@@ -466,28 +488,53 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.12,
-                                                                      height: MediaQuery.sizeOf(context)
-                                                                              .height *
-                                                                          0.035,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .error,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(24.0),
-                                                                      ),
+                                                                    InkWell(
+                                                                      splashColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await listViewCartRecord
+                                                                            .reference
+                                                                            .update({
+                                                                          ...mapToFirestore(
+                                                                            {
+                                                                              'Quantity': FieldValue.increment(-(listViewCartRecord.quantity != 1 ? 1 : 0)),
+                                                                            },
+                                                                          ),
+                                                                        });
+                                                                      },
                                                                       child:
-                                                                          Icon(
-                                                                        Icons
-                                                                            .remove,
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                        size:
-                                                                            24.0,
+                                                                          Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.12,
+                                                                        height: MediaQuery.sizeOf(context).height *
+                                                                            0.035,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).error,
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(24.0),
+                                                                        ),
+                                                                        child:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .remove,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
+                                                                          size:
+                                                                              24.0,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ],

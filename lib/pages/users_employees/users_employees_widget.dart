@@ -8,25 +8,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'users_c_r_u_d_model.dart';
-export 'users_c_r_u_d_model.dart';
+import 'users_employees_model.dart';
+export 'users_employees_model.dart';
 
-class UsersCRUDWidget extends StatefulWidget {
-  const UsersCRUDWidget({super.key});
+class UsersEmployeesWidget extends StatefulWidget {
+  const UsersEmployeesWidget({super.key});
 
   @override
-  State<UsersCRUDWidget> createState() => _UsersCRUDWidgetState();
+  State<UsersEmployeesWidget> createState() => _UsersEmployeesWidgetState();
 }
 
-class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
-  late UsersCRUDModel _model;
+class _UsersEmployeesWidgetState extends State<UsersEmployeesWidget> {
+  late UsersEmployeesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UsersCRUDModel());
+    _model = createModel(context, () => UsersEmployeesModel());
   }
 
   @override
@@ -62,7 +62,7 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
           ),
           title: Text(
             FFLocalizations.of(context).getText(
-              'jvr3hqti' /* Page Title */,
+              'yg4f1r37' /* Page Title */,
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Plus Jakarta Sans',
@@ -123,7 +123,7 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'pmzcn5om' /* Users */,
+                                                  'jxguk0yc' /* Users */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -138,7 +138,21 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                           ),
                                         ),
                                         StreamBuilder<List<UsersRecord>>(
-                                          stream: queryUsersRecord(),
+                                          stream: queryUsersRecord(
+                                            queryBuilder: (usersRecord) =>
+                                                usersRecord
+                                                    .where(Filter.or(
+                                                      Filter(
+                                                        'Rol',
+                                                        isEqualTo: 'Empleado',
+                                                      ),
+                                                      Filter(
+                                                        'Rol',
+                                                        isEqualTo: 'empleado',
+                                                      ),
+                                                    ))
+                                                    .orderBy('Name'),
+                                          ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -329,14 +343,20 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
                                                                 children: [
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          15.0,
                                                                           0.0,
-                                                                          15.0,
+                                                                          0.0,
+                                                                          5.0,
                                                                           0.0),
                                                                       child:
                                                                           FFButtonWidget(
@@ -369,6 +389,8 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                                                         ),
                                                                         options:
                                                                             FFButtonOptions(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.25,
                                                                           height:
                                                                               40.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -409,9 +431,9 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                                                     child:
                                                                         Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          15.0,
+                                                                          5.0,
                                                                           0.0,
-                                                                          15.0,
+                                                                          0.0,
                                                                           0.0),
                                                                       child:
                                                                           FFButtonWidget(
@@ -431,6 +453,149 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                                                                         ),
                                                                         options:
                                                                             FFButtonOptions(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.25,
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                color: Colors.white,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          elevation:
+                                                                              3.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          10.0,
+                                                                          5.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          FFButtonWidget(
+                                                                        onPressed:
+                                                                            () async {
+                                                                          context
+                                                                              .pushNamed('TimeMarcAdmin');
+                                                                        },
+                                                                        text:
+                                                                            '',
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .timer_outlined,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.25,
+                                                                          height:
+                                                                              40.0,
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              24.0,
+                                                                              0.0,
+                                                                              24.0,
+                                                                              0.0),
+                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                color: Colors.white,
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          elevation:
+                                                                              3.0,
+                                                                          borderSide:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.transparent,
+                                                                            width:
+                                                                                1.0,
+                                                                          ),
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(8.0),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          5.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          FFButtonWidget(
+                                                                        onPressed:
+                                                                            () {
+                                                                          print(
+                                                                              'Button pressed ...');
+                                                                        },
+                                                                        text:
+                                                                            '',
+                                                                        icon:
+                                                                            Icon(
+                                                                          Icons
+                                                                              .paid,
+                                                                          size:
+                                                                              30.0,
+                                                                        ),
+                                                                        options:
+                                                                            FFButtonOptions(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.25,
                                                                           height:
                                                                               40.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(

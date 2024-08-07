@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 class EditUserModel extends FlutterFlowModel<EditUserWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for UserNameTextField widget.
   FocusNode? userNameTextFieldFocusNode1;
   TextEditingController? userNameTextFieldTextController1;
@@ -49,7 +48,6 @@ class EditUserModel extends FlutterFlowModel<EditUserWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     userNameTextFieldFocusNode1?.dispose();
     userNameTextFieldTextController1?.dispose();
 

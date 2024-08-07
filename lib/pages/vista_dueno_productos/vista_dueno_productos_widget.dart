@@ -65,9 +65,7 @@ class _VistaDuenoProductosWidgetState extends State<VistaDuenoProductosWidget> {
             snapshot.data!;
 
         return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -633,14 +631,8 @@ class _VistaDuenoProductosWidgetState extends State<VistaDuenoProductosWidget> {
                                                             context: context,
                                                             builder: (context) {
                                                               return GestureDetector(
-                                                                onTap: () => _model
-                                                                        .unfocusNode
-                                                                        .canRequestFocus
-                                                                    ? FocusScope.of(
-                                                                            context)
-                                                                        .requestFocus(_model
-                                                                            .unfocusNode)
-                                                                    : FocusScope.of(
+                                                                onTap: () =>
+                                                                    FocusScope.of(
                                                                             context)
                                                                         .unfocus(),
                                                                 child: Padding(

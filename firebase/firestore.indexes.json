@@ -13,6 +13,20 @@
           "order": "DESCENDING"
         }
       ]
+    },
+    {
+      "collectionGroup": "Users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Rol",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Name",
+          "order": "ASCENDING"
+        }
+      ]
     }
   ]
 }

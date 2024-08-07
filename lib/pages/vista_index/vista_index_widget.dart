@@ -81,9 +81,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
         List<ProductRecord> vistaIndexProductRecordList = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => _model.unfocusNode.canRequestFocus
-              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-              : FocusScope.of(context).unfocus(),
+          onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1930,15 +1928,8 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                           context: context,
                                                           builder: (context) {
                                                             return GestureDetector(
-                                                              onTap: () => _model
-                                                                      .unfocusNode
-                                                                      .canRequestFocus
-                                                                  ? FocusScope.of(
-                                                                          context)
-                                                                      .requestFocus(
-                                                                          _model
-                                                                              .unfocusNode)
-                                                                  : FocusScope.of(
+                                                              onTap: () =>
+                                                                  FocusScope.of(
                                                                           context)
                                                                       .unfocus(),
                                                               child: Padding(
@@ -2266,12 +2257,8 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                 builder:
                                                                     (context) {
                                                                   return GestureDetector(
-                                                                    onTap: () => _model
-                                                                            .unfocusNode
-                                                                            .canRequestFocus
-                                                                        ? FocusScope.of(context).requestFocus(_model
-                                                                            .unfocusNode)
-                                                                        : FocusScope.of(context)
+                                                                    onTap: () =>
+                                                                        FocusScope.of(context)
                                                                             .unfocus(),
                                                                     child:
                                                                         Padding(

@@ -1,4 +1,3 @@
-import '/components/log_out_modal/log_out_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -40,9 +39,7 @@ class _AdministrativeControlWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).lightGrey3,
@@ -183,7 +180,7 @@ class _AdministrativeControlWidgetState
                                               title: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '9civqz8p' /* Users */,
+                                                  'qecik57j' /* Users */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -228,7 +225,7 @@ class _AdministrativeControlWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context
-                                                  .pushNamed('ChangePassword');
+                                                  .pushNamed('UsersEmployees');
                                             },
                                             child: ListTile(
                                               leading: Icon(
@@ -343,8 +340,7 @@ class _AdministrativeControlWidgetState
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context
-                                                  .pushNamed('ChangePassword');
+                                              context.pushNamed('TimeMarcUser');
                                             },
                                             child: ListTile(
                                               leading: Icon(
@@ -460,38 +456,12 @@ class _AdministrativeControlWidgetState
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () => _model
-                                                            .unfocusNode
-                                                            .canRequestFocus
-                                                        ? FocusScope.of(context)
-                                                            .requestFocus(_model
-                                                                .unfocusNode)
-                                                        : FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          LogOutModalWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
+                                              context
+                                                  .pushNamed('UsersEmployees');
                                             },
                                             child: ListTile(
                                               leading: Icon(
-                                                Icons
-                                                    .insert_drive_file_outlined,
+                                                Icons.document_scanner,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
@@ -500,7 +470,7 @@ class _AdministrativeControlWidgetState
                                               title: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'szqnix9c' /* Reports */,
+                                                  '9civqz8p' /* Reports */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -508,9 +478,6 @@ class _AdministrativeControlWidgetState
                                                         .override(
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -520,7 +487,7 @@ class _AdministrativeControlWidgetState
                                                 Icons.arrow_forward_ios,
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primary,
+                                                        .grey2,
                                                 size: 20.0,
                                               ),
                                               tileColor:

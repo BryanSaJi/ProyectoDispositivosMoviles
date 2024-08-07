@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'vista_carrito_widget.dart' show VistaCarritoWidget;
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,7 +18,6 @@ import 'package:provider/provider.dart';
 class VistaCarritoModel extends FlutterFlowModel<VistaCarritoWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for navigator component.
   late NavigatorModel navigatorModel;
 
@@ -28,7 +28,6 @@ class VistaCarritoModel extends FlutterFlowModel<VistaCarritoWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     navigatorModel.dispose();
   }
 }

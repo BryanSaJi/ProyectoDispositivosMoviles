@@ -68,9 +68,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
+      onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1110,7 +1108,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                       title: Text(
                                                           'Actualizar Usuario'),
                                                       content: Text(
-                                                          'Desea ?aplicar los cambios?'),
+                                                          'Desea aplicar los cambios?'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
@@ -1133,13 +1131,30 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                 false;
                                         if (confirmDialogResponse) {
                                           await widget!.user!.reference
-                                              .update(createUsersRecordData());
+                                              .update(createUsersRecordData(
+                                            name: _model
+                                                .userNameTextFieldTextController1
+                                                .text,
+                                            lastName: _model
+                                                .userNameTextFieldTextController2
+                                                .text,
+                                            rol: _model
+                                                .emailTextFieldTextController3
+                                                .text,
+                                            phone: int.tryParse(_model
+                                                .emailTextFieldTextController2
+                                                .text),
+                                            email: _model
+                                                .emailTextFieldTextController1
+                                                .text,
+                                            enable: _model.switchValue,
+                                          ));
                                           await showDialog(
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
                                                 content: Text(
-                                                    'El usuario: ${widget!.user?.name} ${widget!.user?.lastName} ha sido actualizado.'),
+                                                    'El usuario: ${widget!.user?.name}${widget!.user?.lastName} ha sido actualizado.'),
                                                 actions: [
                                                   TextButton(
                                                     onPressed: () =>
@@ -1154,22 +1169,23 @@ class _EditUserWidgetState extends State<EditUserWidget> {
 
                                           context.pushNamed('UsersCRUD');
                                         } else {
-                                          await showDialog(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                content: Text(
-                                                    'El usuario no fue actualizado.'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Los cambios del usuario no han sido salvados.',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
                                           );
                                         }
                                       },

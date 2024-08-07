@@ -13,7 +13,6 @@ import 'package:provider/provider.dart';
 class HelpandSupportModel extends FlutterFlowModel<HelpandSupportWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
@@ -43,7 +42,6 @@ class HelpandSupportModel extends FlutterFlowModel<HelpandSupportWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
 

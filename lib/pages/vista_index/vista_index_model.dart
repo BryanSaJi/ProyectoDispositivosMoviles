@@ -24,7 +24,6 @@ import 'package:text_search/text_search.dart';
 class VistaIndexModel extends FlutterFlowModel<VistaIndexWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for PageView widget.
   PageController? pageViewController;
 
@@ -52,7 +51,6 @@ class VistaIndexModel extends FlutterFlowModel<VistaIndexWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     txtBuscarProductoFocusNode?.dispose();
 
     lvProductosPagingController?.dispose();

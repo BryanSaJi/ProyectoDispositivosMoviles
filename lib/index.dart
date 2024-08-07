@@ -43,3 +43,9 @@ export '/pages/vista_dueno_productos/vista_dueno_productos_widget.dart'
 export '/pages/edit_product/edit_product_widget.dart' show EditProductWidget;
 export '/pages/create_product/create_product_widget.dart'
     show CreateProductWidget;
+export '/pages/users_employees/users_employees_widget.dart'
+    show UsersEmployeesWidget;
+export '/pages/time_marc_admin/time_marc_admin_widget.dart'
+    show TimeMarcAdminWidget;
+export '/pages/time_marc_user/time_marc_user_widget.dart'
+    show TimeMarcUserWidget;

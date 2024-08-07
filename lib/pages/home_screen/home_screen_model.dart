@@ -15,7 +15,6 @@ import 'package:provider/provider.dart';
 class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // Model for TopOfWeekItem component.
   late TopOfWeekItemModel topOfWeekItemModel1;
   // Model for TopOfWeekItem component.
@@ -44,7 +43,6 @@ class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     topOfWeekItemModel1.dispose();
     topOfWeekItemModel2.dispose();
     topOfWeekItemModel3.dispose();

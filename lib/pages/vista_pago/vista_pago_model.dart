@@ -18,7 +18,6 @@ import 'package:provider/provider.dart';
 class VistaPagoModel extends FlutterFlowModel<VistaPagoWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
@@ -33,7 +32,6 @@ class VistaPagoModel extends FlutterFlowModel<VistaPagoWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
 

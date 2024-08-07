@@ -12,7 +12,6 @@ import 'package:provider/provider.dart';
 class VistaLoginModel extends FlutterFlowModel<VistaLoginWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for EmailTextField widget.
   FocusNode? emailTextFieldFocusNode;
@@ -33,7 +32,6 @@ class VistaLoginModel extends FlutterFlowModel<VistaLoginWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     emailTextFieldFocusNode?.dispose();
     emailTextFieldTextController?.dispose();
 

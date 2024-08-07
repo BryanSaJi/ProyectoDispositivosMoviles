@@ -12,7 +12,6 @@ import 'package:provider/provider.dart';
 class AddNewCardModel extends FlutterFlowModel<AddNewCardWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for CardNumberTextField widget.
   FocusNode? cardNumberTextFieldFocusNode;
@@ -44,7 +43,6 @@ class AddNewCardModel extends FlutterFlowModel<AddNewCardWidget> {
 
   @override
   void dispose() {
-    unfocusNode.dispose();
     cardNumberTextFieldFocusNode?.dispose();
     cardNumberTextFieldTextController?.dispose();
 

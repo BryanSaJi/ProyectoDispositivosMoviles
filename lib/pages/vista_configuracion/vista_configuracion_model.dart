@@ -12,15 +12,9 @@ import 'package:provider/provider.dart';
 
 class VistaConfiguracionModel
     extends FlutterFlowModel<VistaConfiguracionWidget> {
-  ///  State fields for stateful widgets in this page.
-
-  final unfocusNode = FocusNode();
-
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 }

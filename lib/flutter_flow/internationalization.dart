@@ -630,10 +630,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '₡',
       'es': '₡',
     },
-    '3bpnc8iz': {
-      'en': '1',
-      'es': '',
-    },
     'd5ktao67': {
       'en': 'Total',
       'es': 'Total',
@@ -1223,7 +1219,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'General',
       'es': '',
     },
-    '9civqz8p': {
+    'qecik57j': {
       'en': 'Users',
       'es': 'Usuarios',
     },
@@ -1243,9 +1239,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Products',
       'es': 'Productos',
     },
-    'szqnix9c': {
+    '9civqz8p': {
       'en': 'Reports',
-      'es': 'Informes',
+      'es': 'Reportes',
     },
     'mol9oib4': {
       'en': 'Version 1.0.1 Build 24',
@@ -1841,6 +1837,107 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'iemea84t': {
       'en': 'Home',
+      'es': '',
+    },
+  },
+  // UsersEmployees
+  {
+    'jxguk0yc': {
+      'en': 'Users',
+      'es': '',
+    },
+    'yg4f1r37': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'c0hy1tau': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // TimeMarcAdmin
+  {
+    'r88s4zfe': {
+      'en': 'Select the Date',
+      'es': 'Seleccione la fecha',
+    },
+    'ecd5gjyb': {
+      'en': 'In Time',
+      'es': 'Hora Entrada',
+    },
+    'jui6x8f4': {
+      'en': 'Out Time',
+      'es': 'Hora Salida',
+    },
+    'a9fizlim': {
+      'en': '08:00 AM',
+      'es': '',
+    },
+    '3tq27mt2': {
+      'en': '05:00 PM',
+      'es': '',
+    },
+    '6d9czj6y': {
+      'en': 'In Marc',
+      'es': 'Marca Entrada',
+    },
+    'olv0no0i': {
+      'en': 'Out Marc',
+      'es': 'Marca Salida',
+    },
+    'felv1s3t': {
+      'en': 'Total Time:',
+      'es': 'Tiempo Total:',
+    },
+    'i6hl7nyx': {
+      'en': '09:00 hrs',
+      'es': '',
+    },
+    'obeengh7': {
+      'en': 'Employ Time Tracker',
+      'es': '',
+    },
+  },
+  // TimeMarcUser
+  {
+    '9qdlab8m': {
+      'en': 'Select the Date',
+      'es': '',
+    },
+    'foeezuf6': {
+      'en': 'In Time',
+      'es': '',
+    },
+    'qky8jx3q': {
+      'en': 'Out Time',
+      'es': '',
+    },
+    '3ouuldlm': {
+      'en': '08:00 AM',
+      'es': '',
+    },
+    'x5a8i9g9': {
+      'en': '05:00 PM',
+      'es': '',
+    },
+    'b4cumd8v': {
+      'en': 'In Marc',
+      'es': '',
+    },
+    'kufzt0d7': {
+      'en': 'Out Marc',
+      'es': '',
+    },
+    'wssnc6p3': {
+      'en': 'Total Time:',
+      'es': '',
+    },
+    '19ciory3': {
+      'en': '09:00 hrs',
+      'es': '',
+    },
+    'f02nusk8': {
+      'en': 'Employ Time Tracker',
       'es': '',
     },
   },
