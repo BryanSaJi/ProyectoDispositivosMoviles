@@ -6,19 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'order_success_modal_model.dart';
-export 'order_success_modal_model.dart';
+import 'bs_orden_exitosa_model.dart';
+export 'bs_orden_exitosa_model.dart';
 
-class OrderSuccessModalWidget extends StatefulWidget {
-  const OrderSuccessModalWidget({super.key});
+class BsOrdenExitosaWidget extends StatefulWidget {
+  const BsOrdenExitosaWidget({super.key});
 
   @override
-  State<OrderSuccessModalWidget> createState() =>
-      _OrderSuccessModalWidgetState();
+  State<BsOrdenExitosaWidget> createState() => _BsOrdenExitosaWidgetState();
 }
 
-class _OrderSuccessModalWidgetState extends State<OrderSuccessModalWidget> {
-  late OrderSuccessModalModel _model;
+class _BsOrdenExitosaWidgetState extends State<BsOrdenExitosaWidget> {
+  late BsOrdenExitosaModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -29,7 +28,7 @@ class _OrderSuccessModalWidgetState extends State<OrderSuccessModalWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OrderSuccessModalModel());
+    _model = createModel(context, () => BsOrdenExitosaModel());
   }
 
   @override
@@ -106,7 +105,7 @@ class _OrderSuccessModalWidgetState extends State<OrderSuccessModalWidget> {
                           shape: BoxShape.circle,
                         ),
                         child: Image.asset(
-                          'assets/images/Frame_1000004288.png',
+                          'assets/images/icons8-success-480.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -146,7 +145,7 @@ class _OrderSuccessModalWidgetState extends State<OrderSuccessModalWidget> {
                                 20.0, 0.0, 20.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '8w3ex41n' /* Happy! Your food will be made ... */,
+                                '8w3ex41n' /* Your order has been placed and... */,
                               ),
                               textAlign: TextAlign.center,
                               maxLines: 3,
@@ -175,7 +174,7 @@ class _OrderSuccessModalWidgetState extends State<OrderSuccessModalWidget> {
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(
-                                'znwujg1g' /* Order Tracking */,
+                                'znwujg1g' /* Understood! */,
                               ),
                               options: FFButtonOptions(
                                 height: 56.0,

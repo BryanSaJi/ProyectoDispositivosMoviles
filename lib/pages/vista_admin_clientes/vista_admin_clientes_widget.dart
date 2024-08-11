@@ -8,32 +8,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'vista_como_dueno_necesito_visualizarla_informacion_del_cliente_model.dart';
-export 'vista_como_dueno_necesito_visualizarla_informacion_del_cliente_model.dart';
+import 'vista_admin_clientes_model.dart';
+export 'vista_admin_clientes_model.dart';
 
-class VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget
-    extends StatefulWidget {
-  const VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget(
-      {super.key});
+class VistaAdminClientesWidget extends StatefulWidget {
+  const VistaAdminClientesWidget({super.key});
 
   @override
-  State<VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget>
-      createState() =>
-          _VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidgetState();
+  State<VistaAdminClientesWidget> createState() =>
+      _VistaAdminClientesWidgetState();
 }
 
-class _VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidgetState
-    extends State<
-        VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget> {
-  late VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteModel _model;
+class _VistaAdminClientesWidgetState extends State<VistaAdminClientesWidget> {
+  late VistaAdminClientesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context,
-        () => VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteModel());
+    _model = createModel(context, () => VistaAdminClientesModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();

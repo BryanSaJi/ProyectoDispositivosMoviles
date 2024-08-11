@@ -105,6 +105,7 @@ class _UsersCRUDWidgetState extends State<UsersCRUDWidget> {
                             ),
                             Expanded(
                               child: SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [

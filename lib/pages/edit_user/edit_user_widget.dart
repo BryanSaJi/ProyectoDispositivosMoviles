@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,12 @@ class _EditUserWidgetState extends State<EditUserWidget> {
     super.initState();
     _model = createModel(context, () => EditUserModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      FFAppState().adminEmail = currentUserEmail;
+      setState(() {});
+    });
+
     _model.userNameTextFieldTextController1 ??=
         TextEditingController(text: widget!.user?.name);
     _model.userNameTextFieldFocusNode1 ??= FocusNode();
@@ -43,17 +50,17 @@ class _EditUserWidgetState extends State<EditUserWidget> {
         TextEditingController(text: widget!.user?.lastName);
     _model.userNameTextFieldFocusNode2 ??= FocusNode();
 
-    _model.emailTextFieldTextController1 ??=
+    _model.emailTextFieldTextController ??=
         TextEditingController(text: widget!.user?.email);
-    _model.emailTextFieldFocusNode1 ??= FocusNode();
+    _model.emailTextFieldFocusNode ??= FocusNode();
 
-    _model.emailTextFieldTextController2 ??=
+    _model.phoneTextFieldTextController ??=
         TextEditingController(text: widget!.user?.phone?.toString());
-    _model.emailTextFieldFocusNode2 ??= FocusNode();
+    _model.phoneTextFieldFocusNode ??= FocusNode();
 
-    _model.emailTextFieldTextController3 ??=
+    _model.rolTextFieldTextController ??=
         TextEditingController(text: widget!.user?.rol);
-    _model.emailTextFieldFocusNode3 ??= FocusNode();
+    _model.rolTextFieldFocusNode ??= FocusNode();
 
     _model.switchValue = widget!.user!.enable;
   }
@@ -67,6 +74,8 @@ class _EditUserWidgetState extends State<EditUserWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -539,9 +548,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                   width: 250.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailTextFieldTextController1,
+                                                        .emailTextFieldTextController,
                                                     focusNode: _model
-                                                        .emailTextFieldFocusNode1,
+                                                        .emailTextFieldFocusNode,
                                                     autofocus: false,
                                                     autofillHints: [
                                                       AutofillHints.email
@@ -639,10 +648,10 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                         Icons.email_outlined,
                                                         color: valueOrDefault<
                                                             Color>(
-                                                          _model.emailTextFieldTextController1
+                                                          _model.emailTextFieldTextController
                                                                           .text ==
                                                                       null ||
-                                                                  _model.emailTextFieldTextController1
+                                                                  _model.emailTextFieldTextController
                                                                           .text ==
                                                                       ''
                                                               ? FlutterFlowTheme
@@ -668,7 +677,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     validator: _model
-                                                        .emailTextFieldTextController1Validator
+                                                        .emailTextFieldTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -713,9 +722,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                   width: 250.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailTextFieldTextController2,
+                                                        .phoneTextFieldTextController,
                                                     focusNode: _model
-                                                        .emailTextFieldFocusNode2,
+                                                        .phoneTextFieldFocusNode,
                                                     autofocus: false,
                                                     autofillHints: [
                                                       AutofillHints.email
@@ -813,10 +822,10 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                         Icons.phone,
                                                         color: valueOrDefault<
                                                             Color>(
-                                                          _model.emailTextFieldTextController2
+                                                          _model.phoneTextFieldTextController
                                                                           .text ==
                                                                       null ||
-                                                                  _model.emailTextFieldTextController2
+                                                                  _model.phoneTextFieldTextController
                                                                           .text ==
                                                                       ''
                                                               ? FlutterFlowTheme
@@ -842,7 +851,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     validator: _model
-                                                        .emailTextFieldTextController2Validator
+                                                        .phoneTextFieldTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -887,9 +896,9 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                   width: 250.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailTextFieldTextController3,
+                                                        .rolTextFieldTextController,
                                                     focusNode: _model
-                                                        .emailTextFieldFocusNode3,
+                                                        .rolTextFieldFocusNode,
                                                     autofocus: false,
                                                     autofillHints: [
                                                       AutofillHints.email
@@ -987,10 +996,10 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                         FFIcons.kuserQuestion,
                                                         color: valueOrDefault<
                                                             Color>(
-                                                          _model.emailTextFieldTextController3
+                                                          _model.rolTextFieldTextController
                                                                           .text ==
                                                                       null ||
-                                                                  _model.emailTextFieldTextController3
+                                                                  _model.rolTextFieldTextController
                                                                           .text ==
                                                                       ''
                                                               ? FlutterFlowTheme
@@ -1016,7 +1025,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     validator: _model
-                                                        .emailTextFieldTextController3Validator
+                                                        .rolTextFieldTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1036,6 +1045,50 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                     setState(() =>
                                                         _model.switchValue =
                                                             newValue!);
+                                                    if (newValue!) {
+                                                      if (_model.switchValue ==
+                                                          true) {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              content: Text(
+                                                                  'Usuario habilitado!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                      } else {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              content: Text(
+                                                                  'Usuario deshabilitado!'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                      }
+                                                    }
                                                   },
                                                   activeColor:
                                                       FlutterFlowTheme.of(
@@ -1139,13 +1192,13 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                 .userNameTextFieldTextController2
                                                 .text,
                                             rol: _model
-                                                .emailTextFieldTextController3
+                                                .rolTextFieldTextController
                                                 .text,
                                             phone: int.tryParse(_model
-                                                .emailTextFieldTextController2
+                                                .phoneTextFieldTextController
                                                 .text),
                                             email: _model
-                                                .emailTextFieldTextController1
+                                                .emailTextFieldTextController
                                                 .text,
                                             enable: _model.switchValue,
                                           ));
@@ -1166,6 +1219,32 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                               );
                                             },
                                           );
+                                          if ((_model.rolTextFieldTextController
+                                                      .text ==
+                                                  'Empleado') ||
+                                              (_model.rolTextFieldTextController
+                                                      .text ==
+                                                  'empleado')) {
+                                            if (FFAppState()
+                                                .adminEmail
+                                                .isEmpty) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Email required!',
+                                                  ),
+                                                ),
+                                              );
+                                              return;
+                                            }
+
+                                            await authManager.updateEmail(
+                                              email: FFAppState().adminEmail,
+                                              context: context,
+                                            );
+                                            setState(() {});
+                                          }
 
                                           context.pushNamed('UsersCRUD');
                                         } else {

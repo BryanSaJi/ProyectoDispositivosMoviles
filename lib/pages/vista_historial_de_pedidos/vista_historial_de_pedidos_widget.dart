@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/bs_informacion_ordenes_widget.dart';
 import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -104,6 +105,7 @@ class _VistaHistorialDePedidosWidgetState
                         ),
                       ),
                       SingleChildScrollView(
+                        primary: false,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -216,11 +218,8 @@ class _VistaHistorialDePedidosWidgetState
                                                             children: [
                                                               Flexible(
                                                                 child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'ddc0ms0w' /* Delinas Resto */,
-                                                                  ),
+                                                                  listViewOrderRecord
+                                                                      .orderCode,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium
@@ -237,11 +236,8 @@ class _VistaHistorialDePedidosWidgetState
                                                                   print(
                                                                       'Button pressed ...');
                                                                 },
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '94k7w4or' /* Completed */,
-                                                                ),
+                                                                text: listViewOrderRecord
+                                                                    .orderStatus,
                                                                 options:
                                                                     FFButtonOptions(
                                                                   height: 24.0,
@@ -379,7 +375,7 @@ class _VistaHistorialDePedidosWidgetState
                                                                         .max,
                                                                 children: [
                                                                   Text(
-                                                                    '₡ ',
+                                                                    '₡  ${listViewOrderRecord.orderTotal.toString()}',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodySmall
@@ -412,9 +408,39 @@ class _VistaHistorialDePedidosWidgetState
                                                   children: [
                                                     Expanded(
                                                       child: FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () =>
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus(),
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      Container(
+                                                                    height:
+                                                                        MediaQuery.sizeOf(context).height *
+                                                                            0.4,
+                                                                    child:
+                                                                        BsInformacionOrdenesWidget(),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(
+                                                                  () {}));
                                                         },
                                                         text:
                                                             FFLocalizations.of(

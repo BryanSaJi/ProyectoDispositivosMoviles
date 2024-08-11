@@ -11,7 +11,8 @@ export '/pages/home_screen/home_screen_widget.dart' show HomeScreenWidget;
 export '/pages/vista_carrito/vista_carrito_widget.dart' show VistaCarritoWidget;
 export '/pages/vista_pago/vista_pago_widget.dart' show VistaPagoWidget;
 export '/pages/address/address_widget.dart' show AddressWidget;
-export '/pages/add_new_card/add_new_card_widget.dart' show AddNewCardWidget;
+export '/pages/vista_creacion_metodo_pago/vista_creacion_metodo_pago_widget.dart'
+    show VistaCreacionMetodoPagoWidget;
 export '/pages/notifications/notifications_widget.dart'
     show NotificationsWidget;
 export '/pages/vista_configuracion/vista_configuracion_widget.dart'
@@ -31,10 +32,10 @@ export '/pages/index/index_widget.dart' show IndexWidget;
 export '/pages/administrative_control/administrative_control_widget.dart'
     show AdministrativeControlWidget;
 export '/pages/users_c_r_u_d/users_c_r_u_d_widget.dart' show UsersCRUDWidget;
-export '/pages/vista_dueno_visualizar_la_lista_de_pedidos/vista_dueno_visualizar_la_lista_de_pedidos_widget.dart'
-    show VistaDuenoVisualizarLaListaDePedidosWidget;
-export '/pages/vista_como_dueno_necesito_visualizarla_informacion_del_cliente/vista_como_dueno_necesito_visualizarla_informacion_del_cliente_widget.dart'
-    show VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget;
+export '/pages/vista_admin_ordenes/vista_admin_ordenes_widget.dart'
+    show VistaAdminOrdenesWidget;
+export '/pages/vista_admin_clientes/vista_admin_clientes_widget.dart'
+    show VistaAdminClientesWidget;
 export '/pages/vista_ordenes_cliente/vista_ordenes_cliente_widget.dart'
     show VistaOrdenesClienteWidget;
 export '/pages/edit_user/edit_user_widget.dart' show EditUserWidget;

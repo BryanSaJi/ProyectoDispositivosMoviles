@@ -1,8 +1,8 @@
 import '/components/add_to_card_modal/add_to_card_modal_widget.dart';
-import '/components/change_payment_method_modal/change_payment_method_modal_widget.dart';
+import '/components/bs_cambiar_metodo_pago_widget.dart';
+import '/components/bs_orden_exitosa/bs_orden_exitosa_widget.dart';
 import '/components/log_out_modal/log_out_modal_widget.dart';
 import '/components/new_password_modal/new_password_modal_widget.dart';
-import '/components/order_success_modal/order_success_modal_widget.dart';
 import '/components/register_success_modal/register_success_modal_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

@@ -37,7 +37,7 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
   String? _txtPrecioTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '67q4ywpk' /* Campo Requerido */,
+        'y6m73qv5' /* Campo Requerido */,
       );
     }
 
@@ -52,7 +52,7 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '05oy3vdi' /* Campo Requerido */,
+        '603pnq9l' /* Campo Requerido */,
       );
     }
 
@@ -68,7 +68,7 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'osoxgttt' /* Campo Requerido */,
+        '08hnsmdc' /* Campo Requerido */,
       );
     }
 
@@ -82,7 +82,7 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
   String? _txtTiempoTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'hvsca0ar' /* Campo Requerido */,
+        'duotrp1n' /* Campo Requerido */,
       );
     }
 
@@ -96,7 +96,7 @@ class EditProductModel extends FlutterFlowModel<EditProductWidget> {
   String? _txtSaborTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'yfj9pzc5' /* Campo Requerido */,
+        'qnxnyu1v' /* Campo Requerido */,
       );
     }
 

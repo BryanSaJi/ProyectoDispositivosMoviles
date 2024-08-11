@@ -488,6 +488,7 @@ class _VistaDuenoProductosWidgetState extends State<VistaDuenoProductosWidget> {
                       children: [
                         Expanded(
                           child: SingleChildScrollView(
+                            primary: false,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,

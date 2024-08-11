@@ -321,7 +321,7 @@ class _BsMostraDetalleProductoWidgetState
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'b4xggmkx' /* Detalles */,
+                                                  'b4xggmkx' /* Details */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -504,7 +504,7 @@ class _BsMostraDetalleProductoWidgetState
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'dm5qzlk5' /* Descripción */,
+                                                  'dm5qzlk5' /* Description */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)

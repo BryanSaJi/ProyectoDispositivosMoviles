@@ -6,28 +6,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'vista_dueno_visualizar_la_lista_de_pedidos_model.dart';
-export 'vista_dueno_visualizar_la_lista_de_pedidos_model.dart';
+import 'vista_admin_ordenes_model.dart';
+export 'vista_admin_ordenes_model.dart';
 
-class VistaDuenoVisualizarLaListaDePedidosWidget extends StatefulWidget {
-  const VistaDuenoVisualizarLaListaDePedidosWidget({super.key});
+class VistaAdminOrdenesWidget extends StatefulWidget {
+  const VistaAdminOrdenesWidget({super.key});
 
   @override
-  State<VistaDuenoVisualizarLaListaDePedidosWidget> createState() =>
-      _VistaDuenoVisualizarLaListaDePedidosWidgetState();
+  State<VistaAdminOrdenesWidget> createState() =>
+      _VistaAdminOrdenesWidgetState();
 }
 
-class _VistaDuenoVisualizarLaListaDePedidosWidgetState
-    extends State<VistaDuenoVisualizarLaListaDePedidosWidget> {
-  late VistaDuenoVisualizarLaListaDePedidosModel _model;
+class _VistaAdminOrdenesWidgetState extends State<VistaAdminOrdenesWidget> {
+  late VistaAdminOrdenesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model =
-        createModel(context, () => VistaDuenoVisualizarLaListaDePedidosModel());
+    _model = createModel(context, () => VistaAdminOrdenesModel());
   }
 
   @override

@@ -8,6 +8,7 @@ import 'edit_user_widget.dart' show EditUserWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -26,20 +27,19 @@ class EditUserModel extends FlutterFlowModel<EditUserWidget> {
   String? Function(BuildContext, String?)?
       userNameTextFieldTextController2Validator;
   // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode1;
-  TextEditingController? emailTextFieldTextController1;
+  FocusNode? emailTextFieldFocusNode;
+  TextEditingController? emailTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController1Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode2;
-  TextEditingController? emailTextFieldTextController2;
+      emailTextFieldTextControllerValidator;
+  // State field(s) for PhoneTextField widget.
+  FocusNode? phoneTextFieldFocusNode;
+  TextEditingController? phoneTextFieldTextController;
   String? Function(BuildContext, String?)?
-      emailTextFieldTextController2Validator;
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode3;
-  TextEditingController? emailTextFieldTextController3;
-  String? Function(BuildContext, String?)?
-      emailTextFieldTextController3Validator;
+      phoneTextFieldTextControllerValidator;
+  // State field(s) for RolTextField widget.
+  FocusNode? rolTextFieldFocusNode;
+  TextEditingController? rolTextFieldTextController;
+  String? Function(BuildContext, String?)? rolTextFieldTextControllerValidator;
   // State field(s) for Switch widget.
   bool? switchValue;
 
@@ -54,13 +54,13 @@ class EditUserModel extends FlutterFlowModel<EditUserWidget> {
     userNameTextFieldFocusNode2?.dispose();
     userNameTextFieldTextController2?.dispose();
 
-    emailTextFieldFocusNode1?.dispose();
-    emailTextFieldTextController1?.dispose();
+    emailTextFieldFocusNode?.dispose();
+    emailTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode2?.dispose();
-    emailTextFieldTextController2?.dispose();
+    phoneTextFieldFocusNode?.dispose();
+    phoneTextFieldTextController?.dispose();
 
-    emailTextFieldFocusNode3?.dispose();
-    emailTextFieldTextController3?.dispose();
+    rolTextFieldFocusNode?.dispose();
+    rolTextFieldTextController?.dispose();
   }
 }

@@ -22,13 +22,6 @@ service cloud.firestore {
       allow delete: if true;
     }
 
-    match /PaymentMethode/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if true;
-      allow delete: if true;
-    }
-
     match /Cart/{document} {
       allow create: if true;
       allow read: if true;
@@ -46,15 +39,22 @@ service cloud.firestore {
     match /TimeMarc/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
     }
 
     match /EmployeePayment/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if true;
-      allow delete: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /PaymentMethod/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
     }
   }
 }

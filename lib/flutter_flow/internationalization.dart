@@ -394,44 +394,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '₡',
     },
     'pmmlaeqy': {
-      'en': 'FoodCort  Menu',
-      'es': 'Menú de FoodCort',
+      'en': 'Menu',
+      'es': 'Menú',
     },
     'dgcyrxzu': {
-      'en': 'Voucher',
-      'es': 'Vale',
+      'en': 'Pending  Orders',
+      'es': 'Órdenes pendientes',
     },
-    'tuy81wcf': {
-      'en': '2',
-      'es': '2',
-    },
-    'qhr5orzh': {
-      'en': 'Chat',
-      'es': 'Charlar',
-    },
-    'gry56hq4': {
-      'en': '23',
-      'es': '23',
-    },
-    '85wowopz': {
-      'en': 'History',
-      'es': 'Historia',
-    },
-    '6l40784f': {
-      'en': '14',
-      'es': '14',
+    'm4gyczuf': {
+      'en': 'My Orders',
+      'es': 'Mis pedidos',
     },
     'saba47ge': {
-      'en': 'Setting',
+      'en': 'Settings',
       'es': 'Configuración',
-    },
-    'zg2co7v2': {
-      'en': 'Magdalena Succrose',
-      'es': 'Magdalena Sacarosa',
-    },
-    '79qs467e': {
-      'en': 'Good Morning',
-      'es': 'Buen día',
     },
     '9yie9zpa': {
       'en': 'Help',
@@ -451,14 +427,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ru6luczd': {
       'en': 'My order history',
       'es': 'mi historial de hordenes',
-    },
-    'ddc0ms0w': {
-      'en': 'Delinas Resto',
-      'es': '',
-    },
-    '94k7w4or': {
-      'en': 'Completed',
-      'es': '',
     },
     'uceytif3': {
       'en': 'Date',
@@ -651,83 +619,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'kpvelkrq': {
       'en': 'Checkout',
-      'es': '',
-    },
-    't8loors2': {
-      'en': 'Address',
-      'es': '',
-    },
-    'p9n5s7h0': {
-      'en': 'Edit',
-      'es': '',
-    },
-    'bywq7p9s': {
-      'en': 'House',
-      'es': '',
-    },
-    'njocwcqz': {
-      'en': '5482 Adobe Falls Rd #15San Diego, California(CA), 92120',
-      'es': '',
+      'es': 'Verifiación',
     },
     'sdylshbh': {
+      'en': 'Resumen de Orden',
+      'es': 'Order Summary',
+    },
+    'd947tya2': {
       'en': 'Payment Method',
-      'es': '',
-    },
-    'krw5s1j2': {
-      'en': 'Master Card',
-      'es': '',
-    },
-    '1ywpvnw1': {
-      'en': '**** **** 1234',
-      'es': '',
-    },
-    'oaev7nnu': {
-      'en': 'Voucher Code',
-      'es': '',
-    },
-    'kkgbeywz': {
-      'en': 'Enter voucher code',
-      'es': '',
-    },
-    'ghvy2a6s': {
-      'en': 'Shipping cost',
-      'es': '',
-    },
-    'b4zlasr0': {
-      'en': '\$ ',
-      'es': '',
-    },
-    '6561gdr3': {
-      'en': '5.31',
-      'es': '',
-    },
-    'bp9wej2t': {
-      'en': 'Sub total',
-      'es': '',
-    },
-    '3hi5molm': {
-      'en': '\$ ',
-      'es': '',
-    },
-    'om71uzlu': {
-      'en': '16.00',
-      'es': '',
+      'es': 'Metodo de Pago',
     },
     'f8i19h8x': {
-      'en': 'Total',
-      'es': '',
-    },
-    'ifdwuw0z': {
-      'en': '\$ ',
-      'es': '',
-    },
-    'g4i6slxy': {
-      'en': '21.31',
-      'es': '',
+      'en': 'Total:',
+      'es': 'Total:',
     },
     'fso0s0oc': {
       'en': 'Checkout Now',
-      'es': '',
+      'es': 'Confirmar Ahora',
     },
     'tzg22myi': {
       'en': 'Home',
@@ -786,47 +694,167 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // AddNewCard
+  // vistaCreacionMetodoPago
   {
     '1fls4zbe': {
-      'en': 'Add New Card',
-      'es': '',
+      'en': 'Add Payment Method',
+      'es': 'Agregar Metodo de Pago',
     },
     '8tqeg719': {
-      'en': 'Card Number',
+      'en': 'Payment Type',
+      'es': 'Tipo de pago',
+    },
+    'rvsuvuox': {
+      'en': 'MasterCard',
+      'es': 'MasterCard',
+    },
+    'd3ipm2a8': {
+      'en': 'MasterCard',
+      'es': 'MasterCard',
+    },
+    '3cyq4p2s': {
+      'en': 'Visa',
+      'es': 'Visa',
+    },
+    'dmrbqytn': {
+      'en': 'Select a payment type',
+      'es': 'Seleccione un tipo de pago',
+    },
+    'q61ccim5': {
+      'en': 'Search for an item...',
       'es': '',
     },
-    'whwwsqyj': {
+    'pr3g39mi': {
+      'en': 'Card Number',
+      'es': 'Número de tarjeta',
+    },
+    'xrbs6gek': {
       'en': 'Enter Card Number',
-      'es': '',
+      'es': 'Introduzca el número de tarjeta',
     },
     'e1jkqztn': {
       'en': 'Card Holder Name',
-      'es': '',
+      'es': 'Dueño de Tarjeta',
     },
     'qmfbitqj': {
       'en': 'Enter Holder Name',
-      'es': '',
+      'es': 'Introduzca el nombre del titular',
     },
     'z7a2vdhr': {
-      'en': 'Expired',
-      'es': '',
+      'en': 'Expiration Date',
+      'es': 'Fecha de expiración',
     },
     'itfkuv3g': {
-      'en': 'MM/YY',
-      'es': '',
+      'en': 'DD',
+      'es': 'DD',
+    },
+    '8attu5gd': {
+      'en': 'MM',
+      'es': 'MM',
+    },
+    '5q34csz5': {
+      'en': 'YYYY',
+      'es': 'YYYY',
     },
     '70eg1hir': {
       'en': 'CVV Code',
-      'es': '',
+      'es': 'Código CVV',
     },
     '8bvf8fns': {
       'en': 'CCV',
+      'es': 'CCV',
+    },
+    'caus4cow': {
+      'en': 'Postal Code',
+      'es': 'Código Postal',
+    },
+    'caz6gibz': {
+      'en': 'Postal Code',
+      'es': 'Código Postal',
+    },
+    'bqgabm7x': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    '5jqc4sze': {
+      'en': 'The card number must be 16 digits long',
+      'es': 'El número de tarjeta debe tener 16 dígitos.',
+    },
+    'd089m0p7': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '67q4ywpk': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'jcy5vyx0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '05oy3vdi': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    '16gv8av3': {
+      'en': 'Not a valid day',
+      'es': 'No es un día válido',
+    },
+    'fjubulik': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'osoxgttt': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'vexj3gmt': {
+      'en': 'Not a valid month',
+      'es': 'No es un mes válido',
+    },
+    '7t51vopi': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'hvsca0ar': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'j4r63ojg': {
+      'en': 'Not a valid year',
+      'es': 'No es un año válido',
+    },
+    'dx4b31jm': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'yfj9pzc5': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    '1mfmelj2': {
+      'en': 'The CVV code is not valid',
+      'es': 'El código CVV no es válido',
+    },
+    'y4668zpq': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'xon3gj1m': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'b530c02c': {
+      'en': 'The postal code is not valid',
+      'es': 'El código postal no es válido',
+    },
+    '39hfv3xh': {
+      'en': 'Please choose an option from the dropdown',
       'es': '',
     },
     'v3wjfpim': {
-      'en': 'Add Card',
-      'es': '',
+      'en': 'Add Payment Method',
+      'es': 'Agregar método de pago',
     },
     '2nfguei3': {
       'en': 'Home',
@@ -1267,7 +1295,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // vistaDuenoVisualizarLaListaDePedidos
+  // vistaAdminOrdenes
   {
     's4m1vm6q': {
       'en': ' Lista de pedidos',
@@ -1366,7 +1394,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // vistaComoDuenoNecesitoVisualizarlaInformacionDelCliente
+  // vistaAdminClientes
   {
     '3dz2nxwa': {
       'en': 'Clientes',
@@ -1456,36 +1484,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Mis ordenes',
     },
     'i6qjiebj': {
-      'en': 'ordenes en curso',
+      'en': 'Current orders',
+      'es': 'Pedidos actuales',
+    },
+    'r5szszgh': {
+      'en': 'Date',
       'es': '',
     },
-    'bh7zu2td': {
-      'en': 'canselar',
+    'zgmkwktt': {
+      'en': 'Price',
       'es': '',
     },
-    'n5a2a4tp': {
-      'en': 'Order #: ',
-      'es': '',
+    'sym927fe': {
+      'en': 'Details',
+      'es': 'Detalles',
     },
-    'v2ecd4mt': {
-      'en': '429242424',
-      'es': '',
-    },
-    '4jzft49x': {
-      'en': 'Mon. July 3rd',
-      'es': '',
-    },
-    'gof367m0': {
-      'en': '2.5 lbs',
-      'es': '',
-    },
-    'xcx0nyoh': {
-      'en': '\$1.50',
-      'es': '',
-    },
-    'eci9jwdn': {
-      'en': 'Accepted',
-      'es': '',
+    '8gezqwku': {
+      'en': 'Cancel',
+      'es': 'Cancelar',
     },
     'yeimc7j6': {
       'en': 'Home',
@@ -1672,47 +1688,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Campo Requerido',
       'es': '',
     },
-    'd089m0p7': {
+    'xm5153em': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    '67q4ywpk': {
+    'y6m73qv5': {
       'en': 'Campo Requerido',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
-    'jcy5vyx0': {
+    'z6hk8ds1': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    '05oy3vdi': {
+    '603pnq9l': {
       'en': 'Campo Requerido',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
-    'fjubulik': {
+    '9a85srub': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    'osoxgttt': {
+    '08hnsmdc': {
       'en': 'Campo Requerido',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
-    '7t51vopi': {
+    'r9w4fjso': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    'hvsca0ar': {
+    'duotrp1n': {
       'en': 'Campo Requerido',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
-    'dx4b31jm': {
+    '0n5qjtws': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    'yfj9pzc5': {
+    'qnxnyu1v': {
       'en': 'Campo Requerido',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
-    'y4668zpq': {
+    '2h1f2vb4': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
@@ -1869,14 +1885,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Out Time',
       'es': 'Hora Salida',
     },
-    'a9fizlim': {
-      'en': '08:00 AM',
-      'es': '',
-    },
-    '3tq27mt2': {
-      'en': '05:00 PM',
-      'es': '',
-    },
     '6d9czj6y': {
       'en': 'In Marc',
       'es': 'Marca Entrada',
@@ -1892,6 +1900,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'i6hl7nyx': {
       'en': '09:00 hrs',
       'es': '',
+    },
+    'hkyf4bzz': {
+      'en': 'Save Marcs',
+      'es': 'Salvar a Marcs',
     },
     'obeengh7': {
       'en': 'Employ Time Tracker',
@@ -2252,27 +2264,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // changePaymentMethod_modal
+  // bsCambiarMetodoPago
   {
     'vdt5chjy': {
-      'en': 'Payment Method',
-      'es': '',
-    },
-    'zt4sy9vi': {
-      'en': 'Paypall',
-      'es': '',
-    },
-    'omu8rwmb': {
-      'en': 'sask****@mail.com',
-      'es': '',
+      'en': 'Payment Methods',
+      'es': 'Metodos de Pago',
     },
     '4ujur370': {
       'en': 'Add Payment Method',
-      'es': '',
-    },
-    'yx6c24gu': {
-      'en': 'Upply the payment method',
-      'es': '',
+      'es': 'Agregar método de pago',
     },
   },
   // PaymentMethodItem
@@ -2286,20 +2286,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // orderSuccess_modal
+  // bsOrdenExitosa
   {
     'ai8qoftl': {
       'en': 'Order Successfully',
-      'es': '',
+      'es': 'Pedido realizado con éxito',
     },
     '8w3ex41n': {
-      'en':
-          'Happy! Your food will be made immediately and we will send it after it\'s finished by the courier, please wait a moment.',
-      'es': '',
+      'en': 'Your order has been placed and will be prepared for pickup!',
+      'es':
+          '¡Su pedido ha sido realizado y estará preparado para ser recogido!',
     },
     'znwujg1g': {
-      'en': 'Order Tracking',
-      'es': '',
+      'en': 'Understood!',
+      'es': '¡Comprendido!',
     },
   },
   // MyOrderItem
@@ -2354,7 +2354,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '12 Minute',
       'es': '',
     },
-    'kbngx28n': {
+    'b4zlasr0': {
       'en': '\$ ',
       'es': '',
     },
@@ -2555,12 +2555,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // bsMostraDetalleProducto
   {
     'b4xggmkx': {
-      'en': 'Detalles',
-      'es': '',
+      'en': 'Details',
+      'es': 'Detalles',
     },
     'dm5qzlk5': {
-      'en': 'Descripción',
-      'es': '',
+      'en': 'Description',
+      'es': 'Descripción',
     },
     'icsxsp5r': {
       'en': '₡ ',
@@ -2607,6 +2607,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ppu93b9j': {
       'en': 'editar',
       'es': 'editar',
+    },
+  },
+  // CCRadioButton
+  {
+    'zyw5k83w': {
+      'en': '',
+      'es': '',
+    },
+  },
+  // bsCrearMetodoPago
+  {
+    '74u9szhf': {
+      'en': 'Create New Password',
+      'es': '',
+    },
+    '294ma50y': {
+      'en': 'Enter youe mail or phone number',
+      'es': '',
+    },
+    '0ah7zd23': {
+      'en': 'Password',
+      'es': '',
+    },
+    'k840mm91': {
+      'en': 'Create your password',
+      'es': '',
+    },
+    'cw8z8zvj': {
+      'en': 'Password',
+      'es': '',
+    },
+    'if5naruk': {
+      'en': 'Create your password',
+      'es': '',
+    },
+    'zlmag8qh': {
+      'en': 'Change Password',
+      'es': '',
+    },
+  },
+  // bsInformacionOrdenes
+  {
+    '0kqdacn5': {
+      'en': 'Oil Change',
+      'es': '',
+    },
+    '297wgt4o': {
+      'en': '#495242',
+      'es': '',
     },
   },
   // Miscellaneous

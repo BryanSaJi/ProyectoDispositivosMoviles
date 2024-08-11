@@ -34,4 +34,22 @@ class FFAppState extends ChangeNotifier {
   set busquedaActiva(bool value) {
     _busquedaActiva = value;
   }
+
+  DateTime? _InMarc;
+  DateTime? get InMarc => _InMarc;
+  set InMarc(DateTime? value) {
+    _InMarc = value;
+  }
+
+  DateTime? _OutMarc;
+  DateTime? get OutMarc => _OutMarc;
+  set OutMarc(DateTime? value) {
+    _OutMarc = value;
+  }
+
+  String _adminEmail = '';
+  String get adminEmail => _adminEmail;
+  set adminEmail(String value) {
+    _adminEmail = value;
+  }
 }

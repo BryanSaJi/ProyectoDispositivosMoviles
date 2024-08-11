@@ -135,7 +135,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vistaPago',
           path: '/vistaPago',
-          builder: (context, params) => VistaPagoWidget(),
+          builder: (context, params) => VistaPagoWidget(
+            prmMetodoPago: params.getParam(
+              'prmMetodoPago',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['PaymentMethod'],
+            ),
+            prmNombreMetodoPago: params.getParam(
+              'prmNombreMetodoPago',
+              ParamType.String,
+            ),
+            prmNumeroTarjeta: params.getParam(
+              'prmNumeroTarjeta',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Address',
@@ -143,9 +158,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => AddressWidget(),
         ),
         FFRoute(
-          name: 'AddNewCard',
-          path: '/addNewCard',
-          builder: (context, params) => AddNewCardWidget(),
+          name: 'vistaCreacionMetodoPago',
+          path: '/vistaCreacionMetodoPago',
+          builder: (context, params) => VistaCreacionMetodoPagoWidget(),
         ),
         FFRoute(
           name: 'Notifications',
@@ -203,16 +218,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => UsersCRUDWidget(),
         ),
         FFRoute(
-          name: 'vistaDuenoVisualizarLaListaDePedidos',
-          path: '/vistaDuenoVisualizarLaListaDePedidos',
-          builder: (context, params) =>
-              VistaDuenoVisualizarLaListaDePedidosWidget(),
+          name: 'vistaAdminOrdenes',
+          path: '/vistaAdminOrdenes',
+          builder: (context, params) => VistaAdminOrdenesWidget(),
         ),
         FFRoute(
-          name: 'vistaComoDuenoNecesitoVisualizarlaInformacionDelCliente',
-          path: '/vistaComoDuenoNecesitoVisualizarlaInformacionDelCliente',
-          builder: (context, params) =>
-              VistaComoDuenoNecesitoVisualizarlaInformacionDelClienteWidget(),
+          name: 'vistaAdminClientes',
+          path: '/vistaAdminClientes',
+          builder: (context, params) => VistaAdminClientesWidget(),
         ),
         FFRoute(
           name: 'vistaOrdenesCliente',
