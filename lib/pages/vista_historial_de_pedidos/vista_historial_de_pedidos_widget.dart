@@ -433,7 +433,10 @@ class _VistaHistorialDePedidosWidgetState
                                                                         MediaQuery.sizeOf(context).height *
                                                                             0.4,
                                                                     child:
-                                                                        BsInformacionOrdenesWidget(),
+                                                                        BsInformacionOrdenesWidget(
+                                                                      orden:
+                                                                          listViewOrderRecord,
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               );

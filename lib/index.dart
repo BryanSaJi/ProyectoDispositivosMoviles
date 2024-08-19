@@ -48,5 +48,14 @@ export '/pages/users_employees/users_employees_widget.dart'
     show UsersEmployeesWidget;
 export '/pages/time_marc_admin/time_marc_admin_widget.dart'
     show TimeMarcAdminWidget;
-export '/pages/time_marc_user/time_marc_user_widget.dart'
-    show TimeMarcUserWidget;
+export '/pages/users_employees_user/users_employees_user_widget.dart'
+    show UsersEmployeesUserWidget;
+export '/pages/vista_abonar_empleado/vista_abonar_empleado_widget.dart'
+    show VistaAbonarEmpleadoWidget;
+export '/pages/marcs_editby_user/marcs_editby_user_widget.dart'
+    show MarcsEditbyUserWidget;
+export '/pages/marcs_edit/marcs_edit_widget.dart' show MarcsEditWidget;
+export '/pages/edit_time_marc_admin/edit_time_marc_admin_widget.dart'
+    show EditTimeMarcAdminWidget;
+export '/pages/edit_time_marc_employee/edit_time_marc_employee_widget.dart'
+    show EditTimeMarcEmployeeWidget;

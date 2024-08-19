@@ -99,7 +99,7 @@ class _AdministrativeControlWidgetState
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'igz5tqm2' /* Administrative Control */,
+                                          'igz5tqm2' /* Administrative Controls */,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -340,7 +340,7 @@ class _AdministrativeControlWidgetState
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context.pushNamed('TimeMarcUser');
+                                              context.pushNamed('MarcsEdit');
                                             },
                                             child: ListTile(
                                               leading: Icon(

@@ -278,12 +278,85 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'TimeMarcAdmin',
           path: '/timeMarcAdmin',
-          builder: (context, params) => TimeMarcAdminWidget(),
+          builder: (context, params) => TimeMarcAdminWidget(
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
+            lastName: params.getParam(
+              'lastName',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
-          name: 'TimeMarcUser',
-          path: '/timeMarcUser',
-          builder: (context, params) => TimeMarcUserWidget(),
+          name: 'UsersEmployeesUser',
+          path: '/usersEmployeesUser',
+          builder: (context, params) => UsersEmployeesUserWidget(),
+        ),
+        FFRoute(
+          name: 'vistaAbonarEmpleado',
+          path: '/vistaAbonarEmpleado',
+          asyncParams: {
+            'prmEmpleado': getDoc(['Users'], UsersRecord.fromSnapshot),
+          },
+          builder: (context, params) => VistaAbonarEmpleadoWidget(
+            prmMetodoPago: params.getParam(
+              'prmMetodoPago',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['PaymentMethod'],
+            ),
+            prmNombreMetodoPago: params.getParam(
+              'prmNombreMetodoPago',
+              ParamType.String,
+            ),
+            prmNumeroTarjeta: params.getParam(
+              'prmNumeroTarjeta',
+              ParamType.String,
+            ),
+            prmEmpleado: params.getParam(
+              'prmEmpleado',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'MarcsEditbyUser',
+          path: '/marcsEditbyUser',
+          builder: (context, params) => MarcsEditbyUserWidget(
+            name: params.getParam(
+              'name',
+              ParamType.String,
+            ),
+            lastname: params.getParam(
+              'lastname',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'MarcsEdit',
+          path: '/marcsEdit',
+          builder: (context, params) => MarcsEditWidget(),
+        ),
+        FFRoute(
+          name: 'EditTimeMarcAdmin',
+          path: '/editTimeMarcAdmin',
+          asyncParams: {
+            'timeMarc': getDoc(['TimeMarc'], TimeMarcRecord.fromSnapshot),
+          },
+          builder: (context, params) => EditTimeMarcAdminWidget(
+            timeMarc: params.getParam(
+              'timeMarc',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'EditTimeMarcEmployee',
+          path: '/editTimeMarcEmployee',
+          builder: (context, params) => EditTimeMarcEmployeeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,6 +1,20 @@
 {
   "indexes": [
     {
+      "collectionGroup": "Product",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Enable",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Quantity",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "Order",
       "queryScope": "COLLECTION",
       "fields": [
@@ -24,6 +38,24 @@
         },
         {
           "fieldPath": "Name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "TimeMarc",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Name",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Lastname",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Date",
           "order": "ASCENDING"
         }
       ]

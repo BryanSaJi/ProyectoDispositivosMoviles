@@ -21,11 +21,6 @@ class OrderRecord extends FirestoreRecord {
   DateTime? get orderDate => _orderDate;
   bool hasOrderDate() => _orderDate != null;
 
-  // "Enable" field.
-  bool? _enable;
-  bool get enable => _enable ?? false;
-  bool hasEnable() => _enable != null;
-
   // "OrderUser" field.
   DocumentReference? _orderUser;
   DocumentReference? get orderUser => _orderUser;
@@ -56,9 +51,23 @@ class OrderRecord extends FirestoreRecord {
   DocumentReference? get orderPaymentMethod => _orderPaymentMethod;
   bool hasOrderPaymentMethod() => _orderPaymentMethod != null;
 
+  // "OrderQuantity" field.
+  List<int>? _orderQuantity;
+  List<int> get orderQuantity => _orderQuantity ?? const [];
+  bool hasOrderQuantity() => _orderQuantity != null;
+
+  // "OrderPrices" field.
+  List<int>? _orderPrices;
+  List<int> get orderPrices => _orderPrices ?? const [];
+  bool hasOrderPrices() => _orderPrices != null;
+
+  // "OrderItems" field.
+  List<String>? _orderItems;
+  List<String> get orderItems => _orderItems ?? const [];
+  bool hasOrderItems() => _orderItems != null;
+
   void _initializeFields() {
     _orderDate = snapshotData['OrderDate'] as DateTime?;
-    _enable = snapshotData['Enable'] as bool?;
     _orderUser = snapshotData['OrderUser'] as DocumentReference?;
     _orderTotal = castToType<int>(snapshotData['OrderTotal']);
     _orderCode = snapshotData['OrderCode'] as String?;
@@ -66,6 +75,9 @@ class OrderRecord extends FirestoreRecord {
     _product = getDataList(snapshotData['Product']);
     _orderPaymentMethod =
         snapshotData['OrderPaymentMethod'] as DocumentReference?;
+    _orderQuantity = getDataList(snapshotData['OrderQuantity']);
+    _orderPrices = getDataList(snapshotData['OrderPrices']);
+    _orderItems = getDataList(snapshotData['OrderItems']);
   }
 
   static CollectionReference get collection =>
@@ -103,7 +115,6 @@ class OrderRecord extends FirestoreRecord {
 
 Map<String, dynamic> createOrderRecordData({
   DateTime? orderDate,
-  bool? enable,
   DocumentReference? orderUser,
   int? orderTotal,
   String? orderCode,
@@ -113,7 +124,6 @@ Map<String, dynamic> createOrderRecordData({
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'OrderDate': orderDate,
-      'Enable': enable,
       'OrderUser': orderUser,
       'OrderTotal': orderTotal,
       'OrderCode': orderCode,
@@ -132,25 +142,29 @@ class OrderRecordDocumentEquality implements Equality<OrderRecord> {
   bool equals(OrderRecord? e1, OrderRecord? e2) {
     const listEquality = ListEquality();
     return e1?.orderDate == e2?.orderDate &&
-        e1?.enable == e2?.enable &&
         e1?.orderUser == e2?.orderUser &&
         e1?.orderTotal == e2?.orderTotal &&
         e1?.orderCode == e2?.orderCode &&
         e1?.orderStatus == e2?.orderStatus &&
         listEquality.equals(e1?.product, e2?.product) &&
-        e1?.orderPaymentMethod == e2?.orderPaymentMethod;
+        e1?.orderPaymentMethod == e2?.orderPaymentMethod &&
+        listEquality.equals(e1?.orderQuantity, e2?.orderQuantity) &&
+        listEquality.equals(e1?.orderPrices, e2?.orderPrices) &&
+        listEquality.equals(e1?.orderItems, e2?.orderItems);
   }
 
   @override
   int hash(OrderRecord? e) => const ListEquality().hash([
         e?.orderDate,
-        e?.enable,
         e?.orderUser,
         e?.orderTotal,
         e?.orderCode,
         e?.orderStatus,
         e?.product,
-        e?.orderPaymentMethod
+        e?.orderPaymentMethod,
+        e?.orderQuantity,
+        e?.orderPrices,
+        e?.orderItems
       ]);
 
   @override

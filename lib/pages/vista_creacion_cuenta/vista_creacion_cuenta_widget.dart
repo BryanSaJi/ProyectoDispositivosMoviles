@@ -1,9 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/bs_registro_exitoso_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -34,14 +36,14 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
     _model.txtLastNameTextController ??= TextEditingController();
     _model.txtLastNameFocusNode ??= FocusNode();
 
-    _model.emailTextFieldTextController ??= TextEditingController();
-    _model.emailTextFieldFocusNode ??= FocusNode();
+    _model.txtEmailTextController ??= TextEditingController();
+    _model.txtEmailFocusNode ??= FocusNode();
 
     _model.txtPhoneTextController ??= TextEditingController();
     _model.txtPhoneFocusNode ??= FocusNode();
 
-    _model.passwordTextFieldTextController ??= TextEditingController();
-    _model.passwordTextFieldFocusNode ??= FocusNode();
+    _model.txtPasswordTextController ??= TextEditingController();
+    _model.txtPasswordFocusNode ??= FocusNode();
 
     _model.txtPasswordConfTextController ??= TextEditingController();
     _model.txtPasswordConfFocusNode ??= FocusNode();
@@ -480,9 +482,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                   width: 250.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailTextFieldTextController,
+                                                        .txtEmailTextController,
                                                     focusNode: _model
-                                                        .emailTextFieldFocusNode,
+                                                        .txtEmailFocusNode,
                                                     autofocus: false,
                                                     autofillHints: [
                                                       AutofillHints.email
@@ -580,10 +582,10 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                         Icons.email_outlined,
                                                         color: valueOrDefault<
                                                             Color>(
-                                                          _model.emailTextFieldTextController
+                                                          _model.txtEmailTextController
                                                                           .text ==
                                                                       null ||
-                                                                  _model.emailTextFieldTextController
+                                                                  _model.txtEmailTextController
                                                                           .text ==
                                                                       ''
                                                               ? FlutterFlowTheme
@@ -611,7 +613,7 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                     keyboardType: TextInputType
                                                         .emailAddress,
                                                     validator: _model
-                                                        .emailTextFieldTextControllerValidator
+                                                        .txtEmailTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -785,6 +787,15 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                               'Plus Jakarta Sans',
                                                           letterSpacing: 0.0,
                                                         ),
+                                                    maxLength: 8,
+                                                    maxLengthEnforcement:
+                                                        MaxLengthEnforcement
+                                                            .enforced,
+                                                    buildCounter: (context,
+                                                            {required currentLength,
+                                                            required isFocused,
+                                                            maxLength}) =>
+                                                        null,
                                                     keyboardType:
                                                         TextInputType.number,
                                                     validator: _model
@@ -833,15 +844,15 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                   width: 250.0,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .passwordTextFieldTextController,
+                                                        .txtPasswordTextController,
                                                     focusNode: _model
-                                                        .passwordTextFieldFocusNode,
+                                                        .txtPasswordFocusNode,
                                                     autofocus: false,
                                                     autofillHints: [
                                                       AutofillHints.password
                                                     ],
                                                     obscureText: !_model
-                                                        .passwordTextFieldVisibility,
+                                                        .txtPasswordVisibility,
                                                     decoration: InputDecoration(
                                                       isDense: false,
                                                       labelStyle:
@@ -927,10 +938,10 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                         Icons.lock_outlined,
                                                         color: valueOrDefault<
                                                             Color>(
-                                                          _model.passwordTextFieldTextController
+                                                          _model.txtPasswordTextController
                                                                           .text ==
                                                                       null ||
-                                                                  _model.passwordTextFieldTextController
+                                                                  _model.txtPasswordTextController
                                                                           .text ==
                                                                       ''
                                                               ? FlutterFlowTheme
@@ -949,15 +960,15 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       suffixIcon: InkWell(
                                                         onTap: () => setState(
                                                           () => _model
-                                                                  .passwordTextFieldVisibility =
+                                                                  .txtPasswordVisibility =
                                                               !_model
-                                                                  .passwordTextFieldVisibility,
+                                                                  .txtPasswordVisibility,
                                                         ),
                                                         focusNode: FocusNode(
                                                             skipTraversal:
                                                                 true),
                                                         child: Icon(
-                                                          _model.passwordTextFieldVisibility
+                                                          _model.txtPasswordVisibility
                                                               ? Icons
                                                                   .visibility_outlined
                                                               : Icons
@@ -978,7 +989,7 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     validator: _model
-                                                        .passwordTextFieldTextControllerValidator
+                                                        .txtPasswordTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1198,8 +1209,7 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                           }
                                           GoRouter.of(context)
                                               .prepareAuthEvent();
-                                          if (_model
-                                                  .passwordTextFieldTextController
+                                          if (_model.txtPasswordTextController
                                                   .text !=
                                               _model
                                                   .txtPasswordConfTextController
@@ -1218,11 +1228,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                           final user = await authManager
                                               .createAccountWithEmail(
                                             context,
-                                            _model.emailTextFieldTextController
-                                                .text,
+                                            _model.txtEmailTextController.text,
                                             _model
-                                                .passwordTextFieldTextController
-                                                .text,
+                                                .txtPasswordTextController.text,
                                           );
                                           if (user == null) {
                                             return;
@@ -1242,48 +1250,40 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                 rol: 'User',
                                                 enable: true,
                                                 email: _model
-                                                    .emailTextFieldTextController
+                                                    .txtEmailTextController
                                                     .text,
                                               ));
 
-                                          await showDialog(
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
                                             context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                  enText: 'Success',
-                                                  esText: 'Exito',
-                                                )),
-                                                content: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getVariableText(
-                                                  enText:
-                                                      'Your new account has been created!',
-                                                  esText:
-                                                      '¡Su cuenta ha sido creada!',
-                                                )),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext),
-                                                    child: Text(
-                                                        FFLocalizations.of(
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child: Container(
+                                                    height: MediaQuery.sizeOf(
                                                                 context)
-                                                            .getVariableText(
-                                                      enText: 'Ok',
-                                                      esText: 'Esta bien',
-                                                    )),
+                                                            .height *
+                                                        0.6,
+                                                    child:
+                                                        BsRegistroExitosoWidget(),
                                                   ),
-                                                ],
+                                                ),
                                               );
                                             },
-                                          );
+                                          ).then(
+                                              (value) => safeSetState(() {}));
 
-                                          context.pushNamedAuth(
-                                              'vistaLogin', context.mounted);
+                                          context.goNamedAuth(
+                                              'vistaIndex', context.mounted);
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/bs_cambiar_metodo_pago_widget.dart';
-import '/components/bs_orden_exitosa/bs_orden_exitosa_widget.dart';
+import '/components/bs_orden_exitosa_widget.dart';
 import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -863,7 +863,6 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                             .doc()
                                                             .set({
                                                           ...createOrderRecordData(
-                                                            enable: true,
                                                             orderUser:
                                                                 currentUserReference,
                                                             orderTotal: functions.funcTotalCarrito(
@@ -893,6 +892,21 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                                       e.product)
                                                                   .withoutNulls
                                                                   .toList(),
+                                                              'OrderQuantity':
+                                                                  vistaPagoCartRecordList
+                                                                      .map((e) =>
+                                                                          e.quantity)
+                                                                      .toList(),
+                                                              'OrderPrices':
+                                                                  vistaPagoCartRecordList
+                                                                      .map((e) =>
+                                                                          e.subtotal)
+                                                                      .toList(),
+                                                              'OrderItems':
+                                                                  vistaPagoCartRecordList
+                                                                      .map((e) =>
+                                                                          e.nameProduct)
+                                                                      .toList(),
                                                             },
                                                           ),
                                                         });
@@ -922,6 +936,9 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                         ).then((value) =>
                                                             safeSetState(
                                                                 () {}));
+
+                                                        context.pushNamed(
+                                                            'vistaIndex');
                                                       } else {
                                                         ScaffoldMessenger.of(
                                                                 context)

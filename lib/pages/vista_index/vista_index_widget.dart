@@ -167,7 +167,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                           if (valueOrDefault(
                                                   currentUserDocument?.rol,
                                                   '') ==
-                                              'User')
+                                              'Admin')
                                             InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -232,6 +232,56 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 'm4gyczuf' /* My Orders */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                        ].divide(SizedBox(width: 8.0)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            if (valueOrDefault(currentUserDocument?.rol, '') ==
+                                'User')
+                              AuthUserStreamWidget(
+                                builder: (context) => InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context
+                                        .pushNamed('vistaHistorialDePedidos');
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Icon(
+                                            Icons.history,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            size: 24.0,
+                                          ),
+                                          if (valueOrDefault(
+                                                  currentUserDocument?.rol,
+                                                  '') ==
+                                              'User')
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                't5i7j2ev' /* Order History */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1792,10 +1842,17 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                 ProductRecord>(
                                               pagingController: _model
                                                   .setLvProductosController(
-                                                ProductRecord.collection.where(
-                                                  'Enable',
-                                                  isEqualTo: true,
-                                                ),
+                                                ProductRecord.collection
+                                                    .where(Filter.or(
+                                                  Filter(
+                                                    'Enable',
+                                                    isEqualTo: true,
+                                                  ),
+                                                  Filter(
+                                                    'Quantity',
+                                                    isNotEqualTo: 0,
+                                                  ),
+                                                )),
                                               ),
                                               padding: EdgeInsets.zero,
                                               shrinkWrap: true,
@@ -2081,10 +2138,17 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                 List<ProductRecord>>(
                                               stream: queryProductRecord(
                                                 queryBuilder: (productRecord) =>
-                                                    productRecord.where(
-                                                  'Enable',
-                                                  isEqualTo: true,
-                                                ),
+                                                    productRecord
+                                                        .where(Filter.or(
+                                                  Filter(
+                                                    'Enable',
+                                                    isEqualTo: true,
+                                                  ),
+                                                  Filter(
+                                                    'Quantity',
+                                                    isNotEqualTo: 0,
+                                                  ),
+                                                )),
                                                 singleRecord: true,
                                               ),
                                               builder: (context, snapshot) {

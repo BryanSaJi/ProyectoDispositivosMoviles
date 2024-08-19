@@ -421,7 +421,7 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
                                                                           .sizeOf(
                                                                               context)
                                                                       .height *
-                                                                  0.4,
+                                                                  0.65,
                                                               child:
                                                                   BsInformacionOrdenesWidget(
                                                                 orden:

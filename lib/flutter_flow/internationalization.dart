@@ -169,7 +169,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9w49szqy': {
       'en': 'Field is required',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
     '7wi6j1te': {
       'en': 'Please choose an option from the dropdown',
@@ -177,7 +177,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j6jvvo1v': {
       'en': 'Field is required',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
     'wvvh8n5q': {
       'en': 'Please choose an option from the dropdown',
@@ -185,7 +185,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lxj0p4lt': {
       'en': 'Field is required',
-      'es': '',
+      'es': 'El campo es obligatorio',
+    },
+    'nfzu372d': {
+      'en': 'Email address is not valid',
+      'es': 'La dirección de correo electrónico no es válida',
     },
     't8vm5plx': {
       'en': 'Please choose an option from the dropdown',
@@ -193,6 +197,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cr4870fs': {
       'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    '9przsnpd': {
+      'en': 'Phone number is not valid',
       'es': '',
     },
     'clqkv99c': {
@@ -201,7 +209,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'a607ie4e': {
       'en': 'Field is required',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
     'm97q22t5': {
       'en': 'Please choose an option from the dropdown',
@@ -209,7 +217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's2jnx2wl': {
       'en': 'Field is required',
-      'es': '',
+      'es': 'El campo es obligatorio',
     },
     'x3f78va6': {
       'en': 'Please choose an option from the dropdown',
@@ -404,6 +412,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'm4gyczuf': {
       'en': 'My Orders',
       'es': 'Mis pedidos',
+    },
+    't5i7j2ev': {
+      'en': 'Order History',
+      'es': 'Historial de pedidos',
     },
     'saba47ge': {
       'en': 'Settings',
@@ -1240,8 +1252,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // AdministrativeControl
   {
     'igz5tqm2': {
-      'en': 'Administrative Control',
-      'es': 'Control administrativo',
+      'en': 'Administrative Controls',
+      'es': 'Controles Administrativos',
     },
     'eql3r3oe': {
       'en': 'General',
@@ -1297,97 +1309,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vistaAdminOrdenes
   {
-    's4m1vm6q': {
-      'en': ' Lista de pedidos',
+    'ehirzdxh': {
+      'en': 'Ordenes del sistema',
       'es': '',
     },
-    'hv70nidx': {
-      'en': '',
+    '3idg01gn': {
+      'en': 'All of the pending orders',
+      'es': 'Todas las ordenes pendientes',
+    },
+    'uwd2b44r': {
+      'en': 'Date',
       'es': '',
     },
-    'sw9sxmb0': {
-      'en': 'Title',
+    'kqtqq8v9': {
+      'en': 'Price',
       'es': '',
     },
-    'f5jeg1d0': {
-      'en': 'Subtext',
-      'es': '',
+    'l6havlwo': {
+      'en': 'Details',
+      'es': 'Detalles',
     },
-    's2ot8rxi': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    'j4fo025c': {
-      'en': 'Title',
-      'es': '',
-    },
-    'hy3zvdwv': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    'u3ndhpjs': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    '50m1b7eu': {
-      'en': 'Title',
-      'es': '',
-    },
-    '60wa121y': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    'hh5jhfno': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    'h2bfap20': {
-      'en': 'Title',
-      'es': '',
-    },
-    'fg5anopt': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    '3tz3q4oc': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    'ayncfgzh': {
-      'en': 'Title',
-      'es': '',
-    },
-    'xjcern9n': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    'eg2l4v3w': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    'myx3fhlk': {
-      'en': 'Title',
-      'es': '',
-    },
-    '3sj93rqj': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    '1i2boeyf': {
-      'en': '\$11.00',
-      'es': '',
-    },
-    'ul1tz6sr': {
-      'en': 'Title',
-      'es': '',
-    },
-    '0vvgugzo': {
-      'en': 'Subtext',
-      'es': '',
-    },
-    '4pfdfslx': {
-      'en': '\$11.00',
-      'es': '',
+    'v371c887': {
+      'en': 'Complete',
+      'es': 'Completo',
     },
     'hysvirxo': {
       'en': 'Home',
@@ -1404,73 +1348,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search members...',
       'es': '',
     },
-    'utp9wsk6': {
-      'en': 'UserName',
-      'es': '',
-    },
-    '6vosjihi': {
-      'en': 'Remove',
-      'es': '',
-    },
-    '1cbpubjc': {
-      'en': 'UserName',
-      'es': '',
-    },
-    '2uc4ztmy': {
-      'en': 'Remove',
-      'es': '',
-    },
-    '9eevq01v': {
-      'en': 'UserName',
-      'es': '',
-    },
-    'ze3ivzoh': {
-      'en': 'Remove',
-      'es': '',
-    },
-    'ysnimbu1': {
-      'en': 'View',
-      'es': '',
-    },
-    'zdzrdfri': {
-      'en': 'user@domainname.com',
-      'es': '',
-    },
-    'a73ld2fj': {
-      'en': 'View',
-      'es': '',
-    },
-    'ctq22ldj': {
-      'en': 'Username',
-      'es': '',
-    },
-    'x3kljr6x': {
-      'en': 'user@domainname.com',
-      'es': '',
-    },
-    'n1rg06qk': {
-      'en': 'View',
-      'es': '',
-    },
-    'gyc62yhn': {
-      'en': 'Username',
-      'es': '',
-    },
-    'da0sbk9k': {
-      'en': 'user@domainname.com',
-      'es': '',
-    },
-    'iauifptc': {
-      'en': 'View',
-      'es': '',
-    },
-    'nliuy3i3': {
-      'en': 'user@domainname.com',
-      'es': '',
-    },
-    'iqr3yq1u': {
-      'en': 'View',
-      'es': '',
+    '7lw76d3o': {
+      'en': 'More details',
+      'es': 'Más detalles',
     },
     'qmz5nucm': {
       'en': 'Home',
@@ -1532,7 +1412,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3t56jrcd': {
       'en': 'Email',
-      'es': '',
+      'es': 'Correo electrónico',
     },
     'bzeyhxsd': {
       'en': 'Enter your email or phone number',
@@ -1547,7 +1427,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     '4zzkxb14': {
-      'en': 'Roll',
+      'en': 'Role',
       'es': 'Rol',
     },
     '1f0ky6xb': {
@@ -1860,7 +1740,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'jxguk0yc': {
       'en': 'Users',
-      'es': '',
+      'es': 'Usuarios',
     },
     'yg4f1r37': {
       'en': 'Page Title',
@@ -1897,10 +1777,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Total Time:',
       'es': 'Tiempo Total:',
     },
-    'i6hl7nyx': {
-      'en': '09:00 hrs',
-      'es': '',
-    },
     'hkyf4bzz': {
       'en': 'Save Marcs',
       'es': 'Salvar a Marcs',
@@ -1910,63 +1786,219 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // TimeMarcUser
+  // UsersEmployeesUser
   {
-    '9qdlab8m': {
+    'm4gv0teq': {
+      'en': 'Users',
+      'es': '',
+    },
+    'yev2fqk6': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'jweyl7vf': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // vistaAbonarEmpleado
+  {
+    '84t1v1zw': {
+      'en': 'Service Accreditation',
+      'es': 'Acreditación de Servicios',
+    },
+    'avssxkkr': {
+      'en':
+          'Please select the desired payment method to credit the employee for the service provided',
+      'es':
+          'Seleccione el método de pago deseado para acreditar al empleado por el servicio prestado.',
+    },
+    'vrp073hl': {
+      'en': 'SINPE',
+      'es': 'SINPE',
+    },
+    'yvvdrxrb': {
+      'en': 'Enter the phone number',
+      'es': 'Introduzca el número de teléfono',
+    },
+    'n1wr8m94': {
+      'en': 'Card Payment',
+      'es': 'Pago con Tarjeta',
+    },
+    'te15cujk': {
+      'en': 'Payment Configuration',
+      'es': 'Configuración de Pago',
+    },
+    '5gi5p111': {
+      'en': 'Ingrese el salario del empleado',
+      'es': 'Ingrese el salario del empleado',
+    },
+    'djv32tff': {
+      'en': 'Issue payment',
+      'es': 'Emitir pago',
+    },
+    'om8jlk1x': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // MarcsEditbyUser
+  {
+    'bbdr9gno': {
+      'en': 'Time Marcs',
+      'es': 'Marcas de Tiempo',
+    },
+    'wp9dcpzx': {
+      'en': 'Date: ',
+      'es': 'Fecha: ',
+    },
+    '1xvvvgsr': {
+      'en': 'In Marc: ',
+      'es': 'Marca Entrada: ',
+    },
+    'x42acmq9': {
+      'en': 'Out Marc: ',
+      'es': 'Marca Salida: ',
+    },
+    'sb4nse1z': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'rge5he1y': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // MarcsEdit
+  {
+    '9hfs0qhp': {
+      'en': 'Time Marcs',
+      'es': '',
+    },
+    'hkrsl332': {
+      'en': 'Date: ',
+      'es': 'Fecha: ',
+    },
+    'frollij3': {
+      'en': 'In Marc: ',
+      'es': 'Marca Entrada: ',
+    },
+    '2mff9i5r': {
+      'en': 'Out Marc:  ',
+      'es': 'Marca Salida: ',
+    },
+    '2qkmi1or': {
+      'en': 'Page Title',
+      'es': '',
+    },
+    'n4yzqunt': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // EditTimeMarcAdmin
+  {
+    'vs61ag5n': {
       'en': 'Select the Date',
       'es': '',
     },
-    'foeezuf6': {
+    'slsgayuf': {
       'en': 'In Time',
-      'es': '',
+      'es': 'Hora Entrada',
     },
-    'qky8jx3q': {
+    '4tgb0jkj': {
       'en': 'Out Time',
+      'es': 'Hora Salida',
+    },
+    'd2se2ulp': {
+      'en': '',
       'es': '',
     },
-    '3ouuldlm': {
-      'en': '08:00 AM',
+    'khi8irhw': {
+      'en': '',
       'es': '',
     },
-    'x5a8i9g9': {
-      'en': '05:00 PM',
-      'es': '',
-    },
-    'b4cumd8v': {
+    '2rnv88g5': {
       'en': 'In Marc',
-      'es': '',
+      'es': 'Marca Entrada',
     },
-    'kufzt0d7': {
+    'pkohfhmm': {
       'en': 'Out Marc',
-      'es': '',
+      'es': 'Marca Salida',
     },
-    'wssnc6p3': {
-      'en': 'Total Time:',
-      'es': '',
+    'acgqlexp': {
+      'en': 'Total Time (Hrs):',
+      'es': 'Tiempo Total (Hrs): ',
     },
-    '19ciory3': {
-      'en': '09:00 hrs',
-      'es': '',
+    'of5z29x3': {
+      'en': 'Save Marcs',
+      'es': 'Guardar Marcas',
     },
-    'f02nusk8': {
+    't3dpp0po': {
       'en': 'Employ Time Tracker',
       'es': '',
     },
   },
-  // registerSuccess_modal
+  // EditTimeMarcEmployee
+  {
+    '6aujt3ti': {
+      'en': 'Select the Date',
+      'es': '',
+    },
+    '9eqnid91': {
+      'en': 'In Time',
+      'es': '',
+    },
+    'csknnug9': {
+      'en': 'Out Time',
+      'es': '',
+    },
+    'jrfi89hz': {
+      'en': '',
+      'es': '',
+    },
+    'qlihg7pe': {
+      'en': '',
+      'es': '',
+    },
+    'hrv3pwr7': {
+      'en': 'In Marc',
+      'es': '',
+    },
+    'l6x2m7fb': {
+      'en': 'Out Marc',
+      'es': '',
+    },
+    'jec1mfu0': {
+      'en': 'Total Time (Hrs):',
+      'es': '',
+    },
+    'vcsd00su': {
+      'en': '09:00 hrs',
+      'es': '',
+    },
+    'bsggqpr1': {
+      'en': 'Save Marcs',
+      'es': '',
+    },
+    'ih1p05vi': {
+      'en': 'Employ Time Tracker',
+      'es': '',
+    },
+  },
+  // bsRegistroExitoso
   {
     'vkxriblo': {
       'en': 'Register Success',
-      'es': '',
+      'es': 'Registro exitoso',
     },
     'h2xdozlk': {
-      'en':
-          'Congratulation! your account already created.\nPlease login to get amazing experience.',
-      'es': '',
+      'en': 'Congratulation! your account already created.\n',
+      'es': '¡Felicitaciones! tu cuenta ya está creada.',
     },
     't4tt10im': {
-      'en': 'Go to Home',
-      'es': '',
+      'en': 'Awesome!',
+      'es': '¡Impresionante!',
     },
   },
   // ForgotPasswordPopup
@@ -2567,7 +2599,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '₡',
     },
     'z4ivj1vy': {
-      'en': 'Añadir al carrito',
+      'en': 'Add to the cart',
       'es': 'Añadir al carrito',
     },
   },
@@ -2649,13 +2681,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // bsInformacionOrdenes
   {
-    '0kqdacn5': {
-      'en': 'Oil Change',
-      'es': '',
-    },
     '297wgt4o': {
       'en': '#495242',
       'es': '',
+    },
+    'x8yd3k33': {
+      'en': 'Total:',
+      'es': 'Total:',
+    },
+  },
+  // bsInformacionOrdenesAdmin
+  {
+    'fhbwbzlu': {
+      'en': 'Total:',
+      'es': '',
+    },
+    'ru4zzzdv': {
+      'en': 'Total:',
+      'es': '',
+    },
+    'kx36bn1p': {
+      'en': 'Total:',
+      'es': 'Total:',
+    },
+  },
+  // userinformation
+  {
+    'sqs86vyz': {
+      'en': 'Profile Details',
+      'es': 'Detalles del perfil',
+    },
+    'mg5baqli': {
+      'en': 'number to contact the customer',
+      'es': 'numero para contactar al cliente',
+    },
+    'mbwhcihw': {
+      'en': 'Pending Orders',
+      'es': 'Pedidos pendientes',
+    },
+    'xyarjjrr': {
+      'en': 'Close',
+      'es': 'cerrar',
     },
   },
   // Miscellaneous

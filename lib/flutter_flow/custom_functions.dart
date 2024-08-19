@@ -30,3 +30,24 @@ int funcSubtotal(
 ) {
   return precio * cantidad;
 }
+
+double? totalTime(
+  DateTime? inMarc,
+  DateTime? outMarc,
+) {
+  if (inMarc == null || inMarc == 0) {
+    return null; // Retorna null si no hay inMarc.
+  }
+
+  // Si outMarc es null, usa la fecha y hora actual.
+  final effectiveOutMarc = outMarc ?? DateTime.now();
+
+  // Calcula la diferencia de tiempo.
+  final difference = effectiveOutMarc.difference(inMarc);
+
+  // Convierte la diferencia en horas decimales.
+  final hoursDecimal = difference.inMinutes / 60.0;
+
+  // Retorna la diferencia en horas con decimales.
+  return hoursDecimal;
+}

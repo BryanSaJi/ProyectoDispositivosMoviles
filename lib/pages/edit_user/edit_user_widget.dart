@@ -874,7 +874,7 @@ class _EditUserWidgetState extends State<EditUserWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '4zzkxb14' /* Roll */,
+                                                    '4zzkxb14' /* Role */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

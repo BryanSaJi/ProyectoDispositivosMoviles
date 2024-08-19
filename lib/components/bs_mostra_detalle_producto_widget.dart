@@ -486,6 +486,40 @@ class _BsMostraDetalleProductoWidgetState
                                             ),
                                           ].divide(SizedBox(width: 16.0)),
                                         ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Flexible(
+                                              child: RichText(
+                                                textScaler:
+                                                    MediaQuery.of(context)
+                                                        .textScaler,
+                                                text: TextSpan(
+                                                  children: [
+                                                    TextSpan(
+                                                      text:
+                                                          '${FFLocalizations.of(context).getVariableText(
+                                                        enText:
+                                                            'Quantity available: ',
+                                                        esText:
+                                                            'Cantidad disponible: ',
+                                                      )}${widget!.producto?.quantity?.toString()}',
+                                                      style: TextStyle(),
+                                                    )
+                                                  ],
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
@@ -621,45 +655,80 @@ class _BsMostraDetalleProductoWidgetState
                                 AuthUserStreamWidget(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
-                                      await CartRecord.collection
-                                          .doc()
-                                          .set(createCartRecordData(
-                                            product:
-                                                widget!.producto?.reference,
-                                            quantity:
-                                                _model.ccAgregarCantidadValue,
-                                            subtotal: widget!.producto?.price,
-                                            nameProduct:
-                                                widget!.producto?.nameProduct,
-                                            buyer: currentUserReference,
-                                          ));
-                                      Navigator.pop(context);
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Se ha agregado el articulo al carrito',
-                                            style: FlutterFlowTheme.of(context)
-                                                .titleMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  letterSpacing: 0.0,
+                                      if (_model.ccAgregarCantidadValue! >
+                                          widget!.producto!.quantity) {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                enText: 'Warning',
+                                                esText: 'Alerta',
+                                              )),
+                                              content: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getVariableText(
+                                                enText:
+                                                    'The product is not available due to low quantity',
+                                                esText:
+                                                    'El producto no se encuentra disponible debido a la baja cantidad',
+                                              )),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('Ok'),
                                                 ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else {
+                                        await CartRecord.collection
+                                            .doc()
+                                            .set(createCartRecordData(
+                                              product:
+                                                  widget!.producto?.reference,
+                                              quantity:
+                                                  _model.ccAgregarCantidadValue,
+                                              subtotal: widget!.producto?.price,
+                                              nameProduct:
+                                                  widget!.producto?.nameProduct,
+                                              buyer: currentUserReference,
+                                            ));
+                                        Navigator.pop(context);
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Se ha agregado el articulo al carrito',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
                                           ),
-                                          duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
+                                        );
+                                      }
                                     },
                                     text: FFLocalizations.of(context).getText(
-                                      'z4ivj1vy' /* Añadir al carrito */,
+                                      'z4ivj1vy' /* Add to the cart */,
                                     ),
                                     icon: Icon(
                                       FFIcons.kshoppingBag,

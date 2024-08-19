@@ -1,10 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/bs_registro_exitoso_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'vista_creacion_cuenta_widget.dart' show VistaCreacionCuentaWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -43,19 +45,22 @@ class VistaCreacionCuentaModel
     return null;
   }
 
-  // State field(s) for EmailTextField widget.
-  FocusNode? emailTextFieldFocusNode;
-  TextEditingController? emailTextFieldTextController;
-  String? Function(BuildContext, String?)?
-      emailTextFieldTextControllerValidator;
-  String? _emailTextFieldTextControllerValidator(
-      BuildContext context, String? val) {
+  // State field(s) for txtEmail widget.
+  FocusNode? txtEmailFocusNode;
+  TextEditingController? txtEmailTextController;
+  String? Function(BuildContext, String?)? txtEmailTextControllerValidator;
+  String? _txtEmailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'lxj0p4lt' /* Field is required */,
       );
     }
 
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'nfzu372d' /* Email address is not valid */,
+      );
+    }
     return null;
   }
 
@@ -70,16 +75,21 @@ class VistaCreacionCuentaModel
       );
     }
 
+    if (val.length > 8) {
+      return FFLocalizations.of(context).getText(
+        '9przsnpd' /* Phone number is not valid */,
+      );
+    }
+
     return null;
   }
 
-  // State field(s) for PasswordTextField widget.
-  FocusNode? passwordTextFieldFocusNode;
-  TextEditingController? passwordTextFieldTextController;
-  late bool passwordTextFieldVisibility;
-  String? Function(BuildContext, String?)?
-      passwordTextFieldTextControllerValidator;
-  String? _passwordTextFieldTextControllerValidator(
+  // State field(s) for txtPassword widget.
+  FocusNode? txtPasswordFocusNode;
+  TextEditingController? txtPasswordTextController;
+  late bool txtPasswordVisibility;
+  String? Function(BuildContext, String?)? txtPasswordTextControllerValidator;
+  String? _txtPasswordTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
@@ -111,12 +121,10 @@ class VistaCreacionCuentaModel
   void initState(BuildContext context) {
     txtNameTextControllerValidator = _txtNameTextControllerValidator;
     txtLastNameTextControllerValidator = _txtLastNameTextControllerValidator;
-    emailTextFieldTextControllerValidator =
-        _emailTextFieldTextControllerValidator;
+    txtEmailTextControllerValidator = _txtEmailTextControllerValidator;
     txtPhoneTextControllerValidator = _txtPhoneTextControllerValidator;
-    passwordTextFieldVisibility = false;
-    passwordTextFieldTextControllerValidator =
-        _passwordTextFieldTextControllerValidator;
+    txtPasswordVisibility = false;
+    txtPasswordTextControllerValidator = _txtPasswordTextControllerValidator;
     txtPasswordConfVisibility = false;
     txtPasswordConfTextControllerValidator =
         _txtPasswordConfTextControllerValidator;
@@ -130,14 +138,14 @@ class VistaCreacionCuentaModel
     txtLastNameFocusNode?.dispose();
     txtLastNameTextController?.dispose();
 
-    emailTextFieldFocusNode?.dispose();
-    emailTextFieldTextController?.dispose();
+    txtEmailFocusNode?.dispose();
+    txtEmailTextController?.dispose();
 
     txtPhoneFocusNode?.dispose();
     txtPhoneTextController?.dispose();
 
-    passwordTextFieldFocusNode?.dispose();
-    passwordTextFieldTextController?.dispose();
+    txtPasswordFocusNode?.dispose();
+    txtPasswordTextController?.dispose();
 
     txtPasswordConfFocusNode?.dispose();
     txtPasswordConfTextController?.dispose();

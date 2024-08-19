@@ -16,12 +16,21 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _selectedEmployeePayment1 =
+          prefs.getBool('ff_selectedEmployeePayment1') ??
+              _selectedEmployeePayment1;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   bool _selected = false;
   bool get selected => _selected;
@@ -52,4 +61,41 @@ class FFAppState extends ChangeNotifier {
   set adminEmail(String value) {
     _adminEmail = value;
   }
+
+  int _IdCountMarc = 0;
+  int get IdCountMarc => _IdCountMarc;
+  set IdCountMarc(int value) {
+    _IdCountMarc = value;
+  }
+
+  bool _selectedEmployeePayment1 = false;
+  bool get selectedEmployeePayment1 => _selectedEmployeePayment1;
+  set selectedEmployeePayment1(bool value) {
+    _selectedEmployeePayment1 = value;
+    prefs.setBool('ff_selectedEmployeePayment1', value);
+  }
+
+  bool _selectedEmployeePayment2 = false;
+  bool get selectedEmployeePayment2 => _selectedEmployeePayment2;
+  set selectedEmployeePayment2(bool value) {
+    _selectedEmployeePayment2 = value;
+  }
+
+  double _totalTime = 0.0;
+  double get totalTime => _totalTime;
+  set totalTime(double value) {
+    _totalTime = value;
+  }
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }

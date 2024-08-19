@@ -1,5 +1,5 @@
+import '/components/bs_registro_exitoso_widget.dart';
 import '/components/navigator_widget.dart';
-import '/components/register_success_modal/register_success_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

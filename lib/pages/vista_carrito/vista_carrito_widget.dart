@@ -374,173 +374,207 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                           alignment:
                                                               AlignmentDirectional(
                                                                   0.0, 0.0),
-                                                          child: Container(
-                                                            width: MediaQuery
-                                                                        .sizeOf(
+                                                          child: StreamBuilder<
+                                                              ProductRecord>(
+                                                            stream: ProductRecord
+                                                                .getDocument(
+                                                                    listViewCartRecord
+                                                                        .product!),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 40.0,
+                                                                    height:
+                                                                        40.0,
+                                                                    child:
+                                                                        SpinKitFadingGrid(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size:
+                                                                          40.0,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+
+                                                              final containerProductRecord =
+                                                                  snapshot
+                                                                      .data!;
+
+                                                              return Container(
+                                                                width: MediaQuery.sizeOf(
                                                                             context)
-                                                                    .width *
-                                                                0.4,
-                                                            height: MediaQuery
-                                                                        .sizeOf(
+                                                                        .width *
+                                                                    0.4,
+                                                                height: MediaQuery.sizeOf(
                                                                             context)
-                                                                    .height *
-                                                                0.035,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .alternate,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          50.0),
-                                                            ),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Column(
+                                                                        .height *
+                                                                    0.035,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              50.0),
+                                                                ),
+                                                                child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        await listViewCartRecord
-                                                                            .reference
-                                                                            .update({
-                                                                          ...mapToFirestore(
-                                                                            {
-                                                                              'Quantity': FieldValue.increment(1),
-                                                                            },
-                                                                          ),
-                                                                        });
-                                                                      },
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.12,
-                                                                        height: MediaQuery.sizeOf(context).height *
-                                                                            0.035,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).success,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(24.0),
-                                                                        ),
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .add,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Flexible(
-                                                                  child: Align(
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child:
-                                                                        Column(
+                                                                    Column(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Flexible(
+                                                                        InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await listViewCartRecord.reference.update({
+                                                                              ...mapToFirestore(
+                                                                                {
+                                                                                  'Quantity': FieldValue.increment(-(listViewCartRecord.quantity != 1 ? 1 : 0)),
+                                                                                },
+                                                                              ),
+                                                                            });
+                                                                          },
                                                                           child:
-                                                                              Text(
-                                                                            listViewCartRecord.quantity.toString(),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                  fontSize: 20.0,
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.12,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 0.035,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                              borderRadius: BorderRadius.circular(24.0),
+                                                                            ),
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.remove,
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              size: 24.0,
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ],
                                                                     ),
-                                                                  ),
-                                                                ),
-                                                                Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    InkWell(
-                                                                      splashColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      focusColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      hoverColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      highlightColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      onTap:
-                                                                          () async {
-                                                                        await listViewCartRecord
-                                                                            .reference
-                                                                            .update({
-                                                                          ...mapToFirestore(
-                                                                            {
-                                                                              'Quantity': FieldValue.increment(-(listViewCartRecord.quantity != 1 ? 1 : 0)),
-                                                                            },
-                                                                          ),
-                                                                        });
-                                                                      },
+                                                                    Flexible(
                                                                       child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            0.12,
-                                                                        height: MediaQuery.sizeOf(context).height *
-                                                                            0.035,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(24.0),
-                                                                        ),
+                                                                          Align(
+                                                                        alignment: AlignmentDirectional(
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .remove,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          size:
-                                                                              24.0,
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Flexible(
+                                                                              child: Text(
+                                                                                listViewCartRecord.quantity.toString(),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontSize: 20.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                    Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            if (listViewCartRecord.quantity >
+                                                                                containerProductRecord.quantity) {
+                                                                              await showDialog(
+                                                                                context: context,
+                                                                                builder: (alertDialogContext) {
+                                                                                  return AlertDialog(
+                                                                                    title: Text(FFLocalizations.of(context).getVariableText(
+                                                                                      enText: 'Warning',
+                                                                                      esText: 'Alerta',
+                                                                                    )),
+                                                                                    content: Text(FFLocalizations.of(context).getVariableText(
+                                                                                      enText: 'The product is not available due to low quantity',
+                                                                                      esText: 'El producto no se encuentra disponible debido a la baja cantidad',
+                                                                                    )),
+                                                                                    actions: [
+                                                                                      TextButton(
+                                                                                        onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                        child: Text('Ok'),
+                                                                                      ),
+                                                                                    ],
+                                                                                  );
+                                                                                },
+                                                                              );
+                                                                            } else {
+                                                                              await listViewCartRecord.reference.update({
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'Quantity': FieldValue.increment(1),
+                                                                                  },
+                                                                                ),
+                                                                              });
+                                                                            }
+                                                                          },
+                                                                          child:
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.12,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 0.035,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).success,
+                                                                              borderRadius: BorderRadius.circular(24.0),
+                                                                            ),
+                                                                            child:
+                                                                                Icon(
+                                                                              Icons.add,
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              size: 24.0,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
                                                                   ],
                                                                 ),
-                                                              ],
-                                                            ),
+                                                              );
+                                                            },
                                                           ),
                                                         ),
                                                       ),
