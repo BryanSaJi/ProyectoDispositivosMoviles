@@ -1275,6 +1275,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Time Marc',
       'es': 'Marca de Tiempo',
     },
+    '13chu1mb': {
+      'en': 'Time Marc Employee',
+      'es': 'Empleado  Time Marc',
+    },
     'uqre8utj': {
       'en': 'Products',
       'es': 'Productos',
@@ -1941,45 +1945,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EditTimeMarcEmployee
   {
-    '6aujt3ti': {
-      'en': 'Select the Date',
-      'es': '',
+    'zlvpuv8r': {
+      'en': 'Press to get day Marc',
+      'es': 'Preionar para obtener marca del día',
     },
     '9eqnid91': {
       'en': 'In Time',
-      'es': '',
+      'es': 'Hora Entrada',
     },
     'csknnug9': {
       'en': 'Out Time',
-      'es': '',
+      'es': 'Hora Salida',
     },
     'jrfi89hz': {
       'en': '',
+      'es': '',
+    },
+    'y5uwdmav': {
+      'en': '00:00',
       'es': '',
     },
     'qlihg7pe': {
       'en': '',
       'es': '',
     },
+    'czcrmrht': {
+      'en': '00:00',
+      'es': '',
+    },
+    '8yyunjpo': {
+      'en': '',
+      'es': '',
+    },
+    'qc6lj8pm': {
+      'en': '',
+      'es': '',
+    },
     'hrv3pwr7': {
       'en': 'In Marc',
-      'es': '',
+      'es': 'Marca Entrada',
     },
     'l6x2m7fb': {
       'en': 'Out Marc',
-      'es': '',
+      'es': 'Marca Salida',
     },
     'jec1mfu0': {
       'en': 'Total Time (Hrs):',
-      'es': '',
-    },
-    'vcsd00su': {
-      'en': '09:00 hrs',
-      'es': '',
+      'es': 'Tiempo Total (Hrs): ',
     },
     'bsggqpr1': {
       'en': 'Save Marcs',
-      'es': '',
+      'es': 'Guardar Marcas',
     },
     'ih1p05vi': {
       'en': 'Employ Time Tracker',

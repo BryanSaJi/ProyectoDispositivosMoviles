@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -85,6 +86,24 @@ class FFAppState extends ChangeNotifier {
   double get totalTime => _totalTime;
   set totalTime(double value) {
     _totalTime = value;
+  }
+
+  DateTime? _defDate;
+  DateTime? get defDate => _defDate;
+  set defDate(DateTime? value) {
+    _defDate = value;
+  }
+
+  DateTime? _inMarcCollection;
+  DateTime? get inMarcCollection => _inMarcCollection;
+  set inMarcCollection(DateTime? value) {
+    _inMarcCollection = value;
+  }
+
+  DateTime? _outMarcColletion;
+  DateTime? get outMarcColletion => _outMarcColletion;
+  set outMarcColletion(DateTime? value) {
+    _outMarcColletion = value;
   }
 }
 

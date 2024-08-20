@@ -398,6 +398,72 @@ class _AdministrativeControlWidgetState
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.pushNamed(
+                                                  'EditTimeMarcEmployee');
+
+                                              FFAppState().inMarcCollection =
+                                                  null;
+                                              FFAppState().outMarcColletion =
+                                                  null;
+                                              FFAppState().InMarc = null;
+                                              FFAppState().OutMarc = null;
+                                              setState(() {});
+                                            },
+                                            child: ListTile(
+                                              leading: Icon(
+                                                Icons.timer_sharp,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 24.0,
+                                              ),
+                                              title: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '13chu1mb' /* Time Marc Employee */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                              trailing: Icon(
+                                                Icons.arrow_forward_ios,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .grey2,
+                                                size: 20.0,
+                                              ),
+                                              tileColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              dense: false,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                          ),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
                                                   'vistaDuenoProductos');
                                             },
                                             child: ListTile(

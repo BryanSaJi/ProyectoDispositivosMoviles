@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/bs_cambiar_metodo_pago_widget.dart';
 import '/components/bs_orden_exitosa_widget.dart';
@@ -939,6 +940,15 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
 
                                                         context.pushNamed(
                                                             'vistaIndex');
+
+                                                        _model.apiResult8xi =
+                                                            await BFEmailConfirmacinTamalesDoaLeylaGroup
+                                                                .emailConfirmacinTamalesDoaLeylaCall
+                                                                .call(
+                                                          to: currentUserEmail,
+                                                          subject:
+                                                              'Confirmación de Orden',
+                                                        );
                                                       } else {
                                                         ScaffoldMessenger.of(
                                                                 context)
@@ -969,6 +979,8 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                           ),
                                                         );
                                                       }
+
+                                                      setState(() {});
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)

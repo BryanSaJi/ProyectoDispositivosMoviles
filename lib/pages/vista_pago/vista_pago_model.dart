@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/bs_cambiar_metodo_pago_widget.dart';
 import '/components/bs_orden_exitosa_widget.dart';
@@ -21,6 +22,8 @@ import 'package:provider/provider.dart';
 class VistaPagoModel extends FlutterFlowModel<VistaPagoWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (emailConfirmacinTamalesDoaLeyla)] action in Button widget.
+  ApiCallResponse? apiResult8xi;
   // Model for navigator component.
   late NavigatorModel navigatorModel;
 

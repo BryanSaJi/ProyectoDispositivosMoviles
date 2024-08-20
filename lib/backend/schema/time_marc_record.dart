@@ -41,12 +41,18 @@ class TimeMarcRecord extends FirestoreRecord {
   DateTime? get outMarc => _outMarc;
   bool hasOutMarc() => _outMarc != null;
 
+  // "Hours" field.
+  double? _hours;
+  double get hours => _hours ?? 0.0;
+  bool hasHours() => _hours != null;
+
   void _initializeFields() {
     _name = snapshotData['Name'] as String?;
     _lastname = snapshotData['Lastname'] as String?;
     _date = snapshotData['Date'] as DateTime?;
     _inMarc = snapshotData['InMarc'] as DateTime?;
     _outMarc = snapshotData['OutMarc'] as DateTime?;
+    _hours = castToType<double>(snapshotData['Hours']);
   }
 
   static CollectionReference get collection =>
@@ -89,6 +95,7 @@ Map<String, dynamic> createTimeMarcRecordData({
   DateTime? date,
   DateTime? inMarc,
   DateTime? outMarc,
+  double? hours,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -97,6 +104,7 @@ Map<String, dynamic> createTimeMarcRecordData({
       'Date': date,
       'InMarc': inMarc,
       'OutMarc': outMarc,
+      'Hours': hours,
     }.withoutNulls,
   );
 
@@ -112,12 +120,13 @@ class TimeMarcRecordDocumentEquality implements Equality<TimeMarcRecord> {
         e1?.lastname == e2?.lastname &&
         e1?.date == e2?.date &&
         e1?.inMarc == e2?.inMarc &&
-        e1?.outMarc == e2?.outMarc;
+        e1?.outMarc == e2?.outMarc &&
+        e1?.hours == e2?.hours;
   }
 
   @override
   int hash(TimeMarcRecord? e) => const ListEquality()
-      .hash([e?.name, e?.lastname, e?.date, e?.inMarc, e?.outMarc]);
+      .hash([e?.name, e?.lastname, e?.date, e?.inMarc, e?.outMarc, e?.hours]);
 
   @override
   bool isValidKey(Object? o) => o is TimeMarcRecord;

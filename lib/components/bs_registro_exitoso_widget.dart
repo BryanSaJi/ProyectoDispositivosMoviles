@@ -169,7 +169,7 @@ class _BsRegistroExitosoWidgetState extends State<BsRegistroExitosoWidget> {
                         Expanded(
                           child: FFButtonWidget(
                             onPressed: () async {
-                              context.goNamed('vistaLogin');
+                              context.pushNamed('vistaLogin');
                             },
                             text: FFLocalizations.of(context).getText(
                               't4tt10im' /* Awesome! */,
