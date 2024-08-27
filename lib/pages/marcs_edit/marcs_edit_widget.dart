@@ -422,6 +422,55 @@ class _MarcsEditWidgetState extends State<MarcsEditWidget> {
                                                                               ),
                                                                             ),
                                                                           ),
+                                                                          Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                                                children: [
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Text(
+                                                                                      FFLocalizations.of(context).getText(
+                                                                                        'g3znzzx0' /* Total Time:  */,
+                                                                                      ),
+                                                                                      maxLines: 2,
+                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  Align(
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        formatNumber(
+                                                                                          listViewTimeMarcRecord.hours,
+                                                                                          formatType: FormatType.custom,
+                                                                                          format: '0.00',
+                                                                                          locale: '',
+                                                                                        ),
+                                                                                        '0',
+                                                                                      ),
+                                                                                      maxLines: 2,
+                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                            fontFamily: 'Plus Jakarta Sans',
+                                                                                            color: FlutterFlowTheme.of(context).green,
+                                                                                            letterSpacing: 0.0,
+                                                                                            fontWeight: FontWeight.w800,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ),
                                                                         ],
                                                                       ),
                                                                     ),
@@ -533,9 +582,31 @@ class _MarcsEditWidgetState extends State<MarcsEditWidget> {
                                                                     child:
                                                                         FFButtonWidget(
                                                                       onPressed:
-                                                                          () {
-                                                                        print(
-                                                                            'Button pressed ...');
+                                                                          () async {
+                                                                        var confirmDialogResponse = await showDialog<bool>(
+                                                                              context: context,
+                                                                              builder: (alertDialogContext) {
+                                                                                return AlertDialog(
+                                                                                  content: Text('Desea eliminar la marca de tiempo?'),
+                                                                                  actions: [
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                      child: Text('Cancelar'),
+                                                                                    ),
+                                                                                    TextButton(
+                                                                                      onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                      child: Text('Confirmar'),
+                                                                                    ),
+                                                                                  ],
+                                                                                );
+                                                                              },
+                                                                            ) ??
+                                                                            false;
+                                                                        if (confirmDialogResponse) {
+                                                                          await listViewTimeMarcRecord
+                                                                              .reference
+                                                                              .delete();
+                                                                        }
                                                                       },
                                                                       text: '',
                                                                       icon:

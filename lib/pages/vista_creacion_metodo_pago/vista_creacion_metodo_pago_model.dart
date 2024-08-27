@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -20,6 +19,7 @@ class VistaCreacionMetodoPagoModel
     extends FlutterFlowModel<VistaCreacionMetodoPagoWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for ddTipoPago widget.
   String? ddTipoPagoValue;
@@ -189,9 +189,6 @@ class VistaCreacionMetodoPagoModel
     return null;
   }
 
-  // Model for navigator component.
-  late NavigatorModel navigatorModel;
-
   @override
   void initState(BuildContext context) {
     txtNumeroTarjetaTextControllerValidator =
@@ -207,7 +204,6 @@ class VistaCreacionMetodoPagoModel
     txtCodigoCVVTextControllerValidator = _txtCodigoCVVTextControllerValidator;
     txtCodigoPostalTextControllerValidator =
         _txtCodigoPostalTextControllerValidator;
-    navigatorModel = createModel(context, () => NavigatorModel());
   }
 
   @override
@@ -232,7 +228,5 @@ class VistaCreacionMetodoPagoModel
 
     txtCodigoPostalFocusNode?.dispose();
     txtCodigoPostalTextController?.dispose();
-
-    navigatorModel.dispose();
   }
 }

@@ -80,13 +80,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
+          appStateNotifier.loggedIn ? VistaIndexWidget() : VistaLoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : VistaLoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? VistaIndexWidget()
+              : VistaLoginWidget(),
         ),
         FFRoute(
           name: 'vistaCreacionCuenta',
@@ -106,16 +107,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vistaIndex',
           path: '/vistaIndex',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'vistaIndex')
-              : VistaIndexWidget(),
+          builder: (context, params) => VistaIndexWidget(),
         ),
         FFRoute(
           name: 'vistaHistorialDePedidos',
           path: '/vistaHistorialDePedidos',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'vistaHistorialDePedidos')
-              : VistaHistorialDePedidosWidget(),
+          builder: (context, params) => VistaHistorialDePedidosWidget(),
         ),
         FFRoute(
           name: 'Favorite',
@@ -173,11 +170,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => VistaConfiguracionWidget(),
         ),
         FFRoute(
-          name: 'EditProfile',
-          path: '/editProfile',
-          builder: (context, params) => EditProfileWidget(),
-        ),
-        FFRoute(
           name: 'ChangePassword',
           path: '/changePassword',
           builder: (context, params) => ChangePasswordWidget(),
@@ -208,14 +200,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => IndexWidget(),
         ),
         FFRoute(
-          name: 'AdministrativeControl',
-          path: '/administrativeControl',
-          builder: (context, params) => AdministrativeControlWidget(),
+          name: 'vistaControlesAdministrativos',
+          path: '/vistaControlesAdministrativos',
+          builder: (context, params) => VistaControlesAdministrativosWidget(),
         ),
         FFRoute(
-          name: 'UsersCRUD',
-          path: '/usersCRUD',
-          builder: (context, params) => UsersCRUDWidget(),
+          name: 'vistaUsersCRUD',
+          path: '/vistaUsersCRUD',
+          builder: (context, params) => VistaUsersCRUDWidget(),
         ),
         FFRoute(
           name: 'vistaAdminOrdenes',
@@ -233,12 +225,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => VistaOrdenesClienteWidget(),
         ),
         FFRoute(
-          name: 'EditUser',
-          path: '/editUser',
+          name: 'vistaEditarUsuario',
+          path: '/vistaEditarUsuario',
           asyncParams: {
             'user': getDoc(['Users'], UsersRecord.fromSnapshot),
           },
-          builder: (context, params) => EditUserWidget(
+          builder: (context, params) => VistaEditarUsuarioWidget(
             user: params.getParam(
               'user',
               ParamType.Document,
@@ -248,17 +240,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vistaDuenoProductos',
           path: '/vistaDuenoProductos',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'vistaDuenoProductos')
-              : VistaDuenoProductosWidget(),
+          builder: (context, params) => VistaDuenoProductosWidget(),
         ),
         FFRoute(
-          name: 'EditProduct',
-          path: '/editProduct',
+          name: 'vistaEditarProducto',
+          path: '/vistaEditarProducto',
           asyncParams: {
             'product': getDoc(['Product'], ProductRecord.fromSnapshot),
           },
-          builder: (context, params) => EditProductWidget(
+          builder: (context, params) => VistaEditarProductoWidget(
             product: params.getParam(
               'product',
               ParamType.Document,
@@ -266,14 +256,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'CreateProduct',
-          path: '/createProduct',
-          builder: (context, params) => CreateProductWidget(),
+          name: 'vistaCrearProducto',
+          path: '/vistaCrearProducto',
+          builder: (context, params) => VistaCrearProductoWidget(),
         ),
         FFRoute(
-          name: 'UsersEmployees',
-          path: '/usersEmployees',
-          builder: (context, params) => UsersEmployeesWidget(),
+          name: 'vistaUsuarioEmpleados',
+          path: '/vistaUsuarioEmpleados',
+          builder: (context, params) => VistaUsuarioEmpleadosWidget(),
         ),
         FFRoute(
           name: 'TimeMarcAdmin',
@@ -290,9 +280,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'UsersEmployeesUser',
-          path: '/usersEmployeesUser',
-          builder: (context, params) => UsersEmployeesUserWidget(),
+          name: 'vistaUsuarioEmpleadosUser',
+          path: '/vistaUsuarioEmpleadosUser',
+          builder: (context, params) => VistaUsuarioEmpleadosUserWidget(),
         ),
         FFRoute(
           name: 'vistaAbonarEmpleado',
@@ -357,6 +347,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditTimeMarcEmployee',
           path: '/editTimeMarcEmployee',
           builder: (context, params) => EditTimeMarcEmployeeWidget(),
+        ),
+        FFRoute(
+          name: 'vistaEditarPerfil',
+          path: '/vistaEditarPerfil',
+          builder: (context, params) => VistaEditarPerfilWidget(),
+        ),
+        FFRoute(
+          name: 'vistaReportesVentas',
+          path: '/vistaReportesVentas',
+          builder: (context, params) => VistaReportesVentasWidget(),
+        ),
+        FFRoute(
+          name: 'vistaReportesEmpleados',
+          path: '/vistaReportesEmpleados',
+          builder: (context, params) => VistaReportesEmpleadosWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -543,9 +548,13 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: Colors.transparent,
-                  child: Image.asset(
-                    'assets/images/Screenshot_2024-06-04_190144.jpg',
-                    fit: BoxFit.cover,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/Screenshot_2024-06-04_190144.jpg',
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: MediaQuery.sizeOf(context).height * 0.4,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               : page;

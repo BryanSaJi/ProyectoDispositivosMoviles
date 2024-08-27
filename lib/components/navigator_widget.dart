@@ -581,7 +581,8 @@ class _NavigatorWidgetState extends State<NavigatorWidget>
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed('EditProfile');
+                                            context
+                                                .pushNamed('vistaEditarPerfil');
                                           },
                                           child: ListTile(
                                             leading: Icon(

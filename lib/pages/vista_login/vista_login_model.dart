@@ -1,5 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/forgot_password_popup/forgot_password_popup_widget.dart';
+import '/components/bs_recuperacion_clave/bs_recuperacion_clave_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 class VistaLoginModel extends FlutterFlowModel<VistaLoginWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for EmailTextField widget.
   FocusNode? emailTextFieldFocusNode;

@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:badges/badges.dart' as badges;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:cached_network_image/cached_network_image.dart';
@@ -409,41 +408,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  width: 32.0,
-                                  height: 32.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context).grey3,
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
-                                  child: Icon(
-                                    FFIcons.kquestionMark,
-                                    color: FlutterFlowTheme.of(context).black3,
-                                    size: 20.0,
-                                  ),
-                                ),
-                                Text(
-                                  FFLocalizations.of(context).getText(
-                                    '9yie9zpa' /* Help */,
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ].divide(SizedBox(width: 8.0)),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
                             InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -595,18 +559,8 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                   .circular(
                                                                       0.0),
                                                             ),
-                                                            child:
-                                                                CachedNetworkImage(
-                                                              fadeInDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              fadeOutDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              imageUrl:
-                                                                  'https://images.unsplash.com/photo-1630071074184-a879a29c51bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxyb2FzdCUyMGJlYWZ8ZW58MHx8fHwxNjk3ODc4ODk5fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                            child: Image.asset(
+                                                              'assets/images/Tma_(1).png',
                                                               width: double
                                                                   .infinity,
                                                               height: double
@@ -663,7 +617,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'hilvxp3u' /* - Roast Beaf - */,
+                                                                      'hilvxp3u' /* - QualityTamales- */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -694,8 +648,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                       children: [
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '6ehql7v1' /* Buy 2 and  */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                ' Everything at the best ',
+                                                                            esText:
+                                                                                'Todo al mejor ',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -708,8 +665,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                         ),
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '4cwxmmig' /* Get 2 */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                'price!',
+                                                                            esText:
+                                                                                'precio!',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -733,34 +693,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                                 0.0,
                                                                           ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'crmnr5n3' /* The taste of the cake is world... */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -793,18 +725,8 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                   .circular(
                                                                       0.0),
                                                             ),
-                                                            child:
-                                                                CachedNetworkImage(
-                                                              fadeInDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              fadeOutDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              imageUrl:
-                                                                  'https://images.unsplash.com/photo-1508616185939-efe767994166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyNHx8YXNpYW4lMjBiYWYlMjBicmVhZHxlbnwwfHx8fDE2OTc4Nzg3NTd8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                            child: Image.asset(
+                                                              'assets/images/Tma_(2).png',
                                                               width: double
                                                                   .infinity,
                                                               height: double
@@ -861,7 +783,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'm9a293bn' /* - Asian Baf Bread - */,
+                                                                      'm9a293bn' /* - More than one flavor- */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -892,8 +814,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                       children: [
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '7osmst6k' /* Buy 3  */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                'Choose the one ',
+                                                                            esText:
+                                                                                'Elige el que ',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -906,8 +831,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                         ),
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '2anocxhi' /* Get 1 */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                'you want!',
+                                                                            esText:
+                                                                                'quieras!',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -931,34 +859,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                                 0.0,
                                                                           ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      '7i85sj3s' /* The taste of the cake is world... */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -991,18 +891,8 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                   .circular(
                                                                       0.0),
                                                             ),
-                                                            child:
-                                                                CachedNetworkImage(
-                                                              fadeInDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              fadeOutDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          500),
-                                                              imageUrl:
-                                                                  'https://images.unsplash.com/photo-1686772115119-40d9a96b5770?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwZnJpZXN8ZW58MHx8fHwxNjk3ODc4OTQyfDA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                            child: Image.asset(
+                                                              'assets/images/Tma.png',
                                                               width: double
                                                                   .infinity,
                                                               height: double
@@ -1059,7 +949,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '7by9nlhq' /* - Fried CHicken - */,
+                                                                      '7by9nlhq' /* - Visit us! - */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1090,8 +980,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                       children: [
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '4f40uqfn' /* Buy 3  */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                ' We are waiting for ',
+                                                                            esText:
+                                                                                ' ¡Te estamos ',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -1104,8 +997,11 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                         ),
                                                                         TextSpan(
                                                                           text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            'kl04yh8r' /* Get 1 */,
+                                                                              FFLocalizations.of(context).getVariableText(
+                                                                            enText:
+                                                                                'you!',
+                                                                            esText:
+                                                                                'esperando!',
                                                                           ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .titleMedium
@@ -1129,34 +1025,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                                 0.0,
                                                                           ),
                                                                     ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                              Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Text(
-                                                                    FFLocalizations.of(
-                                                                            context)
-                                                                        .getText(
-                                                                      'al3v5p18' /* The taste of the cake is world... */,
-                                                                    ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodySmall
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -1364,7 +1232,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                                'ddalvdol' /* San Diego, CA */,
+                                                                'ddalvdol' /* San Rafael, Heredia */,
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -1385,99 +1253,6 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                                Stack(
-                                                  children: [
-                                                    InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        context.pushNamed(
-                                                            'Notifications');
-                                                      },
-                                                      child: badges.Badge(
-                                                        badgeContent: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'w2xon0sl' /* 3 */,
-                                                          ),
-                                                          textAlign:
-                                                              TextAlign.center,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: 12.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                        showBadge: true,
-                                                        shape: badges
-                                                            .BadgeShape.circle,
-                                                        badgeColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        elevation: 3.0,
-                                                        padding:
-                                                            EdgeInsets.all(8.0),
-                                                        position:
-                                                            badges.BadgePosition
-                                                                .topEnd(),
-                                                        animationType: badges
-                                                            .BadgeAnimationType
-                                                            .scale,
-                                                        toAnimate: true,
-                                                        child: Container(
-                                                          width: 40.0,
-                                                          height: 40.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              context.pushNamed(
-                                                                  'vistaConfiguracion');
-                                                            },
-                                                            child: Icon(
-                                                              FFIcons
-                                                                  .kbellRinging,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              size: 24.0,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
                                                 ),
                                               ],
                                             ),
@@ -1624,6 +1399,12 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                   _model.simpleSearchResults =
                                                                       TextSearch(
                                                                     vistaIndexProductRecordList
+                                                                        .where((e) =>
+                                                                            (e.enable ==
+                                                                                true) &&
+                                                                            (e.quantity >
+                                                                                0))
+                                                                        .toList()
                                                                         .map(
                                                                           (record) => TextSearchItem.fromTerms(
                                                                               record,
@@ -1843,16 +1624,14 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                               pagingController: _model
                                                   .setLvProductosController(
                                                 ProductRecord.collection
-                                                    .where(Filter.or(
-                                                  Filter(
-                                                    'Enable',
-                                                    isEqualTo: true,
-                                                  ),
-                                                  Filter(
-                                                    'Quantity',
-                                                    isNotEqualTo: 0,
-                                                  ),
-                                                )),
+                                                    .where(
+                                                      'Enable',
+                                                      isEqualTo: true,
+                                                    )
+                                                    .where(
+                                                      'Quantity',
+                                                      isNotEqualTo: 0,
+                                                    ),
                                               ),
                                               padding: EdgeInsets.zero,
                                               shrinkWrap: true,
@@ -1977,7 +1756,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                           20.0),
                                                               child:
                                                                   Image.asset(
-                                                                'assets/images/Img.png',
+                                                                'assets/images/Diseo_sin_ttulo_(1).png',
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -2139,16 +1918,14 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                               stream: queryProductRecord(
                                                 queryBuilder: (productRecord) =>
                                                     productRecord
-                                                        .where(Filter.or(
-                                                  Filter(
-                                                    'Enable',
-                                                    isEqualTo: true,
-                                                  ),
-                                                  Filter(
-                                                    'Quantity',
-                                                    isNotEqualTo: 0,
-                                                  ),
-                                                )),
+                                                        .where(
+                                                          'Enable',
+                                                          isEqualTo: true,
+                                                        )
+                                                        .where(
+                                                          'Quantity',
+                                                          isNotEqualTo: 0,
+                                                        ),
                                                 singleRecord: true,
                                               ),
                                               builder: (context, snapshot) {
@@ -2283,7 +2060,7 @@ class _VistaIndexWidgetState extends State<VistaIndexWidget> {
                                                                             20.0),
                                                                     child: Image
                                                                         .asset(
-                                                                      'assets/images/Img.png',
+                                                                      'assets/images/Diseo_sin_ttulo_(1).png',
                                                                       fit: BoxFit
                                                                           .cover,
                                                                     ),

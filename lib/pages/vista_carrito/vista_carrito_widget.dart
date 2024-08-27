@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -177,7 +176,7 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(20.0),
                                                 child: Image.asset(
-                                                  'assets/images/Img.png',
+                                                  'assets/images/Diseo_sin_ttulo_(1).png',
                                                   fit: BoxFit.cover,
                                                 ),
                                               ),
@@ -212,67 +211,103 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                           alignment:
                                                               AlignmentDirectional(
                                                                   1.0, 0.0),
-                                                          child: FFButtonWidget(
-                                                            onPressed:
-                                                                () async {
-                                                              await listViewCartRecord
-                                                                  .reference
-                                                                  .delete();
-                                                              ScaffoldMessenger
-                                                                      .of(context)
-                                                                  .showSnackBar(
-                                                                SnackBar(
-                                                                  content: Text(
-                                                                    'Se ha eliminado el articulo del carrito',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          4000),
-                                                                  backgroundColor:
-                                                                      FlutterFlowTheme.of(
+                                                          child: StreamBuilder<
+                                                              ProductRecord>(
+                                                            stream: ProductRecord
+                                                                .getDocument(
+                                                                    listViewCartRecord
+                                                                        .product!),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 40.0,
+                                                                    height:
+                                                                        40.0,
+                                                                    child:
+                                                                        SpinKitFadingGrid(
+                                                                      color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .secondary,
+                                                                          .primary,
+                                                                      size:
+                                                                          40.0,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+
+                                                              final buttonProductRecord =
+                                                                  snapshot
+                                                                      .data!;
+
+                                                              return FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  await buttonProductRecord
+                                                                      .reference
+                                                                      .update({
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'Quantity':
+                                                                            FieldValue.increment(listViewCartRecord.quantity),
+                                                                      },
+                                                                    ),
+                                                                  });
+                                                                  await listViewCartRecord
+                                                                      .reference
+                                                                      .delete();
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Se ha eliminado el articulo del carrito',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondary,
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'e17s2qrn' /* Remove */,
                                                                 ),
-                                                              );
-                                                            },
-                                                            text: FFLocalizations
-                                                                    .of(context)
-                                                                .getText(
-                                                              'e17s2qrn' /* Remove */,
-                                                            ),
-                                                            options:
-                                                                FFButtonOptions(
-                                                              height: 25.0,
-                                                              padding:
-                                                                  EdgeInsetsDirectional
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  height: 25.0,
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           24.0,
                                                                           0.0,
                                                                           24.0,
                                                                           0.0),
-                                                              iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              textStyle:
-                                                                  FlutterFlowTheme.of(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  textStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
@@ -283,18 +318,21 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
-                                                              elevation: 3.0,
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: Colors
-                                                                    .transparent,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          24.0),
-                                                            ),
+                                                                  elevation:
+                                                                      3.0,
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    width: 1.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              24.0),
+                                                                ),
+                                                              );
+                                                            },
                                                           ),
                                                         ),
                                                       ),
@@ -454,6 +492,14 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                                 },
                                                                               ),
                                                                             });
+
+                                                                            await containerProductRecord.reference.update({
+                                                                              ...mapToFirestore(
+                                                                                {
+                                                                                  'Quantity': FieldValue.increment(1),
+                                                                                },
+                                                                              ),
+                                                                            });
                                                                           },
                                                                           child:
                                                                               Container(
@@ -545,6 +591,14 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                                                                 ...mapToFirestore(
                                                                                   {
                                                                                     'Quantity': FieldValue.increment(1),
+                                                                                  },
+                                                                                ),
+                                                                              });
+
+                                                                              await containerProductRecord.reference.update({
+                                                                                ...mapToFirestore(
+                                                                                  {
+                                                                                    'Quantity': FieldValue.increment(-(1)),
                                                                                   },
                                                                                 ),
                                                                               });
@@ -724,37 +778,102 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
-                                          child: FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed('vistaPago');
-                                            },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              'otftdw64' /* Checkout */,
+                                          child: FutureBuilder<int>(
+                                            future: queryCartRecordCount(
+                                              queryBuilder: (cartRecord) =>
+                                                  cartRecord.where(
+                                                'Buyer',
+                                                isEqualTo: currentUserReference,
+                                              ),
                                             ),
-                                            options: FFButtonOptions(
-                                              height: 56.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      24.0, 16.0, 24.0, 16.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    child: SpinKitFadingGrid(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 40.0,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              int buttonCount = snapshot.data!;
+
+                                              return FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (buttonCount > 0) {
+                                                    context
+                                                        .pushNamed('vistaPago');
+                                                  } else {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getVariableText(
+                                                            enText:
+                                                                'Your cart is empty! Please add atleast one product',
+                                                            esText:
+                                                                ' ¡Tu carrito está vacío! Por favor agregue al menos un producto',
+                                                          ),
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
                                                       ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                            ),
+                                                    );
+                                                  }
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'otftdw64' /* Checkout */,
+                                                ),
+                                                options: FFButtonOptions(
+                                                  height: 56.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(24.0, 16.0,
+                                                          24.0, 16.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Plus Jakarta Sans',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  elevation: 0.0,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
+                                              );
+                                            },
                                           ),
                                         ),
                                       ),
@@ -767,16 +886,6 @@ class _VistaCarritoWidgetState extends State<VistaCarritoWidget> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0.85, -0.91),
-                  child: wrapWithModel(
-                    model: _model.navigatorModel,
-                    updateCallback: () => setState(() {}),
-                    child: NavigatorWidget(
-                      expanded: false,
-                    ),
                   ),
                 ),
               ],

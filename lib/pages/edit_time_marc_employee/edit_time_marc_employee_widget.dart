@@ -1003,7 +1003,7 @@ class _EditTimeMarcEmployeeWidgetState
                                 ),
                               );
 
-                              context.pushNamed('AdministrativeControl');
+                              context.pushNamed('vistaConfiguracion');
                             },
                             text: FFLocalizations.of(context).getText(
                               'bsggqpr1' /* Save Marcs */,

@@ -46,27 +46,6 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryText,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
-          actions: [],
-          centerTitle: true,
-          elevation: 0.0,
-        ),
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
@@ -75,49 +54,76 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'ru1cib9k' /* My orders */,
-                    ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          letterSpacing: 0.0,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Flexible(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderColor: Colors.transparent,
+                                borderRadius: 10.0,
+                                buttonSize: 40.0,
+                                icon: Icon(
+                                  FFIcons.karrowNarrowLeft,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 22.0,
+                                ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 50.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '2ybrwb98' /* Current Orders */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'i6qjiebj' /* Current orders */,
-                    ),
-                    textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       StreamBuilder<List<OrderRecord>>(
                         stream: queryOrderRecord(
-                          queryBuilder: (orderRecord) =>
-                              orderRecord.where(Filter.or(
-                            Filter(
-                              'OrderStatus',
-                              isEqualTo: 'En curso',
-                            ),
-                            Filter(
-                              'OrderUser',
-                              isEqualTo: currentUserReference,
-                            ),
-                          )),
+                          queryBuilder: (orderRecord) => orderRecord
+                              .where(
+                                'OrderStatus',
+                                isEqualTo: 'En curso',
+                              )
+                              .where(
+                                'OrderUser',
+                                isEqualTo: currentUserReference,
+                              ),
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -187,7 +193,7 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
                                                       BorderRadius.circular(
                                                           0.0),
                                                   child: Image.asset(
-                                                    'assets/images/Img.png',
+                                                    'assets/images/Diseo_sin_ttulo_(1).png',
                                                     width: 300.0,
                                                     height: 200.0,
                                                     fit: BoxFit.cover,
@@ -421,7 +427,7 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
                                                                           .sizeOf(
                                                                               context)
                                                                       .height *
-                                                                  0.65,
+                                                                  0.45,
                                                               child:
                                                                   BsInformacionOrdenesWidget(
                                                                 orden:
@@ -595,6 +601,16 @@ class _VistaOrdenesClienteWidgetState extends State<VistaOrdenesClienteWidget> {
                         },
                       ),
                     ].divide(SizedBox(height: 12.0)),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                 ),
               ],

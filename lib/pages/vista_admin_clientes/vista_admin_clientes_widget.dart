@@ -49,41 +49,58 @@ class _VistaAdminClientesWidgetState extends State<VistaAdminClientesWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 54.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryText,
-              size: 24.0,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
-          ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              '3dz2nxwa' /* Clientes */,
-            ),
-            style: FlutterFlowTheme.of(context).headlineSmall.override(
-                  fontFamily: 'Plus Jakarta Sans',
-                  letterSpacing: 0.0,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
         body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                ),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      FlutterFlowIconButton(
+                        borderColor: Colors.transparent,
+                        borderRadius: 10.0,
+                        buttonSize: 40.0,
+                        icon: Icon(
+                          FFIcons.karrowNarrowLeft,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 22.0,
+                        ),
+                        onPressed: () async {
+                          context.safePop();
+                        },
+                      ),
+                      Flexible(
+                        child: Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 50.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'mdvvhh2d' /* User Details */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               Stack(
                 children: [
                   ClipRRect(
@@ -270,8 +287,8 @@ class _VistaAdminClientesWidgetState extends State<VistaAdminClientesWidget> {
                                       ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(26.0),
-                                        child: Image.network(
-                                          listViewUsersRecord.photoUrl,
+                                        child: Image.asset(
+                                          'assets/images/avatar.png',
                                           width: 36.0,
                                           height: 36.0,
                                           fit: BoxFit.cover,

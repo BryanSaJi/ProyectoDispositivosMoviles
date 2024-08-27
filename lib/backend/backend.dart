@@ -9,7 +9,6 @@ import 'schema/users_record.dart';
 import 'schema/product_record.dart';
 import 'schema/order_record.dart';
 import 'schema/cart_record.dart';
-import 'schema/time_log_record.dart';
 import 'schema/time_marc_record.dart';
 import 'schema/employee_payment_record.dart';
 import 'schema/payment_method_record.dart';
@@ -27,7 +26,6 @@ export 'schema/users_record.dart';
 export 'schema/product_record.dart';
 export 'schema/order_record.dart';
 export 'schema/cart_record.dart';
-export 'schema/time_log_record.dart';
 export 'schema/time_marc_record.dart';
 export 'schema/employee_payment_record.dart';
 export 'schema/payment_method_record.dart';
@@ -325,84 +323,6 @@ Future<FFFirestorePage<CartRecord>> queryCartRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<CartRecord> data) {
-          data.forEach((item) {
-            final itemIndexes = controller.itemList!
-                .asMap()
-                .map((k, v) => MapEntry(v.reference.id, k));
-            final index = itemIndexes[item.reference.id];
-            final items = controller.itemList!;
-            if (index != null) {
-              items.replaceRange(index, index + 1, [item]);
-              controller.itemList = {
-                for (var item in items) item.reference: item
-              }.values.toList();
-            }
-          });
-        });
-        streamSubscriptions?.add(streamSubscription);
-      }
-      return page;
-    });
-
-/// Functions to query TimeLogRecords (as a Stream and as a Future).
-Future<int> queryTimeLogRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      TimeLogRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<TimeLogRecord>> queryTimeLogRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      TimeLogRecord.collection,
-      TimeLogRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<TimeLogRecord>> queryTimeLogRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      TimeLogRecord.collection,
-      TimeLogRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-Future<FFFirestorePage<TimeLogRecord>> queryTimeLogRecordPage({
-  Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
-  required PagingController<DocumentSnapshot?, TimeLogRecord> controller,
-  List<StreamSubscription?>? streamSubscriptions,
-}) =>
-    queryCollectionPage(
-      TimeLogRecord.collection,
-      TimeLogRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
-    ).then((page) {
-      controller.appendPage(
-        page.data,
-        page.nextPageMarker,
-      );
-      if (isStream) {
-        final streamSubscription =
-            (page.dataStream)?.listen((List<TimeLogRecord> data) {
           data.forEach((item) {
             final itemIndexes = controller.itemList!
                 .asMap()

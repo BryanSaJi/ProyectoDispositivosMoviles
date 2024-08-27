@@ -46,57 +46,64 @@ class _VistaAdminOrdenesWidgetState extends State<VistaAdminOrdenesWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryText,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
-          actions: [],
-          centerTitle: true,
-          elevation: 0.0,
-        ),
         body: SingleChildScrollView(
           primary: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'ehirzdxh' /* Ordenes del sistema */,
-                  ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        letterSpacing: 0.0,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Flexible(
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 10.0,
+                              buttonSize: 40.0,
+                              icon: Icon(
+                                FFIcons.karrowNarrowLeft,
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                size: 22.0,
+                              ),
+                              onPressed: () async {
+                                context.safePop();
+                              },
+                            ),
+                            Flexible(
+                              child: Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 50.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      '7yzu1w72' /* System Orders */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    '3idg01gn' /* All of the pending orders */,
+                    ),
                   ),
-                  textAlign: TextAlign.start,
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        letterSpacing: 0.0,
-                      ),
-                ),
+                ],
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
@@ -175,7 +182,7 @@ class _VistaAdminOrdenesWidgetState extends State<VistaAdminOrdenesWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(0.0),
                                                 child: Image.asset(
-                                                  'assets/images/Img.png',
+                                                  'assets/images/Diseo_sin_ttulo_(1).png',
                                                   width: 300.0,
                                                   height: 200.0,
                                                   fit: BoxFit.cover,
@@ -474,10 +481,24 @@ class _VistaAdminOrdenesWidgetState extends State<VistaAdminOrdenesWidget> {
                                                             builder:
                                                                 (alertDialogContext) {
                                                               return AlertDialog(
-                                                                title: Text(
-                                                                    'alerta'),
+                                                                title: Text(FFLocalizations.of(
+                                                                        context)
+                                                                    .getVariableText(
+                                                                  enText:
+                                                                      'Warning!',
+                                                                  esText:
+                                                                      '¡Alerta !',
+                                                                )),
                                                                 content: Text(
-                                                                    'Deseas canselar la orden ${listViewOrderRecord.orderCode}?'),
+                                                                    '${FFLocalizations.of(context).getVariableText(
+                                                                  enText:
+                                                                      'Do you wish to complete order ',
+                                                                  esText:
+                                                                      '¿Deseas completar el pedido',
+                                                                )}${listViewOrderRecord.orderCode}${FFLocalizations.of(context).getVariableText(
+                                                                  enText: '?',
+                                                                  esText: '?',
+                                                                )}'),
                                                                 actions: [
                                                                   TextButton(
                                                                     onPressed: () =>
@@ -505,7 +526,7 @@ class _VistaAdminOrdenesWidgetState extends State<VistaAdminOrdenesWidget> {
                                                         .reference
                                                         .update(
                                                             createOrderRecordData(
-                                                      orderStatus: 'Cancelado',
+                                                      orderStatus: 'Completado',
                                                     ));
                                                   } else {
                                                     await showDialog(

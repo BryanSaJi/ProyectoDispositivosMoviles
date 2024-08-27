@@ -322,64 +322,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // vistaIndex
   {
     'hilvxp3u': {
-      'en': '- Roast Beaf -',
-      'es': '- Carne Asada -',
-    },
-    '6ehql7v1': {
-      'en': 'Buy 2 and ',
-      'es': 'Compra 2 y',
-    },
-    '4cwxmmig': {
-      'en': 'Get 2',
-      'es': 'Consigue 2',
-    },
-    'crmnr5n3': {
-      'en': 'The taste of the cake is worldwide',
-      'es': 'El sabor del pastel es mundial.',
+      'en': '- QualityTamales-',
+      'es': '-Tamales de calidad-',
     },
     'm9a293bn': {
-      'en': '- Asian Baf Bread -',
-      'es': '- Pan Baf Asiático -',
-    },
-    '7osmst6k': {
-      'en': 'Buy 3 ',
-      'es': 'Comprar 3',
-    },
-    '2anocxhi': {
-      'en': 'Get 1',
-      'es': 'Consigue 1',
-    },
-    '7i85sj3s': {
-      'en': 'The taste of the cake is worldwide',
-      'es': 'El sabor del pastel es mundial.',
+      'en': '- More than one flavor-',
+      'es': '-Más de un sabor-',
     },
     '7by9nlhq': {
-      'en': '- Fried CHicken -',
-      'es': '- Pollo frito -',
-    },
-    '4f40uqfn': {
-      'en': 'Buy 3 ',
-      'es': 'Comprar 3',
-    },
-    'kl04yh8r': {
-      'en': 'Get 1',
-      'es': 'Consigue 1',
-    },
-    'al3v5p18': {
-      'en': 'The taste of the cake is worldwide',
-      'es': 'El sabor del pastel es mundial.',
+      'en': '- Visit us! -',
+      'es': '- ¡Visítanos! -',
     },
     'quzk94sh': {
       'en': 'Location',
       'es': 'Ubicación',
     },
     'ddalvdol': {
-      'en': 'San Diego, CA',
-      'es': 'San Diego, California, EE.UU.',
-    },
-    'w2xon0sl': {
-      'en': '3',
-      'es': '3',
+      'en': 'San Rafael, Heredia',
+      'es': 'San Rafael, Heredia',
     },
     'grys5kta': {
       'en': 'Find what you would like to eat!',
@@ -421,10 +381,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Settings',
       'es': 'Configuración',
     },
-    '9yie9zpa': {
-      'en': 'Help',
-      'es': 'Ayuda',
-    },
     'p2dus5o5': {
       'en': 'Logout',
       'es': 'Cerrar sesión',
@@ -438,7 +394,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ru6luczd': {
       'en': 'My order history',
-      'es': 'mi historial de hordenes',
+      'es': 'Mi historial de pedidos',
     },
     'uceytif3': {
       'en': 'Date',
@@ -450,11 +406,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4e6ykinl': {
       'en': 'Detail',
-      'es': '',
-    },
-    'n752ehln': {
-      'en': 'Order',
-      'es': 'Ordenar',
+      'es': 'Detalle',
     },
     '550t588t': {
       'en': 'My Orders',
@@ -978,10 +930,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Edit Profile',
       'es': 'Editar perfil',
     },
-    'ijinvbt6': {
-      'en': 'Change Password',
-      'es': 'Cambiar la contraseña',
-    },
     'gp25dsr6': {
       'en': 'Language',
       'es': 'Idioma',
@@ -989,6 +937,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '8hhaaw4b': {
       'en': 'Administrative Control',
       'es': 'Controles administrativos',
+    },
+    'n0jvfnyk': {
+      'en': 'Time Marc Employee',
+      'es': 'Marcas de Empleado',
+    },
+    'wl1u6akd': {
+      'en': 'Time Marcs History',
+      'es': 'Historial de Marcas',
     },
     '5mhq5cdc': {
       'en': 'Log out',
@@ -1001,57 +957,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'y5fgtfl1': {
       'en': 'Settings',
       'es': 'Ajustes',
-    },
-  },
-  // EditProfile
-  {
-    'czlgmhds': {
-      'en': 'Edit Profile',
-      'es': '',
-    },
-    '36zgxj4d': {
-      'en': 'Username',
-      'es': '',
-    },
-    '3ia1b2s1': {
-      'en': 'Create your username',
-      'es': '',
-    },
-    '18dmglcv': {
-      'en': 'Hendrix',
-      'es': '',
-    },
-    'y62t4x4v': {
-      'en': 'Email or Phone Number',
-      'es': '',
-    },
-    'qoq8rd90': {
-      'en': 'Enter your email or phone number',
-      'es': '',
-    },
-    'atadv3g7': {
-      'en': 'demo@email.com',
-      'es': '',
-    },
-    '8c7103h3': {
-      'en': 'Account Liked With',
-      'es': '',
-    },
-    'w6ao9nf7': {
-      'en': 'Google connected.',
-      'es': '',
-    },
-    '2es027e3': {
-      'en': 'Connect device',
-      'es': '',
-    },
-    'vrtr6uvq': {
-      'en': 'Save Changes',
-      'es': '',
-    },
-    'ubo5xh9z': {
-      'en': 'Home',
-      'es': '',
     },
   },
   // ChangePassword
@@ -1084,9 +989,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Confirm your new password',
       'es': 'Confirma tu nueva contraseña',
     },
+    'dfeexwx5': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'xm5153em': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'nw7xj0uy': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'z6hk8ds1': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'bl2077ml': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    '9a85srub': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
     'kfgjr2i8': {
-      'en': 'Change',
-      'es': 'Cambiar',
+      'en': 'Change Password',
+      'es': 'Cambiar la contraseña',
     },
     'z8e37nra': {
       'en': 'Home',
@@ -1249,7 +1178,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Indice',
     },
   },
-  // AdministrativeControl
+  // vistaControlesAdministrativos
   {
     'igz5tqm2': {
       'en': 'Administrative Controls',
@@ -1267,25 +1196,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Employees ',
       'es': 'Empleados',
     },
-    'bj7mfqav': {
-      'en': 'Payroll',
-      'es': 'Planilla',
-    },
     'z1gvsynd': {
-      'en': 'Time Marc',
-      'es': 'Marca de Tiempo',
-    },
-    '13chu1mb': {
-      'en': 'Time Marc Employee',
-      'es': 'Empleado  Time Marc',
+      'en': 'Time Marcs',
+      'es': 'Marcas de Tiempo',
     },
     'uqre8utj': {
       'en': 'Products',
       'es': 'Productos',
     },
     '9civqz8p': {
-      'en': 'Reports',
-      'es': 'Reportes',
+      'en': 'Sales Report',
+      'es': 'Informe de ventas',
+    },
+    'rp7k1csb': {
+      'en': 'Employee Perfomance',
+      'es': 'Rendimiento de los empleados',
     },
     'mol9oib4': {
       'en': 'Version 1.0.1 Build 24',
@@ -1296,15 +1221,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // UsersCRUD
+  // vistaUsersCRUD
   {
-    'pmzcn5om': {
+    'lq2t3aqo': {
       'en': 'Users',
       'es': 'Usuarios',
-    },
-    'jvr3hqti': {
-      'en': 'Page Title',
-      'es': '',
     },
     '39qismlu': {
       'en': 'Home',
@@ -1313,13 +1234,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vistaAdminOrdenes
   {
-    'ehirzdxh': {
-      'en': 'Ordenes del sistema',
-      'es': '',
-    },
-    '3idg01gn': {
-      'en': 'All of the pending orders',
-      'es': 'Todas las ordenes pendientes',
+    '7yzu1w72': {
+      'en': 'System Orders',
+      'es': 'Órdenes del Sistema',
     },
     'uwd2b44r': {
       'en': 'Date',
@@ -1344,13 +1261,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vistaAdminClientes
   {
-    '3dz2nxwa': {
-      'en': 'Clientes',
-      'es': '',
+    'mdvvhh2d': {
+      'en': 'User Details',
+      'es': 'Detalles de Usuario',
     },
     'x7pli5py': {
       'en': 'Search members...',
-      'es': '',
+      'es': 'Buscar miembros...',
     },
     '7lw76d3o': {
       'en': 'More details',
@@ -1363,21 +1280,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // vistaOrdenesCliente
   {
-    'ru1cib9k': {
-      'en': 'My orders',
-      'es': 'Mis ordenes',
-    },
-    'i6qjiebj': {
-      'en': 'Current orders',
+    '2ybrwb98': {
+      'en': 'Current Orders',
       'es': 'Pedidos actuales',
     },
     'r5szszgh': {
       'en': 'Date',
-      'es': '',
+      'es': 'Fecha',
     },
     'zgmkwktt': {
       'en': 'Price',
-      'es': '',
+      'es': 'Precio',
     },
     'sym927fe': {
       'en': 'Details',
@@ -1392,7 +1305,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // EditUser
+  // vistaEditarUsuario
   {
     'caybhpg6': {
       'en': 'Edit User',
@@ -1407,7 +1320,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'z1h2g600': {
-      'en': 'Lastname',
+      'en': 'Last Name',
       'es': 'Apellido',
     },
     'dasy319h': {
@@ -1454,55 +1367,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // vistaDuenoProductos
   {
     'x3shoaly': {
-      'en': 'Todos los Productos',
-      'es': '',
+      'en': 'Products',
+      'es': 'Productos',
     },
     '5l4ryyir': {
       'en': '',
-      'es': '',
-    },
-    'dhyi0nlq': {
-      'en': 'FoodCort  Menu',
-      'es': '',
-    },
-    'emxrnj27': {
-      'en': 'Voucher',
-      'es': '',
-    },
-    '6nyq8064': {
-      'en': '2',
-      'es': '',
-    },
-    'lxvsvg4a': {
-      'en': 'Chat',
-      'es': '',
-    },
-    '27u7z9wk': {
-      'en': '23',
-      'es': '',
-    },
-    'agkljcbc': {
-      'en': 'History',
-      'es': '',
-    },
-    'nhj9b0um': {
-      'en': '14',
-      'es': '',
-    },
-    'eht376ui': {
-      'en': 'Magdalena Succrose',
-      'es': '',
-    },
-    'caeyou02': {
-      'en': 'Good Morning',
-      'es': '',
-    },
-    'wlhqgnsl': {
-      'en': 'Help',
-      'es': '',
-    },
-    'zeop0gix': {
-      'en': 'Logout',
       'es': '',
     },
     '3xa6oz30': {
@@ -1510,7 +1379,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // EditProduct
+  // vistaEditarProducto
   {
     'pff8lcne': {
       'en': 'Edit Product',
@@ -1557,8 +1426,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Tiempo de Preparacion',
     },
     'pi0g83t3': {
-      'en': 'Sabor',
-      'es': 'Flavor',
+      'en': 'Flavor',
+      'es': 'Sabor',
     },
     '0p5tf813': {
       'en': 'Product Flavor',
@@ -1566,33 +1435,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5k2phqb5': {
       'en': 'Enabled',
-      'es': '',
-    },
-    'dfeexwx5': {
-      'en': 'Campo Requerido',
-      'es': '',
-    },
-    'xm5153em': {
-      'en': 'Please choose an option from the dropdown',
-      'es': '',
+      'es': 'Activado',
     },
     'y6m73qv5': {
-      'en': 'Campo Requerido',
-      'es': 'El campo es obligatorio',
-    },
-    'z6hk8ds1': {
-      'en': 'Please choose an option from the dropdown',
-      'es': '',
-    },
-    '603pnq9l': {
-      'en': 'Campo Requerido',
-      'es': 'El campo es obligatorio',
-    },
-    '9a85srub': {
-      'en': 'Please choose an option from the dropdown',
-      'es': '',
-    },
-    '08hnsmdc': {
       'en': 'Campo Requerido',
       'es': 'El campo es obligatorio',
     },
@@ -1600,7 +1445,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    'duotrp1n': {
+    'xccbte3z': {
       'en': 'Campo Requerido',
       'es': 'El campo es obligatorio',
     },
@@ -1608,11 +1453,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
-    'qnxnyu1v': {
+    '603pnq9l': {
       'en': 'Campo Requerido',
       'es': 'El campo es obligatorio',
     },
     '2h1f2vb4': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    '08hnsmdc': {
+      'en': 'Campo Requerido',
+      'es': 'El campo es obligatorio',
+    },
+    '9ej59hy0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'duotrp1n': {
+      'en': 'Campo Requerido',
+      'es': 'El campo es obligatorio',
+    },
+    '99b5ahyq': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'qnxnyu1v': {
+      'en': 'Campo Requerido',
+      'es': 'El campo es obligatorio',
+    },
+    'y1kiw6xy': {
       'en': 'Please choose an option from the dropdown',
       'es': '',
     },
@@ -1625,11 +1494,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // CreateProduct
+  // vistaCrearProducto
   {
     'hav9y9fj': {
       'en': 'Create Product',
-      'es': '',
+      'es': 'Crear producto',
     },
     'li83rbst': {
       'en': 'Name',
@@ -1740,15 +1609,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // UsersEmployees
+  // vistaUsuarioEmpleados
   {
-    'jxguk0yc': {
-      'en': 'Users',
-      'es': 'Usuarios',
-    },
-    'yg4f1r37': {
-      'en': 'Page Title',
-      'es': '',
+    '6zkttg25': {
+      'en': 'Staff',
+      'es': 'Personal',
     },
     'c0hy1tau': {
       'en': 'Home',
@@ -1790,14 +1655,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
-  // UsersEmployeesUser
+  // vistaUsuarioEmpleadosUser
   {
-    'm4gv0teq': {
-      'en': 'Users',
-      'es': '',
-    },
-    'yev2fqk6': {
-      'en': 'Page Title',
+    '68xcc0ba': {
+      'en': 'Staff',
       'es': '',
     },
     'jweyl7vf': {
@@ -1837,6 +1698,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ingrese el salario del empleado',
       'es': 'Ingrese el salario del empleado',
     },
+    'yyg3g5h2': {
+      'en': 'Ingres las horas trabajadas',
+      'es': 'Entrar a las horas trabajadas',
+    },
+    'vdh7xsyr': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'dmt301f0': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'z5r8x610': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'yt27u49b': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'qm0lvdwv': {
+      'en': 'Field is required',
+      'es': 'El campo es obligatorio',
+    },
+    'mesbfn8d': {
+      'en': 'Please choose an option from the dropdown',
+      'es': '',
+    },
+    'rzzmf5mf': {
+      'en': 'Total:          ',
+      'es': 'Total:',
+    },
     'djv32tff': {
       'en': 'Issue payment',
       'es': 'Emitir pago',
@@ -1864,6 +1757,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Out Marc: ',
       'es': 'Marca Salida: ',
     },
+    'j2qybveq': {
+      'en': 'Total Time: ',
+      'es': 'Tiempo Total: ',
+    },
     'sb4nse1z': {
       'en': 'Page Title',
       'es': '',
@@ -1890,6 +1787,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '2mff9i5r': {
       'en': 'Out Marc:  ',
       'es': 'Marca Salida: ',
+    },
+    'g3znzzx0': {
+      'en': 'Total Time: ',
+      'es': 'Tiempo Total: ',
     },
     '2qkmi1or': {
       'en': 'Page Title',
@@ -2002,6 +1903,99 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
+  // vistaEditarPerfil
+  {
+    'o3om8rqf': {
+      'en': 'Edit User',
+      'es': 'Editar usuario',
+    },
+    'dmdvxdis': {
+      'en': 'Name',
+      'es': 'Nombre',
+    },
+    'px521gba': {
+      'en': 'Create your username',
+      'es': '',
+    },
+    '7oerwokh': {
+      'en': 'Last Name',
+      'es': 'Apellido',
+    },
+    'g7t9xjb1': {
+      'en': 'Create your username',
+      'es': '',
+    },
+    '5uhqhplv': {
+      'en': 'Email',
+      'es': 'Correo electrónico',
+    },
+    '2tjuy3lv': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'ly5ky7d4': {
+      'en': 'Phone Number',
+      'es': 'Numero de Telefono',
+    },
+    'jcpib5pt': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'donra8p6': {
+      'en': 'Role',
+      'es': 'Rol',
+    },
+    'nyr4uvds': {
+      'en': 'Enter your email or phone number',
+      'es': '',
+    },
+    'dcyvrmny': {
+      'en': 'Enabled',
+      'es': 'Activado',
+    },
+    'v0dkjq1v': {
+      'en': 'Save Changes',
+      'es': 'Guardar cambios',
+    },
+    '9grgos33': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // vistaReportesVentas
+  {
+    'sw5grxmg': {
+      'en': 'Sales Report',
+      'es': 'Informe de ventas',
+    },
+    '3meorjlt': {
+      'en': '   Total \nOrders',
+      'es': ' Pedidos \n Totales',
+    },
+    'hhgtkg0v': {
+      'en': '     Total \n Earnings',
+      'es': 'Ingresos\n Totales',
+    },
+    'v8qs20nt': {
+      'en': ' Total \nUsers',
+      'es': ' Usuarios\nTotales',
+    },
+    '6w25osng': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
+  // vistaReportesEmpleados
+  {
+    'p5egttk4': {
+      'en': 'Perfomance Report',
+      'es': 'Informe de rendimiento',
+    },
+    'sxdgxn50': {
+      'en': 'Home',
+      'es': '',
+    },
+  },
   // bsRegistroExitoso
   {
     'vkxriblo': {
@@ -2017,14 +2011,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¡Impresionante!',
     },
   },
-  // ForgotPasswordPopup
+  // bsRecuperacionClave
   {
     '9eqmslx6': {
       'en': 'Forgot password',
       'es': 'Olvide mi contraseña',
     },
     'a7h9ku4j': {
-      'en': 'Enter your email',
+      'en': 'Please enter your email address to reset your password',
       'es': '',
     },
     'j7j2p5lq': {
@@ -2032,8 +2026,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Correo electrónico',
     },
     'tcoqtr5m': {
-      'en': 'Email Address',
-      'es': 'Digita tu numero de telefono',
+      'en': 'Enter your email address',
+      'es': 'Introduzca su dirección de correo electrónico',
     },
     'c2l37p1d': {
       'en': 'Reset Password',
@@ -2641,20 +2635,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // bsMostraDetalleProductoDueno
   {
     'qjiqma7w': {
-      'en': 'Detalles',
-      'es': '',
+      'en': 'Details',
+      'es': 'Detalles',
     },
     'zivxvi82': {
       'en': 'Description',
       'es': 'Descripción',
     },
-    '5ijt3ent': {
-      'en': '₡ ',
-      'es': '',
-    },
     'ppu93b9j': {
-      'en': 'editar',
-      'es': 'editar',
+      'en': 'Edit',
+      'es': 'Editar',
     },
   },
   // CCRadioButton
@@ -2697,10 +2687,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // bsInformacionOrdenes
   {
-    '297wgt4o': {
-      'en': '#495242',
-      'es': '',
-    },
     'x8yd3k33': {
       'en': 'Total:',
       'es': 'Total:',
@@ -2708,14 +2694,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // bsInformacionOrdenesAdmin
   {
-    'fhbwbzlu': {
-      'en': 'Total:',
-      'es': '',
-    },
-    'ru4zzzdv': {
-      'en': 'Total:',
-      'es': '',
-    },
     'kx36bn1p': {
       'en': 'Total:',
       'es': 'Total:',
@@ -2738,6 +2716,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'xyarjjrr': {
       'en': 'Close',
       'es': 'cerrar',
+    },
+  },
+  // bsPagoExitoso
+  {
+    '8gdd8xa2': {
+      'en': 'Successful payment',
+      'es': 'Pago exitoso',
+    },
+    '9jriee40': {
+      'en': 'The payment has been issued!',
+      'es': '¡El pago ha sido emitido!',
+    },
+    'w0b2mu0f': {
+      'en': 'Understood!',
+      'es': '¡Comprendido!',
     },
   },
   // Miscellaneous

@@ -70,12 +70,19 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
             height: MediaQuery.sizeOf(context).height * 1.0,
             child: Stack(
               children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/Fondo_Tamalmania.png',
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 1.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 1.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -106,6 +113,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -142,6 +152,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -305,6 +318,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -468,6 +484,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -644,6 +663,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -830,6 +852,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
@@ -1020,6 +1045,9 @@ class _VistaCreacionCuentaWidgetState extends State<VistaCreacionCuentaWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),

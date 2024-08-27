@@ -17,6 +17,7 @@ class VistaDuenoProductosModel
     extends FlutterFlowModel<VistaDuenoProductosWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for lvProductos widget.
 
   PagingController<DocumentSnapshot?, ProductRecord>?

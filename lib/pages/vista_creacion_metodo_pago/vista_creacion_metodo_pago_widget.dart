@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -1657,16 +1656,6 @@ class _VistaCreacionMetodoPagoWidgetState
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0.85, -0.91),
-                  child: wrapWithModel(
-                    model: _model.navigatorModel,
-                    updateCallback: () => setState(() {}),
-                    child: NavigatorWidget(
-                      expanded: false,
                     ),
                   ),
                 ),

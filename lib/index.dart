@@ -17,7 +17,6 @@ export '/pages/notifications/notifications_widget.dart'
     show NotificationsWidget;
 export '/pages/vista_configuracion/vista_configuracion_widget.dart'
     show VistaConfiguracionWidget;
-export '/pages/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/pages/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
 export '/pages/vista_lenguaje/vista_lenguaje_widget.dart'
@@ -29,27 +28,30 @@ export '/pages/helpand_support/helpand_support_widget.dart'
 export '/pages/legal_and_policies/legal_and_policies_widget.dart'
     show LegalAndPoliciesWidget;
 export '/pages/index/index_widget.dart' show IndexWidget;
-export '/pages/administrative_control/administrative_control_widget.dart'
-    show AdministrativeControlWidget;
-export '/pages/users_c_r_u_d/users_c_r_u_d_widget.dart' show UsersCRUDWidget;
+export '/pages/vista_controles_administrativos/vista_controles_administrativos_widget.dart'
+    show VistaControlesAdministrativosWidget;
+export '/pages/vista_users_c_r_u_d/vista_users_c_r_u_d_widget.dart'
+    show VistaUsersCRUDWidget;
 export '/pages/vista_admin_ordenes/vista_admin_ordenes_widget.dart'
     show VistaAdminOrdenesWidget;
 export '/pages/vista_admin_clientes/vista_admin_clientes_widget.dart'
     show VistaAdminClientesWidget;
 export '/pages/vista_ordenes_cliente/vista_ordenes_cliente_widget.dart'
     show VistaOrdenesClienteWidget;
-export '/pages/edit_user/edit_user_widget.dart' show EditUserWidget;
+export '/pages/vista_editar_usuario/vista_editar_usuario_widget.dart'
+    show VistaEditarUsuarioWidget;
 export '/pages/vista_dueno_productos/vista_dueno_productos_widget.dart'
     show VistaDuenoProductosWidget;
-export '/pages/edit_product/edit_product_widget.dart' show EditProductWidget;
-export '/pages/create_product/create_product_widget.dart'
-    show CreateProductWidget;
-export '/pages/users_employees/users_employees_widget.dart'
-    show UsersEmployeesWidget;
+export '/pages/vista_editar_producto/vista_editar_producto_widget.dart'
+    show VistaEditarProductoWidget;
+export '/pages/vista_crear_producto/vista_crear_producto_widget.dart'
+    show VistaCrearProductoWidget;
+export '/pages/vista_usuario_empleados/vista_usuario_empleados_widget.dart'
+    show VistaUsuarioEmpleadosWidget;
 export '/pages/time_marc_admin/time_marc_admin_widget.dart'
     show TimeMarcAdminWidget;
-export '/pages/users_employees_user/users_employees_user_widget.dart'
-    show UsersEmployeesUserWidget;
+export '/pages/vista_usuario_empleados_user/vista_usuario_empleados_user_widget.dart'
+    show VistaUsuarioEmpleadosUserWidget;
 export '/pages/vista_abonar_empleado/vista_abonar_empleado_widget.dart'
     show VistaAbonarEmpleadoWidget;
 export '/pages/marcs_editby_user/marcs_editby_user_widget.dart'
@@ -59,3 +61,9 @@ export '/pages/edit_time_marc_admin/edit_time_marc_admin_widget.dart'
     show EditTimeMarcAdminWidget;
 export '/pages/edit_time_marc_employee/edit_time_marc_employee_widget.dart'
     show EditTimeMarcEmployeeWidget;
+export '/pages/vista_editar_perfil/vista_editar_perfil_widget.dart'
+    show VistaEditarPerfilWidget;
+export '/pages/vista_reportes_ventas/vista_reportes_ventas_widget.dart'
+    show VistaReportesVentasWidget;
+export '/pages/vista_reportes_empleados/vista_reportes_empleados_widget.dart'
+    show VistaReportesEmpleadosWidget;

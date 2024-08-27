@@ -135,6 +135,26 @@ class _VistaLenguajeWidgetState extends State<VistaLenguajeWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               setAppLanguage(context, 'en');
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Has establecido el idioma en Ingles',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                ),
+                                              );
                                             },
                                             child: Container(
                                               width: double.infinity,
@@ -206,17 +226,6 @@ class _VistaLenguajeWidgetState extends State<VistaLenguajeWidget> {
                                                       ].divide(SizedBox(
                                                           width: 12.0)),
                                                     ),
-                                                    Stack(
-                                                      children: [
-                                                        Icon(
-                                                          FFIcons.ksquareCheck,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 24.0,
-                                                        ),
-                                                      ],
-                                                    ),
                                                   ].divide(
                                                       SizedBox(width: 8.0)),
                                                 ),
@@ -235,6 +244,26 @@ class _VistaLenguajeWidgetState extends State<VistaLenguajeWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               setAppLanguage(context, 'es');
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'You  have set the language to Spanish',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                ),
+                                              );
                                             },
                                             child: Container(
                                               width: double.infinity,
@@ -305,17 +334,6 @@ class _VistaLenguajeWidgetState extends State<VistaLenguajeWidget> {
                                                         ),
                                                       ].divide(SizedBox(
                                                           width: 12.0)),
-                                                    ),
-                                                    Stack(
-                                                      children: [
-                                                        Icon(
-                                                          FFIcons.ksquareCheck,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 24.0,
-                                                        ),
-                                                      ],
                                                     ),
                                                   ].divide(
                                                       SizedBox(width: 8.0)),

@@ -268,12 +268,6 @@ class _VerificationWidgetState extends State<VerificationWidget> {
                                         FlutterFlowTheme.of(context).grey2,
                                     selectedColor:
                                         FlutterFlowTheme.of(context).grey,
-                                    activeFillColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    inactiveFillColor:
-                                        FlutterFlowTheme.of(context).grey2,
-                                    selectedFillColor:
-                                        FlutterFlowTheme.of(context).grey,
                                   ),
                                   controller: _model.pinCodeController,
                                   onChanged: (_) {},

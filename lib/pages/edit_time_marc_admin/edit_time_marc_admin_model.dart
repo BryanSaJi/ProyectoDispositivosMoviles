@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 class EditTimeMarcAdminModel extends FlutterFlowModel<EditTimeMarcAdminWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for Calendar widget.
   DateTimeRange? calendarSelectedDay;
   // State field(s) for TextField widget.

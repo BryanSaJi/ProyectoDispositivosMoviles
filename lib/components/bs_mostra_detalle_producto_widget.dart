@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -121,13 +119,8 @@ class _BsMostraDetalleProductoWidgetState
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             0.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          'https://images.unsplash.com/photo-1484723091739-30a097e8f929?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8Zm9vZHxlbnwwfHx8fDE2OTc3OTQ4NDF8MA&ixlib=rb-4.0.3&q=80&w=1080',
+                                                    child: Image.asset(
+                                                      'assets/images/Tma_(3).png',
                                                       width: double.infinity,
                                                       height: double.infinity,
                                                       fit: BoxFit.cover,
@@ -160,84 +153,6 @@ class _BsMostraDetalleProductoWidgetState
                                                   ),
                                                 ],
                                               ),
-                                              Stack(
-                                                children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxMnx8Zm9vZHxlbnwwfHx8fDE2OTc3OTQ4NDF8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                      width: double.infinity,
-                                                      height: double.infinity,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    decoration: BoxDecoration(
-                                                      gradient: LinearGradient(
-                                                        colors: [
-                                                          Color(0x7F14181B),
-                                                          Color(0x2614181B)
-                                                        ],
-                                                        stops: [0.0, 1.0],
-                                                        begin:
-                                                            AlignmentDirectional(
-                                                                0.0, -1.0),
-                                                        end:
-                                                            AlignmentDirectional(
-                                                                0, 1.0),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Stack(
-                                                children: [
-                                                  ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: CachedNetworkImage(
-                                                      fadeInDuration: Duration(
-                                                          milliseconds: 500),
-                                                      fadeOutDuration: Duration(
-                                                          milliseconds: 500),
-                                                      imageUrl:
-                                                          'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxmb29kfGVufDB8fHx8MTY5Nzc5NDg0MXww&ixlib=rb-4.0.3&q=80&w=1080',
-                                                      width: double.infinity,
-                                                      height: double.infinity,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height: double.infinity,
-                                                    decoration: BoxDecoration(
-                                                      gradient: LinearGradient(
-                                                        colors: [
-                                                          Color(0x7F14181B),
-                                                          Color(0x2614181B)
-                                                        ],
-                                                        stops: [0.0, 1.0],
-                                                        begin:
-                                                            AlignmentDirectional(
-                                                                0.0, -1.0),
-                                                        end:
-                                                            AlignmentDirectional(
-                                                                0, 1.0),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
                                             ],
                                           ),
                                           Align(
@@ -253,7 +168,7 @@ class _BsMostraDetalleProductoWidgetState
                                                         .pageViewController ??=
                                                     PageController(
                                                         initialPage: 0),
-                                                count: 3,
+                                                count: 1,
                                                 axisDirection: Axis.horizontal,
                                                 onDotClicked: (i) async {
                                                   await _model
@@ -699,6 +614,17 @@ class _BsMostraDetalleProductoWidgetState
                                                   widget!.producto?.nameProduct,
                                               buyer: currentUserReference,
                                             ));
+
+                                        await widget!.producto!.reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'Quantity': FieldValue.increment(
+                                                  -(_model
+                                                      .ccAgregarCantidadValue!)),
+                                            },
+                                          ),
+                                        });
                                         Navigator.pop(context);
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -765,16 +691,6 @@ class _BsMostraDetalleProductoWidgetState
                   ),
                 ),
               ],
-            ),
-          ),
-          Align(
-            alignment: AlignmentDirectional(1.02, -0.75),
-            child: wrapWithModel(
-              model: _model.navigatorModel,
-              updateCallback: () => setState(() {}),
-              child: NavigatorWidget(
-                expanded: false,
-              ),
             ),
           ),
         ],

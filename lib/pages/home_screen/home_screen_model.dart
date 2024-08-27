@@ -15,6 +15,7 @@ import 'package:provider/provider.dart';
 class HomeScreenModel extends FlutterFlowModel<HomeScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for TopOfWeekItem component.
   late TopOfWeekItemModel topOfWeekItemModel1;
   // Model for TopOfWeekItem component.

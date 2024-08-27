@@ -1,7 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/bs_informacion_ordenes_widget.dart';
-import '/components/navigator_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -16,16 +16,11 @@ class VistaHistorialDePedidosModel
     extends FlutterFlowModel<VistaHistorialDePedidosWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Model for navigator component.
-  late NavigatorModel navigatorModel;
+  final unfocusNode = FocusNode();
 
   @override
-  void initState(BuildContext context) {
-    navigatorModel = createModel(context, () => NavigatorModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    navigatorModel.dispose();
-  }
+  void dispose() {}
 }

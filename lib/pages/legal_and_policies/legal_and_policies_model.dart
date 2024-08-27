@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 class LegalAndPoliciesModel extends FlutterFlowModel<LegalAndPoliciesWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // Model for navigator component.
   late NavigatorModel navigatorModel;
 

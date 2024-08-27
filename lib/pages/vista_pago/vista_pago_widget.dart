@@ -3,12 +3,12 @@ import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/bs_cambiar_metodo_pago_widget.dart';
 import '/components/bs_orden_exitosa_widget.dart';
-import '/components/navigator_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:styled_divider/styled_divider.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -312,8 +312,8 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                                           BorderRadius.circular(
                                                                               6.0),
                                                                       child: Image
-                                                                          .network(
-                                                                        'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80',
+                                                                          .asset(
+                                                                        'assets/images/Diseo_sin_ttulo_(1).png',
                                                                         width:
                                                                             80.0,
                                                                         height:
@@ -876,7 +876,13 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                                         e.subtotal)
                                                                     .toList()),
                                                             orderCode:
-                                                                'OR-1234',
+                                                                'OR-${random_data.randomString(
+                                                              9,
+                                                              9,
+                                                              true,
+                                                              true,
+                                                              true,
+                                                            )}',
                                                             orderStatus:
                                                                 'En curso',
                                                             orderPaymentMethod:
@@ -911,6 +917,20 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                                                             },
                                                           ),
                                                         });
+                                                        while (_model
+                                                                .loopCount <
+                                                            vistaPagoCartRecordList
+                                                                .length) {
+                                                          await vistaPagoCartRecordList[
+                                                                  _model
+                                                                      .loopCount]
+                                                              .reference
+                                                              .delete();
+                                                          _model.loopCount =
+                                                              _model.loopCount +
+                                                                  1;
+                                                          setState(() {});
+                                                        }
                                                         await showModalBottomSheet(
                                                           isScrollControlled:
                                                               true,
@@ -1037,16 +1057,6 @@ class _VistaPagoWidgetState extends State<VistaPagoWidget> {
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: AlignmentDirectional(0.85, -0.91),
-                      child: wrapWithModel(
-                        model: _model.navigatorModel,
-                        updateCallback: () => setState(() {}),
-                        child: NavigatorWidget(
-                          expanded: false,
                         ),
                       ),
                     ),

@@ -51,3 +51,29 @@ double? totalTime(
   // Retorna la diferencia en horas con decimales.
   return hoursDecimal;
 }
+
+String? funcCalcularPagoEmpleado(
+  String salario,
+  String tiempo,
+) {
+  int totalAPagar = int.parse(salario) * int.parse(tiempo);
+  return totalAPagar.toString();
+}
+
+bool? funcEvitarZero(String parametro) {
+  bool bandera = false;
+
+  if (int.parse(parametro) > 0) {
+    bandera = true;
+  }
+  return bandera;
+}
+
+int? funcSumatoriaVentas(List<int> totales) {
+  int total = 0;
+
+  for (var i = 0; i < totales.length; i++) {
+    total += totales.elementAt(i);
+  }
+  return total;
+}
